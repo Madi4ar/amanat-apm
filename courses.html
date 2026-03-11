@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-['Montserrat']">
+    <div class="section-1 w-full py-[64px] bg-[#EEF4F6] min-h-screen">
+      <div
+        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative"
+      >
+        <a
+          href="/"
+          class="flex w-fit items-center gap-2 text-sm text-[#6B7A8C] mb-6"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.0003 15.8333L4.16699 10L10.0003 4.16667"
+              stroke="#023047"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15.8337 10H4.16699"
+              stroke="#023047"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span class="text-[#023047]">На главную</span>
+        </a>
+
+        <h1 class="text-[28px] md:text-[32px] font-semibold mb-8">
+          Наши курсы
+        </h1>
+        <div class="w-full flex flex-wrap items-start justify-between gap-6">
+          <!-- Левая колонка: фильтры -->
+          <aside
+            class="w-full md:w-[280px] bg-white rounded-[16px] p-5 md:p-6 shadow-sm md:sticky md:top-6 self-start"
+          >
+            <div class="space-y-6 text-[14px] text-[#1F2A37]">
+              <div data-accordion-item>
+                <button
+                  type="button"
+                  class="cursor-pointer flex w-full items-center justify-between mb-3"
+                  data-accordion-button
+                >
+                  <span class="font-semibold">Язык обучения</span>
+                  <span
+                    class="text-[#9CA3AF] text-lg leading-none transition-transform"
+                    data-accordion-icon
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div class="space-y-2" data-accordion-content>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Казахский</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Русский</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Английский</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Формат курса -->
+              <div data-accordion-item>
+                <button
+                  type="button"
+                  class="cursor-pointer flex w-full items-center justify-between mb-3"
+                  data-accordion-button
+                >
+                  <span class="font-semibold">Формат курса</span>
+                  <span
+                    class="text-[#9CA3AF] text-lg leading-none transition-transform"
+                    data-accordion-icon
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div class="space-y-2" data-accordion-content>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Онлайн</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Оффлайн</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Смешанный</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Месяц проведения -->
+              <div data-accordion-item>
+                <button
+                  type="button"
+                  class="cursor-pointer flex w-full items-center justify-between mb-3"
+                  data-accordion-button
+                >
+                  <span class="font-semibold">Месяц проведения</span>
+                  <span
+                    class="text-[#9CA3AF] text-lg leading-none transition-transform"
+                    data-accordion-icon
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div class="space-y-2" data-accordion-content>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Март</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Апрель</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Для кого -->
+              <div data-accordion-item>
+                <button
+                  type="button"
+                  class="cursor-pointer flex w-full items-center justify-between mb-3"
+                  data-accordion-button
+                >
+                  <span class="font-semibold">Для кого</span>
+                  <span
+                    class="text-[#9CA3AF] text-lg leading-none transition-transform"
+                    data-accordion-icon
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div class="space-y-2" data-accordion-content>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Директор</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Заместитель директора</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" class="accent-[#FF9F1C]" />
+                    <span>Методист</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Правая колонка: список курсов -->
+          <main class="flex-1 min-w-[260px]">
+            <div id="courses-list" class="space-y-4"></div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll("[data-accordion-item]");
+
+        // Аккордеон слева
+        items.forEach((item, index) => {
+          const content = item.querySelector("[data-accordion-content]");
+          const icon = item.querySelector("[data-accordion-icon]");
+
+          if (!content) return;
+
+          if (index === 0) {
+            content.classList.remove("hidden");
+            if (icon) icon.classList.add("rotate-180");
+          } else {
+            content.classList.add("hidden");
+          }
+        });
+
+        document
+          .querySelectorAll("[data-accordion-button]")
+          .forEach((button) => {
+            button.addEventListener("click", () => {
+              const item = button.closest("[data-accordion-item]");
+              if (!item) return;
+
+              const content = item.querySelector("[data-accordion-content]");
+              const icon = item.querySelector("[data-accordion-icon]");
+              if (!content) return;
+
+              const isHidden = content.classList.contains("hidden");
+
+              if (isHidden) {
+                content.classList.remove("hidden");
+                if (icon) icon.classList.add("rotate-180");
+              } else {
+                content.classList.add("hidden");
+                if (icon) icon.classList.remove("rotate-180");
+              }
+            });
+          });
+
+        const courses = [
+          {
+            title: "Основы политического менеджмента",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+          {
+            title: "Избирательные кампании и стратегии",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+          {
+            title: "Коммуникации в политике",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+          {
+            title: "Избирательные кампании и стратегии 2",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+          {
+            title: "Избирательные кампании и стратегии 2",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+          {
+            title: "Избирательные кампании и стратегии 2",
+            hours: "24 ак. ч.",
+            group: "Группа: 5",
+          },
+        ];
+
+        const coursesList = document.getElementById("courses-list");
+        if (coursesList) {
+          coursesList.innerHTML = courses
+            .map(
+              (course) => `
+              <article class="w-full bg-white rounded-[16px] px-5 py-4 md:px-6 md:py-5 shadow-sm flex flex-col gap-4">
+                <div class="w-full flex flex-col lg:flex-row items-center justify-between">
+                  <h2 class="text-[16px] md:text-[18px] font-semibold mb-2 w-full">
+                    ${course.title}
+                  </h2>
+
+                  <div class="flex items-center gap-3 mt-4 lg:mt-0 justify-end w-full">
+                    <div class="px-3 py-1 rounded-[8px] border border-[#C7EBF6] bg-[#E8F7FC] text-[12px] text-[#0993B1]">
+                      ${course.hours}
+                    </div>
+                    <div class="px-3 py-1 rounded-[8px] border border-[#586E84] bg-[#F9FAFB] text-[12px] text-[#586E841]">
+                      ${course.group}
+                    </div>
+                  </div>
+                </div>
+                <div class="flex w-full items-center justify-between items-start mt-6">
+                  <a href="#" class="text-[14px] mt-3 text-[#FF9F1C] font-medium border-b border-[#FF9F1C]">
+                    Подробнее
+                  </a>
+
+                  <button class="cursor-pointer px-4 py-2 rounded-[10px] [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)] text-white text-[14px] font-semibold">
+                    Подать заявку
+                  </button>
+                </div>
+              </article>
+            `,
+            )
+            .join("");
+        }
+      });
+    </script>
+  </body>
+</html>

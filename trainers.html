@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All trainers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="font-['Montserrat']">
+    <div class="section-1 w-full py-[64px] bg-[#EEF4F6] min-h-screen">
+      <div
+        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative"
+      >
+        <a
+          href="/"
+          class="flex w-fit items-center gap-2 text-sm text-[#6B7A8C] mb-6"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.0003 15.8333L4.16699 10L10.0003 4.16667"
+              stroke="#023047"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15.8337 10H4.16699"
+              stroke="#023047"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span class="text-[#023047]">На главную</span>
+        </a>
+
+        <h1 class="text-[28px] md:text-[32px] font-semibold mb-8">
+          Ведущие тренеры
+        </h1>
+
+        <div
+          class="flex flex-wrap items-center gap-4 md:gap-6 justify-between mb-8"
+        >
+          <div class="relative w-full md:w-[200px]">
+            <button
+              type="button"
+              id="lang-filter-btn"
+              class="flex items-center justify-between w-full md:w-[200px] px-4 py-2 rounded-[999px] bg-white shadow-sm border border-[#E5E7EB] text-sm text-[#111827]"
+            >
+              <span>Язык обучения</span>
+              <svg
+                class="w-4 h-4 text-[#9CA3AF]"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 7.5L10 12.5L15 7.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <!-- выбор языка -->
+            <div
+              id="lang-popup"
+              class="hidden absolute z-20 mt-2 w-full md:w-[220px] rounded-[16px] bg-white shadow-lg border border-[#E5E7EB] p-4 space-y-2"
+            >
+              <label class="flex items-center gap-2 text-sm text-[#111827]">
+                <input type="checkbox" class="accent-[#FF9F1C]" />
+                <span>Казахский</span>
+              </label>
+              <label class="flex items-center gap-2 text-sm text-[#111827]">
+                <input type="checkbox" class="accent-[#FF9F1C]" />
+                <span>Русский</span>
+              </label>
+              <label class="flex items-center gap-2 text-sm text-[#111827]">
+                <input type="checkbox" class="accent-[#FF9F1C]" />
+                <span>Английский</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Поиск тренеров -->
+          <div class="flex-1 min-w-[220px]">
+            <div
+              class="w-full flex items-center rounded-[999px] bg-white shadow-sm border border-[#E5E7EB] px-4 py-2"
+            >
+              <input
+                type="text"
+                placeholder="Найти курсы"
+                class="flex-1 text-sm text-[#111827] placeholder:text-[#9CA3AF] outline-none bg-transparent"
+              />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 17L13.4444 13.4444M13.4444 7.22222C13.4444 8.87246 12.7889 10.4551 11.622 11.622C10.4551 12.7889 8.87246 13.4444 7.22222 13.4444C5.57199 13.4444 3.98934 12.7889 2.82245 11.622C1.65555 10.4551 1 8.87246 1 7.22222C1 5.57199 1.65555 3.98934 2.82245 2.82245C3.98934 1.65555 5.57199 1 7.22222 1C8.87246 1 10.4551 1.65555 11.622 2.82245C12.7889 3.98934 13.4444 5.57199 13.4444 7.22222Z"
+                  stroke="#6B7280"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="trainers-list"
+          class="w-full flex flex-wrap items-start gap-6 mt-[40px]"
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("lang-filter-btn");
+        const popup = document.getElementById("lang-popup");
+
+        if (btn && popup) {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            popup.classList.toggle("hidden");
+          });
+
+          document.addEventListener("click", (e) => {
+            if (popup.classList.contains("hidden")) return;
+            if (btn.contains(e.target) || popup.contains(e.target)) return;
+            popup.classList.add("hidden");
+          });
+        }
+
+        const trainers = [
+          {
+            name: "Жанна Абдулова",
+            photo: "images/photo/4.png",
+            specialization: "Политический анализ и прогнозирование",
+          },
+          {
+            name: "Арсен Нуралиев",
+            photo: "images/photo/5.png",
+            specialization: "Медиакоммуникации и имиджмейкинг",
+          },
+          {
+            name: "Карима Асланова",
+            photo: "images/photo/6.png",
+            specialization: "Организация политических кампаний",
+          },
+          {
+            name: "Жанна Абдулова",
+            photo: "images/photo/4.png",
+            specialization: "Политический анализ и прогнозирование",
+          },
+          {
+            name: "Арсен Нуралиев",
+            photo: "images/photo/5.png",
+            specialization: "Медиакоммуникации и имиджмейкинг",
+          },
+          {
+            name: "Карима Асланова",
+            photo: "images/photo/6.png",
+            specialization: "Организация политических кампаний",
+          },
+          {
+            name: "Жанна Абдулова",
+            photo: "images/photo/4.png",
+            specialization: "Политический анализ и прогнозирование",
+          },
+          {
+            name: "Арсен Нуралиев",
+            photo: "images/photo/5.png",
+            specialization: "Медиакоммуникации и имиджмейкинг",
+          },
+          {
+            name: "Карима Асланова",
+            photo: "images/photo/6.png",
+            specialization: "Организация политических кампаний",
+          },
+        ];
+
+        const container = document.getElementById("trainers-list");
+        if (container) {
+          const starImg =
+            '<img src="images/icons/star.svg" alt="Рейтинг" class="w-5 h-5" />';
+          const stars = Array(5).fill(starImg).join("\n");
+
+          container.innerHTML = trainers
+            .map(
+              (t) => `
+          <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-[16px] shadow-sm overflow-hidden flex flex-col">
+            <div class="w-full bg-[#E5E7EB] overflow-hidden">
+              <img src="${t.photo}" alt="${t.name}" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h2 class="text-[18px] font-semibold text-[#111827] mb-2">${t.name}</h2>
+              <div class="flex gap-0.5 mb-3" aria-label="Рейтинг 5 из 5">
+                ${stars}
+              </div>
+              <p class="text-[14px] text-[#6B7280] mb-4 flex-1">${t.specialization}</p>
+              <a href="#" class="w-full py-2.5 rounded-[10px] text-center text-white text-[14px] font-semibold [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)]">
+                Подробнее
+              </a>
+            </div>
+          </div>
+        `,
+            )
+            .join("");
+        }
+      });
+    </script>
+  </body>
+</html>
