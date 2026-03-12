@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.slider-main').slick({
+  $(".slider-main").slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -19,7 +19,7 @@ $(document).ready(function () {
     ],
   });
 
-  $('.slider-feedback').slick({
+  $(".slider-feedback").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -48,7 +48,7 @@ $(document).ready(function () {
     ],
   });
 
-  $('.slider-trainers').slick({
+  $(".slider-trainers").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
