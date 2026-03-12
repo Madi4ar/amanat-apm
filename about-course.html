@@ -175,6 +175,13 @@
             </div>
           </div>
         </div>
+
+        <div class="w-full flex flex-col mt-10 gap-6">
+          <p class="text-2xl md:text-[32px] font-semibold">
+            Результаты обучения
+          </p>
+          <div id="branches-container" class="w-full flex flex-col gap-6"></div>
+        </div>
       </div>
     </div>
 
@@ -220,12 +227,11 @@
           },
         ];
 
-        const container = document.getElementById("modules-accordion");
-        if (!container) return;
-
-        container.innerHTML = modules
-          .map(
-            (m) => `
+        const modulesContainer = document.getElementById("modules-accordion");
+        if (modulesContainer) {
+          modulesContainer.innerHTML = modules
+            .map(
+              (m) => `
           <div class="w-full bg-white rounded-lg shadow-md p-[24px]" data-accordion-item>
             <div class="flex w-full justify-between items-center cursor-pointer" data-accordion-header>
               <div class="flex items-center gap-4 ">
@@ -274,37 +280,126 @@
             </div>
           </div>
         `,
-          )
-          .join("");
+            )
+            .join("");
 
-        const items = container.querySelectorAll("[data-accordion-item]");
+          const items = modulesContainer.querySelectorAll(
+            "[data-accordion-item]",
+          );
 
-        items.forEach((item, index) => {
-          const header = item.querySelector("[data-accordion-header]");
-          const content = item.querySelector("[data-accordion-content]");
-          const icon = item.querySelector("[data-accordion-icon]");
+          items.forEach((item, index) => {
+            const header = item.querySelector("[data-accordion-header]");
+            const content = item.querySelector("[data-accordion-content]");
+            const icon = item.querySelector("[data-accordion-icon]");
 
-          if (!header || !content) return;
+            if (!header || !content) return;
 
-          if (index === 0) {
-            content.classList.remove("hidden");
-            if (icon) icon.classList.add("rotate-180");
-          } else {
-            content.classList.add("hidden");
-          }
-
-          header.addEventListener("click", () => {
-            const isHidden = content.classList.contains("hidden");
-
-            if (isHidden) {
+            if (index === 0) {
               content.classList.remove("hidden");
               if (icon) icon.classList.add("rotate-180");
             } else {
               content.classList.add("hidden");
-              if (icon) icon.classList.remove("rotate-180");
             }
+
+            header.addEventListener("click", () => {
+              const isHidden = content.classList.contains("hidden");
+
+              if (isHidden) {
+                content.classList.remove("hidden");
+                if (icon) icon.classList.add("rotate-180");
+              } else {
+                content.classList.add("hidden");
+                if (icon) icon.classList.remove("rotate-180");
+              }
+            });
           });
-        });
+        }
+
+        const branches = [
+          {
+            name: "Филиал 1",
+            groups: [
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+            ],
+          },
+          {
+            name: "Филиал 2",
+            groups: [
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+            ],
+          },
+          {
+            name: "Филиал 3",
+            groups: [
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+              "Группа 1",
+              "Группа 2",
+              "Группа 3",
+              "Группа 4",
+              "Группа 5",
+            ],
+          },
+        ];
+
+        const branchesContainer = document.getElementById("branches-container");
+        if (branchesContainer) {
+          branchesContainer.innerHTML = branches
+            .map(
+              (branch) => `
+          <section class="w-full flex flex-col gap-4">
+            <p class=" text-xl md:text-[24px] font-semibold text-[#219EBC]">
+              ${branch.name}
+            </p>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              ${branch.groups
+                .map(
+                  (group) => `
+                <div class="bg-white rounded-[16px] shadow-md px-4 py-5 flex flex-col justify-between">
+                  <div class="flex justify-end mb-6">
+                    <span
+                      class="px-3 py-1 rounded-[8px] border border-[#586E84] bg-[#F9FAFB] text-[12px] text-[#586E84]"
+                    >
+                      ${branch.name}
+                    </span>
+                  </div>
+                  <p class="text-[16px] font-semibold mb-4">${group}</p>
+                  <button
+                    class="w-full py-2.5 rounded-[999px] text-[14px] font-semibold text-white [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)]"
+                  >
+                    Записаться
+                  </button>
+                </div>
+              `,
+                )
+                .join("")}
+            </div>
+          </section>
+        `,
+            )
+            .join("");
+        }
       });
     </script>
   </body>
