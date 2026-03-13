@@ -612,8 +612,7 @@
               placeholder="Введите номер документа"
               class="flex-1 min-w-0 px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#023047] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#219EBC]/30 focus:border-[#219EBC]"
             />
-            <button
-              type="submit"
+            <a href="check-certificate.html"
               class="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold bg-[linear-gradient(90deg,#023047_0%,#219EBC_100%)] hover:opacity-95 transition-opacity"
             >
               Проверить
@@ -813,7 +812,7 @@
     </footer>
 
     <!-- Попап проверки документа -->
-    <div
+    <!-- <div
       id="document-result-popup"
       class="fixed inset-0 z-[1000] hidden items-center justify-center p-4 bg-black/50"
       aria-hidden="true"
@@ -831,7 +830,7 @@
           class="mt-6 text-center text-gray-700 space-y-2"
         ></div>
         <div class="flex justify-center mt-8">
-          <button
+          <a href="check-certificate.html"
             type="button"
             id="document-popup-back"
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold bg-[linear-gradient(90deg,#023047_0%,#219EBC_100%)] hover:opacity-95 transition-opacity"
@@ -862,49 +861,9 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script>
-      // Проверка документа — попап
-      (function () {
-        const form = document.getElementById("document-check-form");
-        const popup = document.getElementById("document-result-popup");
-        const contentEl = document.getElementById("document-result-content");
-        const backBtn = document.getElementById("document-popup-back");
-        if (!form || !popup || !contentEl || !backBtn) return;
-
-        const foundHtml = `
-          <p>ФИО: Адамов Адам Адамович</p>
-          <p>Программа: Политический бренд</p>
-          <p>Дата выдачи: 12.02.2026</p>
-          <p>Статус: Активный</p>
-        `;
-        const notFoundHtml = `<p class="text-[#023047] font-medium">Документ не найден</p>`;
-
-        function openPopup(found) {
-          contentEl.innerHTML = found ? foundHtml : notFoundHtml;
-          popup.classList.remove("hidden");
-          popup.classList.add("flex");
-          document.body.style.overflow = "hidden";
-        }
-        function closePopup() {
-          popup.classList.add("hidden");
-          popup.classList.remove("flex");
-          document.body.style.overflow = "";
-        }
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const input = form.querySelector('input[name="docNumber"]');
-          const value = input && input.value ? input.value.trim() : "";
-          openPopup(value.length > 0);
-        });
-        backBtn.addEventListener("click", closePopup);
-        popup.addEventListener("click", function (e) {
-          if (e.target === popup) closePopup();
-        });
-      })();
-
       // Слайдер тренеров — маппинг
       const trainersData = [
         {
