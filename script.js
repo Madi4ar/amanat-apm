@@ -6,7 +6,7 @@ $(document).ready(function () {
     autoplaySpeed: 2000,
     dots: true,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -63,4 +63,15 @@ $(document).ready(function () {
       { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   });
+
+  function adjustBannerHeight() {
+    var headerHeight = $("header").first().outerHeight() || 0;
+    var viewportHeight = window.innerHeight || 0;
+    var bannerHeight = Math.max(viewportHeight - headerHeight, 460);
+    $(".block2").css("height", bannerHeight + "px");
+  }
+
+  adjustBannerHeight();
+  $(window).on("resize orientationchange", adjustBannerHeight);
+
 });
