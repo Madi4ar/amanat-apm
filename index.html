@@ -109,11 +109,38 @@
     .active p {
       color: white;
     }
+    .slider-main.slick-slider {
+      height: 100%;
+    }
+    .slider-main .slick-list,
+    .slider-main .slick-track {
+      height: 100%;
+    }
+    .slider-main .slick-slide {
+      height: 100%;
+    }
+    .slider-main .slick-slide > div {
+      display: flex;
+      height: 100%;
+      min-height: 0;
+      width: 100%;
+      align-items: stretch;
+    }
     .slider-main .slick-dots {
-      bottom: 20px;
+      bottom: 16px;
     }
     .slider-main .slick-dots li button:before {
-      color: white;
+      color: #023047;
+      opacity: 0.35;
+      font-size: 10px;
+    }
+    .slider-main .slick-dots li.slick-active button:before {
+      color: #219ebc;
+      opacity: 1;
+    }
+    .slider-main-gradient-card {
+      background: var(--2, linear-gradient(45deg, #023047 0%, #219EBC 100%));
+      overflow: hidden;
     }
     .slider-feedback .slick-track {
       padding-top: 10px;
@@ -265,25 +292,91 @@
       </header>
     </div>
 
-    <div class="block2 h-[calc(100dvh-118px)] lg:h-[calc(100dvh-224px)]">
+    <div class="block2 min-h-[460px] bg-[#E8F4F6]">
       <div class="slider-main w-full slider h-full">
+        <div
+          class="flex h-full w-full items-stretch justify-center px-0 py-0"
+        >
+          <div
+            class="slider-main-gradient-card flex h-full w-full max-w-none flex-col gap-4 rounded-none p-4 sm:p-5 md:flex-row md:items-stretch md:gap-8 md:p-8 lg:gap-12 lg:p-12 lg:px-16 xl:px-20"
+          >
+            <div class="flex w-full shrink-0 md:h-full md:w-[42%] lg:w-[40%]">
+              <img
+                class="h-[38vh] w-full rounded-[16px] object-cover object-top sm:h-[42vh] md:h-full md:rounded-[24px]"
+                src="images/photo/mr-president.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="flex mt-1 md:mt-0 flex-col justify-center text-center text-white md:w-[58%] md:text-left lg:w-[60%]"
+            >
+              <p class="text-[12px] font-semibold leading-[1.4] sm:text-[13px] md:text-[17px] lg:text-[22px]">
+                «Наша партия должна стать кузницей кадров, готовить современных
+                политиков и государственников, умеющих работать с избирателями. <br/> <br/>
+                В структуре партии функционирует Академия политического
+                менеджмента. <br/> <br/> Нужно перейти от разовых семинаров и тренингов к
+                полноценным программам подготовки депутатов, акимов, министров и
+                других партийных выдвиженцев. На системной основе следует
+                проводить выездные тренинги для обучения партийного актива на
+                местах».
+              </p>
+              <div class="mt-3 space-y-1 text-[11px] sm:text-[12px] md:text-[14px] lg:text-[18px] font-normal leading-snug text-white/95 md:text-left">
+                <p class="font-medium">Токаев Касым-Жомарт</p>
+                <p>внеочередной XXII съезд партии «Nur Otan»</p>
+                <p>01.03.2022 г.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex h-full w-full items-stretch justify-center px-0 py-0"
+        >
+          <div
+            class="slider-main-gradient-card flex h-full w-full max-w-none flex-col gap-4 rounded-none p-4 sm:p-5 md:flex-row md:items-stretch md:gap-8 md:p-8 lg:gap-12 lg:p-12 lg:px-16 xl:px-20"
+          >
+            
+            <div class="flex order-2 md:order-1 flex-col justify-center text-center text-white md:w-[58%] md:text-left lg:w-[60%]">
+              <p class="text-[16px] font-bold leading-[1.25] sm:text-[18px] md:text-[22px] lg:text-[30px]">
+                Академия «AMANAT».
+                <br />
+                Готовим лидеров политического завтра.
+              </p>
+              <div class="mt-3 text-[11px] font-normal leading-snug text-white/95 sm:text-[12px] md:text-[14px] md:text-left">
+                <p>Образовательная платформа партии «AMANAT»</p>
+              </div>
+            </div>
+
+            <div
+              class="flex order-1 md:order-2 w-full shrink-0 md:h-full md:min-h-0 md:w-[42%] lg:w-[40%]"
+            >
+              <img
+                class="h-[38vh] w-full rounded-[16px] object-cover object-center sm:h-[42vh] md:h-full md:rounded-[24px]"
+                src="images/photo/deputat.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="flex relative flex-col items-center justify-center h-full">
           <img
-            class="w-full h-[calc(100dvh-118px)] lg:h-[calc(100dvh-224px)] object-cover"
+            class="w-full h-full object-cover"
             src="images/photo/1.png"
             alt=""
           />
           <p
             class="absolute bottom-20 text-white text-center text-2xl lg:text-[60px] font-bold w-full"
           >
-            Академия «AMANAT». <br />
-            Готовим лидеров политического завтра.
+            Академия «AMANAT».
+           <br />
+           Готовим лидеров политического завтра.
           </p>
         </div>
 
         <div class="flex relative flex-col items-center justify-center h-full">
           <img
-            class="w-full h-[calc(100dvh-118px)] lg:h-[calc(100dvh-224px)] object-cover"
+            class="w-full h-full object-cover"
             src="images/photo/2.png"
             alt=""
           />
@@ -297,12 +390,12 @@
 
         <div class="flex relative flex-col items-center justify-center h-full">
           <img
-            class="w-full h-[calc(100dvh-118px)] lg:h-[calc(100dvh-224px)] object-cover"
+            class="w-full h-full object-cover"
             src="images/photo/3.png"
             alt=""
           />
           <p
-            class="absolute bottom-20 text-white text-center text-2xl lg:text-[60px] font-bold w-full"
+            class="absolute bottom-20 text-white text-center text-xl lg:text-[60px] font-bold w-full"
           >
             Стань частью профессиональной
             <br />
@@ -952,43 +1045,41 @@
         coursesContainer.innerHTML = coursesData
           .map(
             (course) => `
-          <article class="course-card w-full lg:w-[32%] md:w-[48%] mb-4 bg-white rounded-2xl shadow-md p-[24px] flex flex-col">
-            <span class="inline-flex self-start rounded-full text-white text-xs font-medium px-3 py-1 mb-4" style="background-color: ${course.levelBg}">${course.level}</span>
-            <h3 class="text-[#023047] text-xl font-bold mb-3 w-full leading-[26px]">${course.title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mt-[24px]">${course.description}</p>
-            <div class="flex flex-wrap gap-4 text-gray-500 text-sm mt-[24px]">
-              <span class="flex items-center gap-1.5">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_222_600)">
-                <path d="M8.00001 14.6666C11.6819 14.6666 14.6667 11.6818 14.6667 7.99992C14.6667 4.31802 11.6819 1.33325 8.00001 1.33325C4.31811 1.33325 1.33334 4.31802 1.33334 7.99992C1.33334 11.6818 4.31811 14.6666 8.00001 14.6666Z" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 4V8L10.6667 9.33333" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_222_600">
-                <rect width="16" height="16" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-              <p class="text-sm">${course.weeks}</p>
-              </span>
-              <span class="flex items-center gap-1.5">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="#023047" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-                   ${course.students}</span>
-              <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.68335 1.52985C7.71257 1.47082 7.7577 1.42114 7.81365 1.3864C7.86961 1.35166 7.93416 1.33325 8.00002 1.33325C8.06588 1.33325 8.13043 1.35166 8.18638 1.3864C8.24234 1.42114 8.28747 1.47082 8.31669 1.52985L9.85669 4.64918C9.95814 4.85449 10.1079 5.03212 10.2931 5.16682C10.4783 5.30151 10.6934 5.38926 10.92 5.42251L14.364 5.92651C14.4293 5.93597 14.4906 5.9635 14.541 6.00598C14.5914 6.04847 14.629 6.10421 14.6494 6.16692C14.6698 6.22962 14.6722 6.29679 14.6564 6.36081C14.6406 6.42483 14.6072 6.48315 14.56 6.52918L12.0694 8.95451C11.9051 9.11458 11.7822 9.31217 11.7112 9.53027C11.6403 9.74837 11.6234 9.98044 11.662 10.2065L12.25 13.6332C12.2615 13.6984 12.2545 13.7656 12.2297 13.827C12.2049 13.8884 12.1633 13.9416 12.1097 13.9805C12.0561 14.0194 11.9927 14.0425 11.9266 14.0471C11.8605 14.0517 11.7945 14.0376 11.736 14.0065L8.65735 12.3878C8.4545 12.2813 8.22881 12.2257 7.99969 12.2257C7.77057 12.2257 7.54487 12.2813 7.34202 12.3878L4.26402 14.0065C4.20557 14.0375 4.13962 14.0514 4.07365 14.0467C4.00769 14.042 3.94437 14.0189 3.89088 13.98C3.8374 13.9411 3.79591 13.888 3.77112 13.8267C3.74634 13.7654 3.73926 13.6983 3.75069 13.6332L4.33802 10.2072C4.37682 9.981 4.36001 9.74878 4.28904 9.53055C4.21808 9.31231 4.09509 9.11462 3.93069 8.95451L1.44002 6.52985C1.39242 6.48387 1.35868 6.42545 1.34266 6.36123C1.32664 6.29702 1.32898 6.22959 1.34941 6.16664C1.36983 6.10369 1.40753 6.04774 1.4582 6.00517C1.50888 5.9626 1.57049 5.93511 1.63602 5.92585L5.07935 5.42251C5.30619 5.38951 5.52161 5.30189 5.70708 5.16717C5.89254 5.03246 6.04249 4.8547 6.14402 4.64918L7.68335 1.52985Z" fill="#FFB703" stroke="#FFB703" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
- ${course.rating}</span>
+          <article class="w-full lg:w-[32%] md:w-[48%] bg-white rounded-[16px] overflow-hidden shadow-sm flex flex-col h-full mb-4">
+            <img
+              src="${course.image || "images/photo/7.png"}"
+              alt="${course.title}"
+              class="w-full h-[160px] md:h-[170px] object-cover" />
+
+            <div class="px-5 py-5 md:px-6 flex flex-col gap-4 flex-1">
+              <h3 class="text-[20px] md:text-[16px] font-bold leading-[1.35]">
+                ${course.title}
+              </h3>
+
+              <p class="text-[14px] md:text-[16px] font-normal leading-[1.35]">
+                ${course.description}
+              </p>
+
+              <div class="flex items-center gap-3 flex-wrap pb-6">
+                <div class="px-3 py-1 rounded-[8px] border border-[#C7EBF6] bg-[#E8F7FC] text-[12px] text-[#0993B1]">
+                  ${course.type || course.level || "Курс"}
+                </div>
+                <div class="px-3 py-1 rounded-[8px] border border-[#C7EBF6] bg-[#E8F7FC] text-[12px] text-[#0993B1]">
+                  ${course.hours || course.weeks || "24 ак. ч."}
+                </div>
+                <div class="px-3 py-1 rounded-[8px] border border-[#586E84] bg-[#F9FAFB] text-[12px] text-[#586E84]">
+                  ${course.group || `Участники: ${course.students || "-"}`}
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-3 mt-auto">
+                <button
+                  type="button"
+                  class="cursor-pointer w-full py-2 rounded-[10px] [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)] text-white text-[14px] font-semibold">
+                  Подать заявку
+                </button>
+              </div>
             </div>
-            <button type="button" class="mt-[32px] w-full flex items-center gap-2 text-center justify-center py-3 rounded-xl text-white text-sm font-semibold bg-[linear-gradient(90deg,#E67E22_0%,#F4B942_100%)] hover:opacity-95 transition-opacity">Подать заявку <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.75 9H14.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</button>
           </article>
         `,
           )
@@ -998,22 +1089,26 @@
       // Карточки блока «О платформе»
       const platformCardsData = [
         {
-          icon: "images/icons/1.svg",
+          icon: "images/icons/about-us-icon-1.svg",
+          background: `background: var(--3, linear-gradient(45deg, #8ECAE6 0%, #219EBC 100%))`,
           title: "Наша миссия",
           text: "Развитие профессиональных компетенций в области политического менеджмента и подготовка квалифицированных кадров для партии",
         },
         {
-          icon: "images/icons/2.svg",
+          icon: "images/icons/about-us-icon-2.svg",
+          background: `background: var(--2, linear-gradient(8deg, #FB8500 5.36%, #FFB703 94.64%))`,
           title: "Опытные тренеры",
           text: "Команда экспертов-практиков с многолетним опытом работы в политической сфере и государственном управлении, а также тренеров по развитию функциональных компетенций",
         },
         {
-          icon: "images/icons/3.svg",
+          icon: "images/icons/about-us-icon-3.svg",
+          background: `background: linear-gradient(45deg, rgba(142, 202, 230, 0.40) 0%, rgba(33, 158, 188, 0.40) 100%)`,
           title: "Сертификация",
           text: "При успешном окончании курса выдается официальный сертификат, подтверждающий полученные знания и навыки.",
         },
         {
-          icon: "images/icons/4.svg",
+          icon: "images/icons/about-us-icon-4.svg",
+          background: `background: linear-gradient(8deg, rgba(251, 133, 0, 0.40) 5.36%, rgba(255, 183, 3, 0.40) 94.64%)`,
           title: "Карьерный рост",
           text: "Наши выпускники получают преимущества при построении карьеры в партийных структурах и государственных органах.",
         },
@@ -1024,10 +1119,10 @@
         platformCardsContainer.innerHTML = platformCardsData
           .map(
             (card) => `
-          <div class="rounded-3xl flex flex-col shadow-md w-full md:w-[48%] lg:w-[24%] relative p-[32px] mt-[40px]">
+          <div class="rounded-3xl flex flex-col shadow-md w-full md:w-[48%] lg:w-[22%] relative p-[32px] mt-[40px]" style="${card.background}">
             <img src="${card.icon}" alt="" class="w-[56px]" />
-            <p class="text-[20px] font-semibold text-[#023047] mt-[20px]">${card.title}</p>
-            <p class="mt-[20px] leading-[26px]">${card.text}</p>
+            <p class="text-[22px] font-semibold text-[#023047] mt-[20px]">${card.title}</p>
+            <p class="mt-[20px] text-[20px] leading-[26px]">${card.text}</p>
             <img src="images/icons/17.svg" alt="" class="absolute top-0 right-0" />
           </div>
         `,
@@ -1134,7 +1229,7 @@
             <div class="bg-white rounded-2xl shadow-md p-8 relative h-full flex flex-col min-h-[280px]">
               <img src="images/icons/icon-quote.svg" alt="" class="opacity-10 absolute top-4 right-3 text-[80px] leading-none text-gray-200 font-serif select-none" />
               <div class="flex text-[#FFB703] gap-0.5 mb-4 shrink-0">${starsHtml}</div>
-              <p class="text-gray-700 text-base leading-relaxed flex-1 min-h-0 pr-8">${item.quote}</p>
+              <p class="text-[18px] leading-relaxed flex-1 min-h-0 pr-8">${item.quote}</p>
               <div class="mt-6 pt-4 border-t border-gray-100 shrink-0">
                 <p class="font-semibold text-[#023047]">${item.name}</p>
                 <p class="text-sm text-gray-500 mt-1">${item.course}</p>
