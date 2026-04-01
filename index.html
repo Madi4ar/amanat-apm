@@ -1011,7 +1011,7 @@
         {
           level: "Продвинутый",
           levelBg: "#E67E22",
-          title: "Основы политического менеджмента",
+          title: "Основы политического менеджмента Комплексная программа для начинающих специалистов в области политического управления и стратегического планирования",
           description:
             "Комплексная программа для начинающих специалистов в области политического управления и стратегического планирования.",
           weeks: "8 недель",
@@ -1045,7 +1045,7 @@
         coursesContainer.innerHTML = coursesData
           .map(
             (course) => `
-          <article class="w-full lg:w-[32%] md:w-[48%] bg-white rounded-[16px] overflow-hidden shadow-lg flex flex-col h-full mb-4">
+          <div class="bg-white rounded-[16px] overflow-hidden shadow-lg flex flex-col">
             <img
               src="${course.image || "images/photo/7.png"}"
               alt="${course.title}"
@@ -1056,7 +1056,7 @@
                 ${course.title}
               </h3>
 
-              <p class="text-[14px] md:text-[16px] font-normal leading-[1.35]">
+              <p class="text-[16px] font-normal leading-[1.35]">
                 ${course.description}
               </p>
 
@@ -1080,7 +1080,7 @@
                 </button>
               </div>
             </div>
-          </article>
+          </div>
         `,
           )
           .join("");
