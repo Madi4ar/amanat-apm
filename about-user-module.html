@@ -11,847 +11,1008 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .topic-accordion-header {
+        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+        background-color: #ffffff;
+        padding: 16px 20px;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-radius 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .topic-open .topic-accordion-header {
+        background: var(--2, linear-gradient(45deg, #023047 0%, #219ebc 100%));
+        border-color: transparent;
+        color: #ffffff;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .topic-open .topic-accordion-header h3,
+      .topic-open .topic-accordion-header span {
+        color: #ffffff !important;
+      }
+
+      [data-topic-content] {
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+
+      .topic-open [data-topic-content] {
+        background-color: #ccedf9;
+        border-top: none;
+        border-radius: 0 0 16px 16px;
+        padding: 16px 20px 20px;
+      }
+
+      .topic-header-status {
+        transition:
+          opacity 0.2s ease,
+          max-height 0.2s ease,
+          margin 0.2s ease,
+          padding-top 0.2s ease,
+          padding-bottom 0.2s ease;
+        max-height: 40px;
+        opacity: 1;
+        margin-top: 4px;
+        margin-bottom: 0;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+
+      .topic-header-status--in-progress {
+        background-color: #fef9c2;
+        color: #854d0e;
+        border: 1px solid #facc15;
+      }
+
+      .topic-header-status--done {
+        background-color: #ecfdf3;
+        color: #166534;
+        border: 1px solid #86efac;
+      }
+
+      .topic-header-status--not-started {
+        background-color: #f9fafb;
+        color: #4b5563;
+        border: 1px solid #e5e7eb;
+      }
+
+      .topic-open .topic-header-status {
+        opacity: 0;
+        max-height: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .topic-toggle-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #2563eb;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .topic-toggle-icon {
+        transition: transform 0.2s ease;
+      }
+
+      .topic-open .topic-toggle-label {
+        color: #ffffff;
+      }
+
+      .topic-open .topic-toggle-icon {
+        transform: rotate(180deg);
+      }
+    </style>
   </head>
   <body class="font-['Montserrat'] bg-[#EEF4F6]">
     <div class="section-1 w-full py-[64px] bg-[#EEF4F6] min-h-screen">
       <div
         class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative"
       >
-        <a
-          href="/"
-          class="flex w-fit items-center gap-2 text-sm text-[#6B7A8C] mb-6"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10.0003 15.8333L4.16699 10L10.0003 4.16667"
-              stroke="#023047"
-              stroke-width="1.66667"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M15.8337 10H4.16699"
-              stroke="#023047"
-              stroke-width="1.66667"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <span class="text-[#155DFC]">Назад</span>
-        </a>
+        <div class="w-full bg-white rounded-lg shadow-lg px-[24px] py-[30px]">
+          <div class="mb-8">
+            <a
+              href="https://amanat.cpm.kz/study/groups/12"
+              class="inline-flex items-center gap-2 text-sm text-[#155DFC] transition hover:text-[#0E4FD6]"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10.0003 15.8333L4.16699 10L10.0003 4.16667"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M15.8337 10H4.16699"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <span>Назад</span>
+            </a>
+          </div>
 
-        <div class="w-full">
           <div
-            class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-8"
+            class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
           >
             <div class="min-w-0">
               <h1
-                class="mt-3 text-2xl sm:text-3xl font-bold tracking-tight text-gray-900"
+                class="mt-3 text-2xl font-bold tracking-tight text-[#101828] sm:text-3xl"
               >
-                Личное лидерство и ценностные ориентиры
+                Эффективные коммуникации с населением и командой
               </h1>
-
-              <p class="mt-2 text-sm text-gray-500">
-                Учебные материалы модуля и прогресс по темам
-              </p>
             </div>
 
             <div
-              class="shrink-0 flex flex-col sm:flex-row sm:items-center gap-3"
+              class="shrink-0 rounded-xl border border-[#DDE3EA] bg-white px-4 py-3 text-sm text-[#4A5565] shadow-sm"
             >
-              <div
-                class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#4A5565] shadow-sm"
-              >
-                Группа:
-                <span class="text-[#4A5565]"> 4-5-1-26 </span>
-              </div>
+              Группа:
+              <span class="font-medium text-[#4A5565]">4-5-12-26</span>
             </div>
           </div>
 
-          <div class="overflow-hidden">
-            <div class="w-full">
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div
-                      class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                    >
-                      Тема 1
-                    </div>
+          <div class="space-y-6">
+            <section class="border-b border-[#E5E7EB] pb-6">
+              <div
+                class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div class="w-full">
+                  <div
+                    class="mt-1 flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <h3 class="text-xl font-semibold text-[#101828]">
+                      Введение
+                    </h3>
 
-                    <div class="w-full flex items-start justify-between">
-                      <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                        «Великая личность» и харизматическое лидерство
-                      </h3>
+                    <span
+                      class="topic-header-status inline-flex w-fit items-center rounded-[12px] px-3 py-1 text-xs font-semibold whitespace-nowrap bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                    >
+                      Завершено
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5 sm:col-span-2"
+                >
+                  <div
+                    class="flex flex-wrap items-center gap-2 w-full justify-between"
+                  >
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
 
                       <span
-                        class="inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3] whitespace-nowrap"
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                      >
+                        1. Материал
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                      <span
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
                       >
                         Завершено
                       </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
                     </div>
                   </div>
-                </div>
 
-                <div
-                  class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                  <div class="prose prose-sm mt-4 max-w-none text-[#344054]">
+                    🎯 Современный руководитель на местном уровне и публичный
+                    представи-тель партии работает в условиях постоянно растущих
+                    ожиданий общества ввиду необходимости разрешения кризисных
+                    ситуаций и поиска эффектив-ных подходов к выбору стратегии
+                    реагирования. Граждане требуют не толь-ко быстрых решений,
+                    но и прозрачности действий, понятных объяснений и
+                    уверенности, что их мнение учитывается. При этом скорость
+                    распростране-ния информации — особенно через социальные сети
+                    — практически всегда опережает скорость управленческих
+                    решений. Любое действие, пауза или неточно сформулированное
+                    сообщение мгновенно становится предметом обсуждения,
+                    интерпретаций и, в ряде случаев, источником напряжения или
+                    конфликтов.
+                  </div>
+                </article>
+
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5"
                 >
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
+                  <div
+                    class="flex flex-wrap justify-between items-center gap-2"
                   >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            1. ФАЙЛЫ
-                          </span>
-
-                          <span
-                            class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
-                          >
-                            Завершено
-                          </span>
-                        </div>
-                      </div>
-
-                      <!-- No top "Открыть" button in the card header (see mock) -->
-                    </div>
-
-                    <div class="mt-4">
-                      <div class="mb-2 text-sm font-semibold text-gray-900">
-                        Прикрепленные материалы
-                      </div>
-
-                      <div class="space-y-2">
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Презентация.pptx
-                            </div>
-                          </div>
-
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/8kAM1UDj2iv9eZVzaNvzVW14xWaw75ogzYakCext.pptx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Разбор кейсов.docx
-                            </div>
-                          </div>
-
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/IRWu9QLsJIqPG0M7qKvNYQYs2xXoydlhj16vXY1N.docx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Ресурс для чтения.docx
-                            </div>
-                          </div>
-
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/GxY0eTANGJEjN1cVQD9tO4qDxeZDGKxLFlHjPpCY.docx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-                        <!-- 4th file removed to match mock layout -->
-                      </div>
-                    </div>
-                  </article>
-
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            2. МАТЕРИАЛ
-                          </span>
-
-                          <span
-                            class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
-                          >
-                            Завершено
-                          </span>
-                        </div>
-
-                        <div
-                          class="prose prose-sm sm:prose max-w-none mt-3 text-gray-700"
-                        >
-                          Вопросы для самостоятельного анализа:<br />
-                          <br />
-                          ► Какие 5 компетенций вы считаете критически важными
-                          для лидера вашей сферы?<br />
-                          ► Какие черты чаще всего переоценивают при выборе
-                          лидера? <br />
-                          ► Какие компетенции в вашей ситуации (регион, сфера,
-                          команда) важнее всего, даже если у человека хорошие
-                          личные качества?
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            3. ВИДЕОМАТЕРИАЛ
-                          </span>
-
-                          <span
-                            class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
-                          >
-                            Завершено
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="mt-4 rounded-lg border border-indigo-100 bg-white p-4"
-                    >
-                      <div class="text-sm font-semibold text-gray-900">
-                        Внешняя ссылка
-                      </div>
-                      <p class="mt-2 text-sm text-gray-600">
-                        Нажмите, чтобы открыть материал:
-                      </p>
-                      <a
-                        href="https://youtu.be/je_qBA9QWsc"
-                        target="_blank"
-                        class="mt-3 w-full inline-flex items-center justify-center rounded-lg border border-[#155DFC] px-4 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        Открыть материал - Видеоматериал
-                      </a>
-                    </div>
-                  </article>
-                </div>
-              </section>
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
-                      <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                      >
-                        Тема 2
-                      </div>
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
                       <span
-                        class="inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#FEF9C2] text-[#894B00] whitespace-nowrap"
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
                       >
-                        В процессе
+                        2. Файлы
                       </span>
                     </div>
 
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Теории черт и компетенций
-                    </h3>
-                  </div>
-                </div>
-
-                <div
-                  class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-                >
-                  <!-- 1. ФАЙЛЫ -->
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            1. ФАЙЛЫ
-                          </span>
-                          <span
-                            class="inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#FEF9C2] text-[#894B00] whitespace-nowrap"
-                          >
-                            В процессе
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="mt-4">
-                      <div class="mb-2 text-sm font-semibold text-gray-900">
-                        Прикрепленные материалы
-                      </div>
-
-                      <div class="space-y-2">
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Презентация.pptx
-                            </div>
-                          </div>
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/8kAM1UDj2iv9eZVzaNvzVW14xWaw75ogzYakCext.pptx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Разбор кейсов.docx
-                            </div>
-                          </div>
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/IRWu9QLsJIqPG0M7qKvNYQYs2xXoydlhj16vXY1N.docx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-
-                        <div
-                          class="flex flex-col gap-3 rounded-lg border border-gray-200 bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
-                        >
-                          <div class="min-w-0">
-                            <div
-                              class="truncate text-sm font-medium text-gray-800"
-                            >
-                              Ресурс для чтения.docx
-                            </div>
-                          </div>
-                          <a
-                            href="http://amanat.cpm.kz/storage/umk/lessons/1/GxY0eTANGJEjN1cVQD9tO4qDxeZDGKxLFlHjPpCY.docx"
-                            target="_blank"
-                            class="shrink-0 inline-flex items-center gap-2 rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                          >
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 1.5v8"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                              <path
-                                d="M4.8 7.9L8 11.1l3.2-3.2"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.5 12.6c0 .8.7 1.4 1.5 1.4h8c.8 0 1.5-.6 1.5-1.4"
-                                stroke="#155DFC"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            Скачать
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  <!-- 2. МАТЕРИАЛ -->
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            2. МАТЕРИАЛ
-                          </span>
-                          <span
-                            class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                          >
-                            Не начат
-                          </span>
-                        </div>
-
-                        <div
-                          class="prose prose-sm sm:prose max-w-none mt-3 text-gray-700"
-                        >
-                          Вопросы для самостоятельного анализа:<br />
-                          <br />
-                          ► Какие 5 компетенций вы считаете критически важными
-                          для лидера вашей сферы?<br />
-                          ► Какие черты чаще всего переоценивают при выборе
-                          лидера?<br />
-                          ► Какие компетенции в вашей ситуации важнее всего?
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  <!-- 3. ВИДЕОМАТЕРИАЛ -->
-                  <article
-                    class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            3. ВИДЕОМАТЕРИАЛ
-                          </span>
-                          <span
-                            class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                          >
-                            Не начат
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="mt-4 rounded-lg border border-indigo-100 bg-white p-4"
-                    >
-                      <div class="text-sm font-semibold text-gray-900">
-                        Внешняя ссылка
-                      </div>
-                      <p class="mt-2 text-sm text-gray-600">
-                        Нажмите, чтобы открыть материал:
-                      </p>
-                      <a
-                        href="https://youtu.be/je_qBA9QWsc"
-                        target="_blank"
-                        class="mt-3 w-full inline-flex items-center justify-center rounded-lg border border-[#155DFC] px-4 py-2 text-sm font-medium text-[#155DFC] hover:opacity-95"
-                      >
-                        Открыть материал - Видеоматериал
-                      </a>
-                    </div>
-                  </article>
-                </div>
-              </section>
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
-                      <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                      >
-                        Тема 3
-                      </div>
-
+                    <div class="flex items-center gap-4">
                       <span
-                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
                       >
-                        Не начат
+                        Завершено
                       </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
                     </div>
-
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Поведенческие теории: фокус на задаче и фокус на людях
-                    </h3>
                   </div>
-                </div>
 
-                <div
-                  class="mt-4 rounded-lg border border-dashed border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-500"
-                >
-                  В этой теме пока нет контента
-                </div>
-              </section>
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
+                  <div class="mt-4">
+                    <div class="space-y-2">
+                      <p class="font-semibold">Прикрепленные материалы:</p>
                       <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
                       >
-                        Тема 4
-                      </div>
-
-                      <span
-                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                      >
-                        Не начат
-                      </span>
-                    </div>
-
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Контингентный подход и ситуационное лидерство
-                    </h3>
-                  </div>
-                </div>
-
-                <div class="mt-5 grid gap-4">
-                  <article
-                    class="rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-5"
-                  >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
                           >
-                            1. Тест
-                          </span>
-
-                          <span
-                            class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset bg-gray-100 text-gray-700 ring-gray-200"
-                          >
-                            Не начат
-                          </span>
+                            Презентация (каз).pdf
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="shrink-0">
                         <a
-                          href="https://amanat.cpm.kz/study/groups/1/topics/13"
-                          class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
+                          href="https://amanat.cpm.kz/study/groups/12/topics/71/files/183/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
                         >
-                          Пройти тест
+                          Скачать
+                        </a>
+                      </div>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/71/files/184/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
                         </a>
                       </div>
                     </div>
-                  </article>
-                </div>
-              </section>
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
-                      <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                      >
-                        Тема 5
-                      </div>
-
-                      <span
-                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                      >
-                        Не начат
-                      </span>
-                    </div>
-
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Ценностно-ориентированные модели лидерства
-                    </h3>
                   </div>
-                </div>
+                </article>
 
-                <div
-                  class="mt-4 rounded-lg border border-dashed border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-500"
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5"
                 >
-                  В этой теме пока нет контента
-                </div>
-              </section>
-              <section class="mb-6 pb-6 border-b border-gray-100">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
-                      <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                      >
-                        Тема 6
-                      </div>
-
-                      <span
-                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                      >
-                        Не начат
-                      </span>
-                    </div>
-
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Лидерство XXI века: распределённое, сетевое, цифровое
-                    </h3>
-                  </div>
-                </div>
-
-                <div
-                  class="mt-4 rounded-lg border border-dashed border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-500"
-                >
-                  В этой теме пока нет контента
-                </div>
-              </section>
-              <section class="">
-                <div
-                  class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-                >
-                  <div class="w-full">
-                    <div class="w-full flex items-start justify-between">
-                      <div
-                        class="text-xs font-semibold uppercase tracking-wide text-indigo-600"
-                      >
-                        Тема 7
-                      </div>
-
-                      <span
-                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
-                      >
-                        Не начат
-                      </span>
-                    </div>
-
-                    <h3 class="mt-1 text-xl font-semibold text-gray-900">
-                      Ценности и лидерство
-                    </h3>
-                  </div>
-                </div>
-
-                <div class="mt-5 grid gap-4">
-                  <article
-                    class="rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-5"
+                  <div
+                    class="flex flex-wrap justify-between items-center gap-2"
                   >
-                    <div
-                      class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
-                    >
-                      <div class="min-w-0 flex-1">
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span
-                            class="text-xs font-semibold uppercase tracking-wide text-gray-500"
-                          >
-                            1. Тест
-                          </span>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
 
-                          <span
-                            class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset bg-gray-100 text-gray-700 ring-gray-200"
-                          >
-                            Не начат
-                          </span>
-                        </div>
-                      </div>
+                      <span
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                      >
+                        3. Файлы
+                      </span>
+                    </div>
 
-                      <div class="shrink-0">
-                        <a
-                          href="https://amanat.cpm.kz/study/groups/1/topics/19"
-                          class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
+                    <div class="flex items-center gap-4">
+                      <span
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                      >
+                        Завершено
+                      </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          Пройти тест
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="space-y-2">
+                      <p class="font-semibold">Прикрепленные материалы:</p>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/72/files/185/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/72/files/186/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
                         </a>
                       </div>
                     </div>
-                  </article>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="border-b border-[#E5E7EB] pb-6">
+              <div
+                class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div class="w-full">
+                  <div
+                    class="mt-1 flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <h3 class="text-xl font-semibold text-[#101828]">
+                      Введение
+                    </h3>
+
+                    <span
+                      class="inline-flex w-fit items-center rounded-[12px] px-3 py-1 text-xs font-semibold whitespace-nowrap bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                    >
+                      Завершено
+                    </span>
+                  </div>
                 </div>
-              </section>
-            </div>
+              </div>
+
+              <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5 sm:col-span-2"
+                >
+                  <div
+                    class="flex flex-wrap items-center gap-2 w-full justify-between"
+                  >
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      <span
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                      >
+                        1. Материал
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                      <span
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                      >
+                        Завершено
+                      </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="prose prose-sm mt-4 max-w-none text-[#344054]">
+                    🎯 Современный руководитель на местном уровне и публичный
+                    представи-тель партии работает в условиях постоянно растущих
+                    ожиданий общества ввиду необходимости разрешения кризисных
+                    ситуаций и поиска эффектив-ных подходов к выбору стратегии
+                    реагирования. Граждане требуют не толь-ко быстрых решений,
+                    но и прозрачности действий, понятных объяснений и
+                    уверенности, что их мнение учитывается. При этом скорость
+                    распростране-ния информации — особенно через социальные сети
+                    — практически всегда опережает скорость управленческих
+                    решений. Любое действие, пауза или неточно сформулированное
+                    сообщение мгновенно становится предметом обсуждения,
+                    интерпретаций и, в ряде случаев, источником напряжения или
+                    конфликтов.
+                  </div>
+                </article>
+
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5"
+                >
+                  <div
+                    class="flex flex-wrap justify-between items-center gap-2"
+                  >
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      <span
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                      >
+                        2. Файлы
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                      <span
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                      >
+                        Завершено
+                      </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="space-y-2">
+                      <p class="font-semibold">Прикрепленные материалы:</p>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/71/files/183/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/71/files/184/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5"
+                >
+                  <div
+                    class="flex flex-wrap justify-between items-center gap-2"
+                  >
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.1036 7.03008L7.91281 10.1584C7.60948 10.4584 7.44281 10.8684 7.44948 11.2992C7.45857 11.7351 7.63807 12.15 7.94948 12.4551C8.26198 12.7642 8.68281 12.9417 9.11865 12.9492C9.332 12.9537 9.5441 12.9155 9.74246 12.8368C9.94082 12.7581 10.1214 12.6405 10.2736 12.4909L13.4636 9.36258C13.7646 9.06486 14.0019 8.70909 14.1612 8.31688C14.3205 7.92466 14.3985 7.50416 14.3903 7.08091C14.3728 6.20918 14.0144 5.37901 13.392 4.76841C12.7678 4.15079 11.9299 3.79717 11.052 3.78091C10.6257 3.77241 10.202 3.84894 9.80571 4.00605C9.40937 4.16315 9.04831 4.39767 8.74365 4.69591L5.55115 7.82508C5.10007 8.27188 4.74437 8.80558 4.50559 9.39387C4.2668 9.98216 4.14991 10.6128 4.16198 11.2476C4.18882 12.5549 4.72669 13.7996 5.66031 14.7151C6.59603 15.6413 7.8523 16.1718 9.16865 16.1967C9.80828 16.2101 10.4441 16.0956 11.039 15.8601C11.6338 15.6246 12.1757 15.2727 12.6328 14.8251L15.8236 11.6951"
+                          stroke="#219EBC"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      <span
+                        class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                      >
+                        3. Файлы
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                      <span
+                        data-complete-label="topic-1-material"
+                        class="hidden inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#E9FEEA] text-[#00C950] border border-[#D1F5D3]"
+                      >
+                        Завершено
+                      </span>
+                      <button
+                        type="button"
+                        class="inline-flex gap-2 items-center rounded-[999px] px-[16px] py-[8px] text-xs font-semibold text-white bg-[linear-gradient(45deg,#FB8500_0%,#FFB703_100%)] shadow-sm hover:opacity-90 transition"
+                      >
+                        Завершить изучение
+                        <svg
+                          width="12"
+                          height="9"
+                          viewBox="0 0 12 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.5763 3.95847C11.7013 4.08349 11.7715 4.25303 11.7715 4.42981C11.7715 4.60658 11.7013 4.77612 11.5763 4.90114L7.80496 8.67247C7.67923 8.79391 7.51082 8.86111 7.33603 8.85959C7.16123 8.85807 6.99402 8.78796 6.87041 8.66435C6.74681 8.54075 6.6767 8.37354 6.67518 8.19874C6.67366 8.02394 6.74085 7.85554 6.86229 7.72981L9.49563 5.09647H0.66696C0.490149 5.09647 0.320579 5.02624 0.195555 4.90121C0.0705308 4.77619 0.000293381 4.60662 0.000293381 4.42981C0.000293381 4.253 0.0705308 4.08343 0.195555 3.9584C0.320579 3.83338 0.490149 3.76314 0.66696 3.76314H9.49563L6.86229 1.12981C6.74085 1.00407 6.67366 0.835671 6.67518 0.660874C6.6767 0.486076 6.74681 0.318867 6.87041 0.195262C6.99402 0.0716566 7.16123 0.00154415 7.33603 2.52018e-05C7.51082 -0.00149374 7.67923 0.0657025 7.80496 0.187141L11.5763 3.95847Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="space-y-2">
+                      <p class="font-semibold">Прикрепленные материалы:</p>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/72/files/185/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                      <div
+                        class="flex flex-col gap-3 rounded-lg border border-[#E5E7EB] bg-white p-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div class="min-w-0 flex items-center gap-2">
+                          <img src="images/icons/books.svg" />
+                          <div
+                            class="truncate text-sm font-medium text-[#1F2937]"
+                          >
+                            Презентация (каз).pdf
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://amanat.cpm.kz/study/groups/12/topics/72/files/186/download"
+                          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-[#155DFC] px-3 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="border-b border-[#E5E7EB] pb-6">
+              <div
+                class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div class="w-full">
+                  <div
+                    class="mt-1 flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <h3 class="text-xl font-semibold text-[#101828]">
+                      Итоговое тестирование по модулю
+                    </h3>
+
+                    <span
+                      class="inline-flex w-fit items-center rounded-[12px] px-3 py-1 text-xs font-semibold whitespace-nowrap bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
+                    >
+                      Не начат
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <article
+                  class="rounded-xl border border-[#DDE3EA] bg-white p-4 shadow-sm sm:p-5"
+                >
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span
+                      class="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
+                    >
+                      1. Тест
+                    </span>
+
+                    <span
+                      class="inline-flex items-center rounded-[12px] px-3 py-1 text-xs font-semibold bg-[#F2F4F7] text-[#667085] border border-[#E4E7EC]"
+                    >
+                      Не начат
+                    </span>
+                  </div>
+
+                  <div class="prose prose-sm mt-4 max-w-none text-[#344054]">
+                    Описание теста по программе развития лидерства<br />
+                    <p>
+                      Тестирование является итоговым инструментом оценки
+                      освоения программы и направлено на проверку теоретических
+                      знаний и прикладного понимания современных концепций
+                      лидерства.<br />
+                      <br />
+                      Цель теста<br />
+                      Оценка уровня сформированности управленческих и лидерских
+                      компетенций участника, а также его способности применять
+                      различные стили лидерства в зависимости от управленческой
+                      ситуации.<br />
+                      <br />
+                      Формат тестирования<br />
+                      Количество вопросов: 20<br />
+                      Тип вопросов: множественный выбор (один или несколько
+                      правильных ответов)<br />
+                      Время прохождения: устанавливается программой<br />
+                      Порог успешного прохождения: не менее 50% правильных
+                      ответов<br />
+                      <br />
+                      Критерии оценки<br />
+                      ≥ 50% правильных ответов — тест считается пройденным,
+                      участнику выдается сертификат;<br />
+                      &lt; 50% правильных ответов — участнику выдается
+                      свидетельство о прохождении программы без подтверждения
+                      квалификации.
+                    </p>
+                  </div>
+
+                  <div class="mt-4">
+                    <a
+                      href="https://amanat.cpm.kz/study/groups/12/topics/158"
+                      class="inline-flex w-full items-center justify-center rounded-lg border border-[#155DFC] px-4 py-2 text-sm font-medium text-[#155DFC] transition hover:bg-[#EFF6FF]"
+                    >
+                      Открыть
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </section>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      function handleComplete(buttonEl) {
+        var container = buttonEl && buttonEl.parentElement;
+        if (!container) return;
+        var label = container.querySelector("[data-complete-label]");
+        if (label) label.classList.remove("hidden");
+        buttonEl.classList.add("hidden");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const topicSections = Array.from(
+          document.querySelectorAll("section.border-b"),
+        );
+
+        if (!topicSections.length) return;
+
+        const topicStatuses = [
+          { text: "В процессе", className: "topic-header-status--in-progress" },
+          { text: "Завершено", className: "topic-header-status--done" },
+          { text: "Не начато", className: "topic-header-status--not-started" },
+        ];
+
+        topicSections.forEach((sec, index) => {
+          const existingChildren = Array.from(sec.children);
+          if (!existingChildren.length) return;
+
+          let contentWrapper = sec.querySelector("[data-topic-content]");
+          if (!contentWrapper) {
+            contentWrapper = document.createElement("div");
+            contentWrapper.setAttribute("data-topic-content", "");
+
+            existingChildren.forEach((child) => {
+              contentWrapper.appendChild(child);
+            });
+
+            sec.appendChild(contentWrapper);
+          }
+
+          let header = sec.querySelector("[data-topic-header]");
+          if (!header) {
+            header = document.createElement("div");
+            header.setAttribute("data-topic-header", "");
+
+            const info = document.createElement("div");
+            info.className = "flex flex-col items-start gap-2";
+
+            const status = document.createElement("span");
+            status.className =
+              "topic-header-status inline-flex items-center rounded-[999px] px-3 py-1 text-[11px] font-semibold";
+
+            const currentStatus =
+              topicStatuses[index] || topicStatuses[topicStatuses.length - 1];
+            status.classList.add(currentStatus.className);
+            status.textContent = currentStatus.text;
+
+            const title = document.createElement("h3");
+            title.className = "text-[20px] md:text-[24px] font-semibold";
+            title.textContent = `Тема ${index + 1}`;
+
+            info.appendChild(status);
+            info.appendChild(title);
+            header.appendChild(info);
+
+            sec.insertBefore(header, contentWrapper);
+          }
+
+          header.classList.add(
+            "topic-accordion-header",
+            "cursor-pointer",
+            "flex",
+            "flex-col",
+            "gap-2",
+            "sm:flex-row",
+            "sm:items-start",
+            "sm:justify-between",
+          );
+
+          let toggle = header.querySelector("[data-topic-toggle]");
+          if (!toggle) {
+            toggle = document.createElement("div");
+            toggle.setAttribute("data-topic-toggle", "");
+            toggle.className =
+              "mt-2 sm:mt-0 flex items-center justify-between sm:justify-end w-full sm:w-auto";
+            toggle.innerHTML = `
+            <button type="button" class="topic-toggle-label">
+              <span data-topic-toggle-text class="text-lg">раскрыть</span>
+              <svg
+                class="topic-toggle-icon"
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          `;
+            header.appendChild(toggle);
+          }
+
+          if (index === 0) {
+            sec.classList.add("topic-open");
+            contentWrapper.style.maxHeight = contentWrapper.scrollHeight + "px";
+          } else {
+            contentWrapper.style.maxHeight = "0px";
+          }
+
+          header.addEventListener("click", () => {
+            const isOpen = sec.classList.contains("topic-open");
+            if (isOpen) {
+              sec.classList.remove("topic-open");
+              const content = sec.querySelector("[data-topic-content]");
+              if (content) content.style.maxHeight = "0px";
+              const label = sec.querySelector("[data-topic-toggle-text]");
+              if (label) label.textContent = "раскрыть";
+            } else {
+              topicSections.forEach((other, otherIndex) => {
+                const otherContent = other.querySelector(
+                  "[data-topic-content]",
+                );
+                const otherLabel = other.querySelector(
+                  "[data-topic-toggle-text]",
+                );
+                if (!otherContent) return;
+                if (otherIndex === index) {
+                  other.classList.add("topic-open");
+                  otherContent.style.maxHeight =
+                    otherContent.scrollHeight + "px";
+                  if (otherLabel) otherLabel.textContent = "скрыть";
+                } else {
+                  other.classList.remove("topic-open");
+                  otherContent.style.maxHeight = "0px";
+                  if (otherLabel) otherLabel.textContent = "раскрыть";
+                }
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

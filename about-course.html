@@ -442,7 +442,7 @@
           const blocks = [];
           if (tab.description) {
             blocks.push(
-              `<p class="text-[15px] leading-[1.5] text-[#111827]">${tab.description}</p>`,
+              `<p class="text-[16px] leading-[1.5]">${tab.description}</p>`,
             );
           }
           if (tab.listItems && tab.listItems.length) {
@@ -452,7 +452,7 @@
                   (text) => `
                 <div class="flex items-start gap-2">
                   <img src="${tab.listIcon}" alt="" class="w-5 h-5 shrink-0 mt-0.5" />
-                  <p class="text-[14px] leading-[1.45] text-[#111827]">${text}</p>
+                  <p class="text-[16px] leading-[1.45]">${text}</p>
                 </div>`,
                 )
                 .join("")}</div>`,
@@ -583,7 +583,7 @@
                     src="images/icons/checkout.svg"
                     alt=""
                     class="w-5 h-5 shrink-0 mt-[3px]" />
-                  <span>${topic}</span>
+                  <span class="text-[18px] leading-[1.45]">${topic}</span>
                 </div>
               `,
                 )
@@ -752,7 +752,9 @@
                         <img
                           src="${t.image}"
                           alt="${t.name}"
-                          class="!w-16 !h-16 rounded-full object-cover object-center border border-[#000] border-2" />
+                          class="!w-16 !h-16 rounded-full object-cover object-center border border-[#000] border-2" 
+                          style="width: 64px; height: 64px; min-width: 64px; border-radius: 50%;"
+                          />
                         <div>
                           <p class="text-[13px] font-semibold text-[#0F2F46]">${t.name}</p>
                           <p class="text-[12px] leading-[1.2] mt-1">
