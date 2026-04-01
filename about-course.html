@@ -172,7 +172,7 @@
           >
             <article class="flex flex-col gap-4">
               <p class="text-[#FB8500] text-[24px] font-bold mb-3">Этап 1</p>
-              <p class="bg-white rounded-[10px] text-[15px] leading-[1.35]">
+              <p class="rounded-[10px] text-[18px] leading-[1.35]">
                 Нацелен на формирование базовых знаний, стратегического видения
                 и общего понятийного поля. Проходит в формате гостевых лекций и
                 стратегических сессий и длится <br />
@@ -182,7 +182,7 @@
 
             <article class="flex flex-col gap-4">
               <p class="text-[#FB8500] text-[24px] font-bold mb-3">Этап 2</p>
-              <p class="bg-white rounded-[10px] text-[15px] leading-[1.35]">
+              <p class="rounded-[10px] text-[18px] leading-[1.35]">
                 Нацелен на формирование базовых знаний, стратегического видения
                 и общего понятийного поля. Проходит в формате гостевых лекций и
                 стратегических сессий и длится <br />
@@ -192,7 +192,7 @@
 
             <article class="flex flex-col gap-4">
               <p class="text-[#FB8500] text-[24px] font-bold mb-3">Этап 3</p>
-              <p class="bg-white rounded-[10px] text-[15px] leading-[1.35]">
+              <p class="rounded-[10px] text-[18px] leading-[1.35]">
                 Нацелен на формирование базовых знаний, стратегического видения
                 и общего понятийного поля. Проходит в формате гостевых лекций и
                 стратегических сессий и длится <br />
@@ -442,7 +442,7 @@
           const blocks = [];
           if (tab.description) {
             blocks.push(
-              `<p class="text-[16px] leading-[1.5]">${tab.description}</p>`,
+              `<p class="text-[18px] leading-[1.5]">${tab.description}</p>`,
             );
           }
           if (tab.listItems && tab.listItems.length) {
@@ -600,8 +600,8 @@
                 type="button"
                 class="px-4 md:px-5 py-2 rounded-full text-[12px] md:text-[13px] font-semibold ${
                   index === 0
-                    ? "bg-[#219EBC] text-white shadow-sm"
-                    : "bg-white text-[#023047]"
+                    ? "bg-[#219EBC] text-white shadow-md"
+                    : "bg-white text-[#023047] border border-gray-200"
                 }"
                 data-module-tab="${index}"
               >
@@ -756,8 +756,8 @@
                           style="width: 64px; height: 64px; min-width: 64px; border-radius: 50%;"
                           />
                         <div>
-                          <p class="text-[13px] font-semibold text-[#0F2F46]">${t.name}</p>
-                          <p class="text-[12px] leading-[1.2] mt-1">
+                          <p class="text-[16px] font-medium">${t.name}</p>
+                          <p class="text-[14px] leading-[1.2] mt-1">
                             ${t.subtitle}
                           </p>
                         </div>

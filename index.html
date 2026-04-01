@@ -1045,7 +1045,7 @@
         coursesContainer.innerHTML = coursesData
           .map(
             (course) => `
-          <article class="w-full lg:w-[32%] md:w-[48%] bg-white rounded-[16px] overflow-hidden shadow-sm flex flex-col h-full mb-4">
+          <article class="w-full lg:w-[32%] md:w-[48%] bg-white rounded-[16px] overflow-hidden shadow-lg flex flex-col h-full mb-4">
             <img
               src="${course.image || "images/photo/7.png"}"
               alt="${course.title}"
@@ -1061,21 +1061,21 @@
               </p>
 
               <div class="flex items-center gap-3 flex-wrap pb-6">
-                <div class="px-3 py-1 rounded-[8px] border border-[#C7EBF6] bg-[#E8F7FC] text-[12px] text-[#0993B1]">
-                  ${course.type || course.level || "Курс"}
+                <div class="px-3 py-1 rounded-[8px] font-medium border border-[#C7EBF6] bg-[#E8F7FC] text-[14px] shadow-md">
+                  ${"Курс"}
                 </div>
-                <div class="px-3 py-1 rounded-[8px] border border-[#C7EBF6] bg-[#E8F7FC] text-[12px] text-[#0993B1]">
-                  ${course.hours || course.weeks || "24 ак. ч."}
+                <div class="px-3 py-1 rounded-[8px] font-medium border border-[#C7EBF6] bg-[#E8F7FC] text-[14px] shadow-md">
+                  ${"24 ак. ч."}
                 </div>
-                <div class="px-3 py-1 rounded-[8px] border border-[#586E84] bg-[#F9FAFB] text-[12px] text-[#586E84]">
-                  ${course.group || `Участники: ${course.students || "-"}`}
+                <div class="px-3 py-1 rounded-[8px] font-medium border border-[#586E84] bg-[#F9FAFB] text-[14px] shadow-md">
+                  ${course.group || `Групп: ${"5"}`}
                 </div>
               </div>
 
               <div class="flex flex-col gap-3 mt-auto">
                 <button
                   type="button"
-                  class="cursor-pointer w-full py-2 rounded-[10px] [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)] text-white text-[14px] font-semibold">
+                  class="cursor-pointer w-full py-2 rounded-[10px] [background:linear-gradient(45deg,_#FB8500_0%,_#FFB703_100%)] text-white text-[18px] font-semibold">
                   Подать заявку
                 </button>
               </div>
@@ -1229,7 +1229,7 @@
             <div class="bg-white rounded-2xl shadow-md p-8 relative h-full flex flex-col min-h-[280px]">
               <img src="images/icons/icon-quote.svg" alt="" class="opacity-10 absolute top-4 right-3 text-[80px] leading-none text-gray-200 font-serif select-none" />
               <div class="flex text-[#FFB703] gap-0.5 mb-4 shrink-0">${starsHtml}</div>
-              <p class="text-[18px] leading-relaxed flex-1 min-h-0 pr-8">${item.quote}</p>
+              <p class="text-[20px] leading-relaxed flex-1 min-h-0 pr-8">${item.quote}</p>
               <div class="mt-6 pt-4 border-t border-gray-100 shrink-0">
                 <p class="font-semibold">${item.name}</p>
                 <p class="text-base mt-1">${item.course}</p>
