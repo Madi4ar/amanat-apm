@@ -51,10 +51,22 @@
         padding-top: 0;
         padding-bottom: 0;
       }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
     </style>
   </head>
   <body class="font-['Montserrat'] bg-[#EEF4F6]">
-    <div class="section-1 w-full py-[64px] bg-[#EEF4F6] min-h-screen">
+    <div class="section-1 w-full py-10 md:py-14 bg-[#EEF4F6]">
       <div
         class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative"
       >
@@ -136,7 +148,7 @@
                 </button>
 
                 <div
-                  class="border-t border-[#F2F4F7] overflow-hidden transition-[max-height] duration-300"
+                  class="border-t border-[#F2F4F7] overflow-hidden"
                   data-stage-content
                 >
                   <div
@@ -304,12 +316,9 @@
                   </div>
                 </button>
 
-                <div
-                  class="overflow-hidden transition-[max-height] duration-300 p-4"
-                  data-stage-content
-                >
+                <div class="overflow-hidden hidden" data-stage-content>
                   <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-4 pt-4 md:pb-5"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4 pt-4 md:px-5 md:pb-5"
                   >
                     <!-- Module 1 -->
                     <div
@@ -662,10 +671,7 @@
                     </div>
                   </button>
 
-                  <div
-                    class="overflow-hidden transition-[max-height] duration-300"
-                    data-stage-content
-                  >
+                  <div class="overflow-hidden hidden" data-stage-content>
                     <div
                       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4 pt-4 md:px-5 md:pb-5"
                     >
@@ -768,67 +774,725 @@
                     </div>
                   </button>
 
-                  <div
-                    class="overflow-hidden transition-[max-height] duration-300"
-                    data-stage-content
-                  >
+                  <div class="overflow-hidden hidden" data-stage-content>
                     <div
-                      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4 pt-4 md:px-5 md:pb-5"
+                      class="flex flex-col gap-8 px-4 pb-6 pt-4 md:px-5 md:pb-8"
                     >
-                      <div class="lg:col-span-3 sm:col-span-2">
-                        <div
-                          class="bg-white rounded-[16px] border border-[#EAECF0] p-5 flex flex-col h-full"
+                      <!-- Описание проекта -->
+                      <section class="w-full">
+                        <h2
+                          class="text-[20px] md:text-[22px] font-semibold text-[#101828] mb-4"
                         >
-                          <div class="flex items-center gap-3">
-                            <p
-                              class="text-[#155DFC] text-[14px] font-semibold bg-[#E7F0FF] rounded-[10px] px-4 py-1.5"
-                            >
-                              Модуль 8
-                            </p>
+                          Описание проекта
+                        </h2>
+                        <div
+                          class="bg-white rounded-[12px] border border-[#E5E7EB] p-5 md:p-6 space-y-6"
+                        >
+                          <div class="space-y-2">
+                            <label
+                              class="block text-[14px] font-semibold text-[#111827]"
+                              >Модуль</label>
                             <span
-                              class="text-[14px] px-4 py-1.5 rounded-[10px] bg-[#F2F4F7] text-[#667085] font-semibold border-0"
-                            >
-                              Не начато
-                            </span>
-                          </div>
-
-                          <h3
-                            class="text-[20px] font-semibold mt-4 leading-[1.15] text-[#101828]"
-                          >
-                            Итоговый проект о защита
-                          </h3>
-
-                          <div class="mt-3 text-[16px]">
-                            1 тем • 1 элементов
-                          </div>
-
-                          <div class="mt-4 mb-6">
-                            <div
-                              class="flex items-center justify-between text-[14px] "
-                            >
-                              <span class="font-medium">Прогресс</span>
-                              <span class="text-[#667085] font-semibold"
-                                >0%</span
+                              class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEF3C7] text-[#92400E]"
+                              >На проверке</span>
+                            <div class="relative mt-1">
+                              <select
+                                class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                               >
-                            </div>
-                            <div
-                              class="mt-2 h-[8px] w-full rounded-[10px] bg-[#EAECF0] overflow-hidden"
-                            >
-                              <div
-                                class="h-full rounded-[10px] bg-[#98A2B3]"
-                                style="width: 0%"
-                              ></div>
+                                <option selected>
+                                  Применение системы региональных стандартов
+                                  при планировании развития населённых пунктов
+                                </option>
+                                <option>
+                                  Налоги для развития: от базы поступлений к
+                                  результату на местах
+                                </option>
+                                <option>
+                                  Бюджетная вертикаль: от республики до села
+                                </option>
+                              </select>
+                              <svg
+                                class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#155DFC]"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M4 6L8 10L12 6"
+                                  stroke="currentColor"
+                                  stroke-width="1.33"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
                             </div>
                           </div>
 
-                          <button
-                            type="button"
-                            class="mt-auto w-full py-2.5 rounded-[12px] border border-[#155DFC] text-[#155DFC] text-[14px] font-semibold bg-transparent"
+                          <div class="space-y-2">
+                            <label
+                              class="block text-[14px] font-semibold text-[#111827]"
+                              >Тема</label>
+                            <span
+                              class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
+                              >Одобрено</span>
+                            <textarea
+                              rows="3"
+                              class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                            >Применение Системы региональных стандартов при планировании развития населённых пунктов (на примере Туркестанской области)</textarea>
+                            <p class="text-[12px] md:text-[13px] text-[#6B7280] leading-relaxed">
+                              Рекомендации: Укажите тему проекта в соответствии с
+                              выбранным модулем. Тема должна быть конкретной и
+                              отражать суть проекта.
+                              <span
+                              class="cursor-pointer inline-flex w-fit text-[13px] font-semibold text-[#155DFC] underline decoration-dashed underline-offset-4 hover:text-[#1249d4]"
+                              data-example-open
+                              >
+                                Посмотреть пример
+                            </span>
+                            </p>
+                            
+                          </div>
+
+                          <div
+                            class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6"
                           >
-                            Открыть модуль
-                          </button>
+                            <div class="space-y-2">
+                              <label
+                                class="block text-[14px] font-semibold text-[#111827]"
+                                >Основной куратор</label>
+                              <div class="relative">
+                                <select
+                                  class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+                                >
+                                  <option selected>Құрметұлы Н.</option>
+                                  <option>Мукушева Д.А.</option>
+                                  <option>Турсынбаева Н.Е.</option>
+                                </select>
+                                <svg
+                                  class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#155DFC]"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M4 6L8 10L12 6"
+                                    stroke="currentColor"
+                                    stroke-width="1.33"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="space-y-2">
+                              <label
+                                class="block text-[14px] font-semibold text-[#111827]"
+                                >Со-куратор</label>
+                              <div class="relative">
+                                <select
+                                  class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+                                >
+                                  <option selected>Жолдасбаева С.</option>
+                                  <option>Ибрагимов Д.К.</option>
+                                  <option>Жумабекова Г.А.</option>
+                                  <option>Каженов С.Г.</option>
+                                  <option>Пак В.С</option>
+                                  <option>Нугербаев Т.К.</option>
+                                  <option>Онгар С.</option>
+                                  <option>Қалдыбаев Т.</option>
+                                  <option>Мынбаева Ж.</option>
+                                  <option>Калдарова С.И.</option>
+                                </select>
+                                <svg
+                                  class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#155DFC]"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M4 6L8 10L12 6"
+                                    stroke="currentColor"
+                                    stroke-width="1.33"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6"
+                          >
+                            <div class="space-y-2">
+                              <label
+                                class="block text-[14px] font-semibold text-[#111827] leading-snug"
+                                >Целевая группа и обоснование ее выбора</label>
+                              <span
+                                class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEE2E2] text-[#991B1B]"
+                                >Отклонено</span>
+                              <p
+                                class="text-[12px] md:text-[13px] text-[#6B7280]"
+                              >
+                                Необходимо более детально обосновать выбор
+                                целевой группы с учетом специфики региона
+                                <span class="text-[#9CA3AF] whitespace-nowrap"
+                                  >· 21.04.2026, 14:32</span>
+                              </p>
+                              <textarea
+                                rows="3"
+                                class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                              >Руководители районных акиматов и специалисты отделов развития территории Туркестанской области</textarea>
+                            </div>
+                            <div class="space-y-2">
+                              <label
+                                class="block text-[14px] font-semibold text-[#111827] leading-snug"
+                                >Описание социальной и (или) практической
+                                значимости</label>
+                              <span
+                                class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
+                                >Одобрено</span>
+                              <textarea
+                                rows="5"
+                                class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                              >Проект направлен на повышение эффективности применения СРС для оптимизации распределения бюджетных средств и улучшения качества жизни населения</textarea>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      </section>
+
+                      <!-- Поэтапный алгоритм -->
+                      <section class="w-full">
+                        <h2
+                          class="text-[20px] md:text-[22px] font-semibold text-[#101828] mb-4"
+                        >
+                          Поэтапный алгоритм выполнения проекта
+                        </h2>
+                        <div
+                          class="bg-white rounded-[12px] border border-[#E5E7EB] overflow-hidden"
+                        >
+                          <div class="overflow-x-auto">
+                            <table
+                              class="w-full min-w-[920px] text-left text-[13px] md:text-[14px]"
+                            >
+                              <thead>
+                                <tr
+                                  class="border-b border-[#E5E7EB] bg-[#FAFAFA]"
+                                >
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] whitespace-nowrap text-center w-12"
+                                  >
+                                    №
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[160px]"
+                                  >
+                                    Наименование мероприятия
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[180px]"
+                                  >
+                                    Ожидаемые результаты
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] whitespace-nowrap"
+                                  >
+                                    Сроки
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
+                                  >
+                                    Участники
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
+                                  >
+                                    Формы завершения
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
+                                  >
+                                    Статус одобрения
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] whitespace-nowrap"
+                                  >
+                                    Статус проведения
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] w-14 text-center"
+                                  ></th>
+                                </tr>
+                              </thead>
+                              <tbody id="stages-tbody">
+                                <tr class="border-b border-[#E5E7EB]">
+                                  <td
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center"
+                                  >
+                                    1
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-medium align-top"
+                                  >
+                                    Проведение анализа текущей ситуации
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Отчет с выявленными проблемами и возможностями
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-semibold align-top whitespace-nowrap"
+                                  >
+                                    15.05.2026
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Малдыбаева Н. Б., Құрметұлы Н., Жолдасбаева С.
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Аналитический отчет
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <span
+                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]"
+                                      >Одобрено</span>
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <span
+                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DBEAFE] text-[#1E40AF]"
+                                      >Проведено</span>
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 align-top text-center"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                      aria-label="Удалить этап"
+                                    >
+                                      <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                      >
+                                        <path
+                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                          stroke="currentColor"
+                                          stroke-width="1.25"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </td>
+                                </tr>
+                                <tr class="border-b border-[#E5E7EB]">
+                                  <td
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center"
+                                  >
+                                    2
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-medium align-top"
+                                  >
+                                    Разработка стратегии и плана действий
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    План мероприятий с конкретными целями и KPI
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-semibold align-top whitespace-nowrap"
+                                  >
+                                    20.06.2026
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Мукушева Д., Турсынбаева Н.
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Презентация стратегии
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <div class="flex flex-col items-start gap-1.5 max-w-[220px]">
+                                      <span
+                                        class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FCE7F3] text-[#9D174D]"
+                                        >Не одобрено</span>
+                                      <p
+                                        class="text-[11px] md:text-[12px] font-medium leading-snug text-[#9D174D]"
+                                      >
+                                        Необходимо уточнить сроки и конкретизировать
+                                        показатели эффективности
+                                      </p>
+                                    </div>
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <span
+                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FEF9C3] text-[#854D0E]"
+                                      >Не проведено</span>
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 align-top text-center"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                      aria-label="Удалить этап"
+                                    >
+                                      <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                      >
+                                        <path
+                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                          stroke="currentColor"
+                                          stroke-width="1.25"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </td>
+                                </tr>
+                                <tr class="border-b border-[#E5E7EB]">
+                                  <td
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center"
+                                  >
+                                    3
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-medium align-top"
+                                  >
+                                    Реализация пилотного проекта
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Апробированная модель внедрения с метриками
+                                    эффективности
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 text-[#111827] font-semibold align-top whitespace-nowrap"
+                                  >
+                                    30.07.2026
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Ибрагимов Д., Жумабекова Г., Малдыбаева Н. Б.
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
+                                    Итоговый отчет и видеопрезентация
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <span
+                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]"
+                                      >Одобрено</span>
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top">
+                                    <span
+                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FEF9C3] text-[#854D0E]"
+                                      >Не проведено</span>
+                                  </td>
+                                  <td
+                                    class="px-3 py-3 md:px-4 align-top text-center"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                      aria-label="Удалить этап"
+                                    >
+                                      <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                      >
+                                        <path
+                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                          stroke="currentColor"
+                                          stroke-width="1.25"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="p-4 md:px-4 md:pb-4 border-t border-[#E5E7EB]">
+                            <button
+                              type="button"
+                              data-add-stage-open
+                              class="w-full py-3 rounded-lg border border-[#155DFC] text-[#155DFC] text-[14px] font-semibold bg-white hover:bg-[#F5F9FF] transition-colors"
+                            >
+                              Добавить этап
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- Выводы и практические рекомендации -->
+                      <section class="w-full">
+                        <div class="flex flex-col gap-2 mb-4">
+                          <h2
+                            class="text-[18px] md:text-[20px] font-semibold text-[#101828]"
+                          >
+                            Выводы и практические рекомендации
+                          </h2>
+                          <span
+                            class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
+                            >Одобрено</span>
+                        </div>
+                        <textarea
+                          rows="5"
+                          class="block min-w-0 w-full max-w-full rounded-lg border border-[#D1D5DB] bg-white p-4 md:p-5 mb-6 text-[14px] md:text-[15px] font-semibold text-[#111827] leading-relaxed outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC] resize-y whitespace-normal"
+                        >По итогам проекта ожидается формирование комплексной системы управления региональным развитием с применением современных цифровых инструментов, что позволит повысить эффективность принятия управленческих решений и улучшить качество предоставляемых услуг населению.</textarea>
+
+                        <div
+                          class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 md:items-stretch mb-6"
+                        >
+                          <div
+                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                          >
+                            <div
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                            >
+                              <svg
+                                class="shrink-0 mt-0.5 text-[#155DFC]"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <rect
+                                  x="2.5"
+                                  y="3.5"
+                                  width="13"
+                                  height="10"
+                                  rx="1.5"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                />
+                                <path
+                                  d="M6 14.5H12"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                  stroke-linecap="round"
+                                />
+                              </svg>
+                              <span
+                                >Презентация итогового проекта (объемом до 15
+                                слайдов)</span>
+                            </div>
+                            <span
+                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
+                              >Одобрено</span>
+                            <label
+                              class="mt-auto flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 transition-colors hover:border-[#155DFC] focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
+                            >
+                              <input
+                                type="file"
+                                class="sr-only"
+                                data-conclusion-file
+                              />
+                              <span
+                                data-filename
+                                class="min-w-0 flex-1 truncate text-left text-[13px] font-semibold text-[#111827]"
+                                >Презентация_проекта.pptx</span>
+                              <svg
+                                class="shrink-0 text-[#9CA3AF]"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M5 3.75H11.25L15 7.5V16.25H5V3.75Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.2"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M11.25 3.75V7.5H15"
+                                  stroke="currentColor"
+                                  stroke-width="1.2"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </label>
+                          </div>
+
+                          <div
+                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                          >
+                            <div
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                            >
+                              <svg
+                                class="shrink-0 mt-0.5 text-[#155DFC]"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M4.5 3.75H13.5C14.053 3.75 14.5 4.197 14.5 4.75V13.25C14.5 13.803 14.053 14.25 13.5 14.25H4.5C3.947 14.25 3.5 13.803 3.5 13.25V4.75C3.5 4.197 3.947 3.75 4.5 3.75Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                />
+                                <path
+                                  d="M6 7.5H12M6 10H10"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                  stroke-linecap="round"
+                                />
+                              </svg>
+                              <span>Рефлексивный анализ</span>
+                            </div>
+                            <span
+                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
+                              >Одобрено</span>
+                            <label
+                              class="mt-auto flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 transition-colors hover:border-[#155DFC] focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
+                            >
+                              <input
+                                type="file"
+                                accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                class="sr-only"
+                                data-conclusion-file
+                              />
+                              <span
+                                data-filename
+                                class="min-w-0 flex-1 truncate text-left text-[13px] font-semibold text-[#111827]"
+                                >Рефлексивный_анализ.docx</span>
+                              <svg
+                                class="shrink-0 text-[#9CA3AF]"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M5 3.75H11.25L15 7.5V16.25H5V3.75Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.2"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M11.25 3.75V7.5H15"
+                                  stroke="currentColor"
+                                  stroke-width="1.2"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </label>
+                          </div>
+
+                          <div
+                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                          >
+                            <div
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                            >
+                              <svg
+                                class="shrink-0 mt-0.5 text-[#155DFC]"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <rect
+                                  x="2.5"
+                                  y="4.5"
+                                  width="13"
+                                  height="10"
+                                  rx="2"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                />
+                                <circle
+                                  cx="9"
+                                  cy="9.5"
+                                  r="2.25"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                />
+                              </svg>
+                              <span
+                                >Видео-презентация (продолжительностью до 3
+                                минут)</span>
+                            </div>
+                            <span
+                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEF3C7] text-[#92400E]"
+                              >На проверке</span>
+                            <div
+                              class="mt-auto flex min-h-[52px] w-full items-center gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
+                            >
+                              <input
+                                type="text"
+                                name="video_presentation_url"
+                                inputmode="url"
+                                autocomplete="url"
+                                placeholder="Вставьте ссылку на видео"
+                                class="min-w-0 flex-1 border-0 bg-transparent p-0 text-[13px] font-semibold text-[#111827] outline-none placeholder:font-normal placeholder:text-[#9CA3AF] [&:not(:placeholder-shown)]:text-[#155DFC]"
+                              />
+                              <svg
+                                class="shrink-0 text-[#155DFC]"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <circle
+                                  cx="9"
+                                  cy="9"
+                                  r="6.25"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                />
+                                <path
+                                  d="M3.25 9H14.75"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                  stroke-linecap="round"
+                                />
+                                <path
+                                  d="M9 3.25C11.2 5.45 11.2 12.55 9 14.75"
+                                  stroke="currentColor"
+                                  stroke-width="1.25"
+                                  stroke-linecap="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
+                        >
+                          Сохранить
+                        </button>
+                      </section>
                     </div>
                   </div>
                 </div>
@@ -850,18 +1514,22 @@
           const icon = item.querySelector("[data-stage-toggle-icon]");
           if (!content) return;
 
-          if (index === activeIndex) {
-            content.style.maxHeight = content.scrollHeight + "px";
+          const isOpen = activeIndex >= 0 && index === activeIndex;
+
+          if (isOpen) {
+            content.classList.remove("hidden");
+            content.style.removeProperty("max-height");
             if (text) text.textContent = "скрыть";
             if (icon) icon.classList.add("rotate-180");
           } else {
-            content.style.maxHeight = "0px";
+            content.classList.add("hidden");
+            content.style.removeProperty("max-height");
             if (text) text.textContent = "раскрыть";
             if (icon) icon.classList.remove("rotate-180");
           }
 
           const key = item.getAttribute("data-stage-item");
-          if (index === activeIndex && key !== "about") {
+          if (isOpen && key !== "about") {
             item.classList.add("stage-open");
           } else {
             item.classList.remove("stage-open");
@@ -890,6 +1558,559 @@
           });
         });
       }
+
+      const exampleModal = document.getElementById("example-modal");
+      const addStageModal = document.getElementById("add-stage-modal");
+      const exampleOpenBtn = document.querySelector("[data-example-open]");
+      const addStageOpenBtn = document.querySelector("[data-add-stage-open]");
+      const addStageForm = document.getElementById("add-stage-form");
+      const stagesTbody = document.getElementById("stages-tbody");
+      const moduleSelect = document.querySelector(
+        '[data-stage-item="3"] select'
+      );
+
+      function syncBodyScrollLock() {
+        const exOpen = exampleModal && !exampleModal.classList.contains("hidden");
+        const addOpen =
+          addStageModal && !addStageModal.classList.contains("hidden");
+        document.body.classList.toggle("overflow-hidden", !!(exOpen || addOpen));
+      }
+
+      function setExampleModalOpen(isOpen) {
+        if (!exampleModal) return;
+        exampleModal.classList.toggle("hidden", !isOpen);
+        syncBodyScrollLock();
+      }
+
+      function setAddStageModalOpen(isOpen) {
+        if (!addStageModal) return;
+        addStageModal.classList.toggle("hidden", !isOpen);
+        syncBodyScrollLock();
+        if (isOpen && addStageForm) {
+          addStageForm.reset();
+          const sel = addStageForm.querySelector("#add-stage-participants");
+          if (sel) sel.selectedIndex = 0;
+        }
+      }
+
+      function formatDateRu(iso) {
+        if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return "—";
+        const [y, m, d] = iso.split("-");
+        return `${d}.${m}.${y}`;
+      }
+
+      function refreshStage3AccordionHeight() {
+        /* Панели этапов без max-height: пересчёт высоты не нужен. */
+      }
+
+      function renumberStageRows() {
+        if (!stagesTbody) return;
+        stagesTbody.querySelectorAll("tr").forEach((tr, i) => {
+          const numCell = tr.querySelector("td:first-child");
+          if (numCell) numCell.textContent = String(i + 1);
+        });
+      }
+
+      function randomApprovalCell() {
+        const td = document.createElement("td");
+        td.className = "px-3 py-3 md:px-4 align-top";
+        const approved = Math.random() < 0.5;
+        if (approved) {
+          const span = document.createElement("span");
+          span.className =
+            "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]";
+          span.textContent = "Одобрено";
+          td.appendChild(span);
+        } else {
+          const wrap = document.createElement("div");
+          wrap.className =
+            "flex flex-col items-start gap-1.5 max-w-[220px]";
+          const span = document.createElement("span");
+          span.className =
+            "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FCE7F3] text-[#9D174D]";
+          span.textContent = "Не одобрено";
+          wrap.appendChild(span);
+          if (Math.random() < 0.5) {
+            const p = document.createElement("p");
+            p.className =
+              "text-[11px] md:text-[12px] font-medium leading-snug text-[#9D174D]";
+            p.textContent =
+              "Требуется уточнение сроков и показателей эффективности.";
+            wrap.appendChild(p);
+          }
+          td.appendChild(wrap);
+        }
+        return td;
+      }
+
+      function randomExecutionCell() {
+        const td = document.createElement("td");
+        td.className = "px-3 py-3 md:px-4 align-top";
+        const span = document.createElement("span");
+        span.className =
+          "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold ";
+        if (Math.random() < 0.5) {
+          span.className += "bg-[#DBEAFE] text-[#1E40AF]";
+          span.textContent = "Проведено";
+        } else {
+          span.className += "bg-[#FEF9C3] text-[#854D0E]";
+          span.textContent = "Не проведено";
+        }
+        td.appendChild(span);
+        return td;
+      }
+
+      function trashButtonCell() {
+        const td = document.createElement("td");
+        td.className = "px-3 py-3 md:px-4 align-top text-center";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className =
+          "inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors";
+        btn.setAttribute("aria-label", "Удалить этап");
+        btn.innerHTML =
+          '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        td.appendChild(btn);
+        return td;
+      }
+
+      function appendStageRow(data) {
+        if (!stagesTbody) return;
+        const tr = document.createElement("tr");
+        tr.className = "border-b border-[#E5E7EB]";
+
+        const tdNum = document.createElement("td");
+        tdNum.className =
+          "px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center";
+        tdNum.textContent = String(stagesTbody.querySelectorAll("tr").length + 1);
+
+        const tdName = document.createElement("td");
+        tdName.className =
+          "px-3 py-3 md:px-4 text-[#111827] font-medium align-top";
+        tdName.textContent = data.name || "—";
+
+        const tdRes = document.createElement("td");
+        tdRes.className = "px-3 py-3 md:px-4 text-[#111827] align-top";
+        tdRes.textContent = data.results || "—";
+
+        const tdDate = document.createElement("td");
+        tdDate.className =
+          "px-3 py-3 md:px-4 text-[#111827] font-semibold align-top whitespace-nowrap";
+        tdDate.textContent = data.dateRu || "—";
+
+        const tdPart = document.createElement("td");
+        tdPart.className = "px-3 py-3 md:px-4 text-[#111827] align-top";
+        tdPart.textContent = data.participants || "—";
+
+        const tdForms = document.createElement("td");
+        tdForms.className = "px-3 py-3 md:px-4 text-[#111827] align-top";
+        tdForms.textContent = data.forms || "—";
+
+        tr.appendChild(tdNum);
+        tr.appendChild(tdName);
+        tr.appendChild(tdRes);
+        tr.appendChild(tdDate);
+        tr.appendChild(tdPart);
+        tr.appendChild(tdForms);
+        tr.appendChild(randomApprovalCell());
+        tr.appendChild(randomExecutionCell());
+        tr.appendChild(trashButtonCell());
+
+        stagesTbody.appendChild(tr);
+        renumberStageRows();
+        refreshStage3AccordionHeight();
+      }
+
+      if (addStageOpenBtn) {
+        addStageOpenBtn.addEventListener("click", () => setAddStageModalOpen(true));
+      }
+
+      if (addStageForm) {
+        addStageForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = addStageForm.querySelector("#add-stage-name")?.value?.trim() || "";
+          const results =
+            addStageForm.querySelector("#add-stage-results")?.value?.trim() || "";
+          const dateIso =
+            addStageForm.querySelector("#add-stage-date")?.value || "";
+          const sel = addStageForm.querySelector("#add-stage-participants");
+          let participants = "";
+          if (sel && sel.value) {
+            const opt = sel.options[sel.selectedIndex];
+            participants = (opt && opt.textContent ? opt.textContent : "").trim();
+          }
+          const forms =
+            addStageForm.querySelector("#add-stage-forms")?.value?.trim() || "";
+          appendStageRow({
+            name,
+            results,
+            dateRu: formatDateRu(dateIso),
+            participants,
+            forms,
+          });
+          setAddStageModalOpen(false);
+        });
+      }
+
+      if (stagesTbody) {
+        stagesTbody.addEventListener("click", function (e) {
+          const btn =
+            e.target &&
+            e.target.closest &&
+            e.target.closest('button[aria-label="Удалить этап"]');
+          if (!btn || !stagesTbody.contains(btn)) return;
+          const tr = btn.closest("tr");
+          if (tr) {
+            tr.remove();
+            renumberStageRows();
+            refreshStage3AccordionHeight();
+          }
+        });
+      }
+
+      document.querySelectorAll("[data-conclusion-file]").forEach(function (input) {
+        input.addEventListener("change", function () {
+          const label = input.closest("label");
+          const nameEl = label && label.querySelector("[data-filename]");
+          if (!nameEl) return;
+          const file = input.files && input.files[0];
+          if (file) {
+            nameEl.textContent = file.name;
+            nameEl.classList.remove("underline", "text-[#155DFC]");
+            nameEl.classList.add("text-[#111827]");
+          }
+        });
+      });
+
+      function getSelectedModuleText() {
+        if (!moduleSelect) return "";
+        const opt = moduleSelect.options[moduleSelect.selectedIndex];
+        return (opt && opt.textContent ? opt.textContent : "").trim();
+      }
+
+      function renderExampleContent() {
+        const container = document.querySelector("[data-example-content]");
+        if (!container) return;
+
+        const selected = getSelectedModuleText().toLowerCase();
+
+        const examples = {
+          srs: {
+            theme: "Село без дефицитов: дороги, вода, услуги.",
+            body: `
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Село без дефицитов: дороги, вода, услуги.</span></p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести комплексную оценку обеспеченности выбранной территории социальными и инфраструктурными благами в соответствии с системой региональных стандартов (СРС), выявить имеющиеся дефициты и разработать обоснованные меры по их устранению.</span></p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-2 leading-relaxed">По итогам анализа подготовить предложения для включения:</p>
+              <ul class="list-disc pl-5 space-y-1.5 text-[14px] md:text-[15px] leading-relaxed">
+                <li>в план развития территории;</li>
+                <li>в бюджетную заявку с указанием приоритетных направлений финансирования.</li>
+              </ul>
+              <p class="text-[14px] md:text-[15px] font-normal mt-4 leading-relaxed">Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
+            `,
+          },
+          taxes: {
+            theme: "Больше доходов — лучше условия",
+            body: `
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Больше доходов — лучше условия</span></p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести анализ налоговых поступлений на территории села (виды налогов, источники, уровень собираемости), выявить резервы для увеличения доходной базы и определить меры по ее расширению (легализация деятельности, поддержка МСБ, учет объектов налогообложения)</span></p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-3 leading-relaxed">На основе полученных данных разработать конкретные предложения по направлению дополнительных поступлений на приоритетные нужды села (инфраструктура, благоустройство, социальные объекты) с последующим включением в план развития и бюджет.</p>
+              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
+            `,
+          },
+          budget: {
+            theme: "Бюджет для жителей",
+            body: `
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Бюджет для жителей</span></p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести анализ формирования и исполнения местного бюджета (доходы, расходы, приоритеты), определить ключевые потребности населения и обеспечить перераспределение средств на наиболее востребованные направления (инфраструктура, ЖКХ, социальные услуги).</span></p>
+              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Обеспечить прозрачность бюджетного процесса: организовать информирование (лидерство и коммуникация) и вовлечение жителей в обсуждение приоритетов, усилить контроль за целевым и эффективным использованием средств, а также включить приоритетные проекты в план развития территории.</p>
+            `,
+          },
+        };
+
+        let html = examples.srs.body;
+        if (selected.includes("налог")) html = examples.taxes.body;
+        else if (selected.includes("бюджет")) html = examples.budget.body;
+        else if (selected.includes("стандарт")) html = examples.srs.body;
+
+        container.innerHTML = html;
+      }
+
+      if (exampleOpenBtn) {
+        exampleOpenBtn.addEventListener("click", () => {
+          renderExampleContent();
+          setExampleModalOpen(true);
+        });
+      }
+
+      document.addEventListener("click", (e) => {
+        const target = e.target;
+        if (!(target instanceof Element)) return;
+        if (target.closest("[data-add-stage-close]")) {
+          setAddStageModalOpen(false);
+          return;
+        }
+        if (target.closest("[data-add-stage-overlay]")) {
+          setAddStageModalOpen(false);
+          return;
+        }
+        if (target.closest("[data-example-close]")) {
+          setExampleModalOpen(false);
+          return;
+        }
+        if (target.closest("[data-example-overlay]")) {
+          setExampleModalOpen(false);
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        if (addStageModal && !addStageModal.classList.contains("hidden")) {
+          setAddStageModalOpen(false);
+          return;
+        }
+        if (exampleModal && !exampleModal.classList.contains("hidden")) {
+          setExampleModalOpen(false);
+        }
+      });
     });
   </script>
+  <div
+    id="example-modal"
+    class="fixed inset-0 z-50 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Пример"
+  >
+    <div
+      class="absolute inset-0 bg-black/40"
+      data-example-overlay
+    ></div>
+    <div
+      class="relative z-10 w-full min-h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto"
+    >
+      <div
+        class="w-full max-w-[520px] md:max-w-[560px] rounded-[12px] bg-white shadow-xl border border-[#E5E7EB] my-auto"
+      >
+        <div
+          class="flex items-center justify-between gap-3 px-4 py-3 md:px-5 border-b border-[#E5E7EB]"
+        >
+          <h3 class="text-[18px] md:text-[20px] font-semibold text-[#111827]">
+            Пример
+          </h3>
+          <button
+            type="button"
+            class="p-1.5 rounded-md hover:bg-[#F2F4F7] transition-colors shrink-0"
+            aria-label="Закрыть"
+            data-example-close
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="#111827"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="px-4 py-4 md:px-5 md:py-4 max-h-[min(70vh,520px)] overflow-y-auto text-[#111827]"
+          data-example-content
+        >
+          <div class="text-[14px]">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="add-stage-modal"
+    class="fixed inset-0 z-[55] hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="add-stage-title"
+  >
+    <div
+      class="absolute inset-0 bg-black/40"
+      data-add-stage-overlay
+    ></div>
+    <div
+      class="relative z-10 w-full min-h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto"
+    >
+      <div
+        class="w-full max-w-[480px] rounded-[12px] bg-white shadow-xl border border-[#E5E7EB] my-auto"
+      >
+        <div
+          class="flex items-center justify-between gap-3 px-4 py-3 md:px-5 border-b border-[#E5E7EB]"
+        >
+          <h3
+            id="add-stage-title"
+            class="text-[18px] md:text-[20px] font-semibold text-[#111827]"
+          >
+            Добавить этап
+          </h3>
+          <button
+            type="button"
+            class="p-1.5 rounded-md hover:bg-[#F2F4F7] transition-colors shrink-0"
+            aria-label="Закрыть"
+            data-add-stage-close
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="#111827"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <form
+          id="add-stage-form"
+          class="px-4 py-4 md:px-5 md:py-5 space-y-4 max-h-[min(78vh,640px)] overflow-y-auto"
+        >
+          <div class="space-y-1.5">
+            <label
+              class="block text-[14px] font-semibold text-[#111827]"
+              for="add-stage-name"
+              >Наименование мероприятия</label>
+            <textarea
+              id="add-stage-name"
+              name="name"
+              rows="3"
+              placeholder="Введите текст"
+              class="w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] text-[#111827] placeholder:text-[#9CA3AF] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+            ></textarea>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="block text-[14px] font-semibold text-[#111827]"
+              for="add-stage-results"
+              >Ожидаемые результаты</label>
+            <textarea
+              id="add-stage-results"
+              name="results"
+              rows="3"
+              placeholder="Введите текст"
+              class="w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] text-[#111827] placeholder:text-[#9CA3AF] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+            ></textarea>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="block text-[14px] font-semibold text-[#111827]"
+              for="add-stage-date"
+              >Сроки</label>
+            <div class="relative">
+              <input
+                id="add-stage-date"
+                name="date"
+                type="date"
+                class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-11 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC] [color-scheme:light]"
+              />
+              <span
+                class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#155DFC]"
+                aria-hidden="true"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2.5"
+                    y="3.5"
+                    width="13"
+                    height="12"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                  />
+                  <path
+                    d="M2.5 7.25H15.5M6 2V4.25M12 2V4.25"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="block text-[14px] font-semibold text-[#111827]"
+              for="add-stage-participants"
+              >Участники</label>
+            <div class="relative">
+              <select
+                id="add-stage-participants"
+                name="participants"
+                class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+              >
+                <option value="" selected disabled>Выбрать</option>
+                <option value="1">Құрметұлы Н.</option>
+                <option value="2">Мукушева Д.А.</option>
+                <option value="3">Турсынбаева Н.Е.</option>
+                <option value="4">Жолдасбаева С.</option>
+                <option value="5">Малдыбаева Н. Б.</option>
+                <option value="6">Ибрагимов Д.</option>
+                <option value="7">Жумабекова Г.</option>
+              </select>
+              <svg
+                class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#155DFC]"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.33"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="block text-[14px] font-semibold text-[#111827]"
+              for="add-stage-forms"
+              >Формы завершения</label>
+            <textarea
+              id="add-stage-forms"
+              name="forms"
+              rows="3"
+              placeholder="Введите текст"
+              class="w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] text-[#111827] placeholder:text-[#9CA3AF] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full py-3 rounded-lg bg-[#155DFC] text-white text-[14px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
+          >
+            Добавить этап
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </html>
