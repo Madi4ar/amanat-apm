@@ -1488,6 +1488,7 @@
 
                         <button
                           type="button"
+                          data-save-conclusions
                           class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
                         >
                           Сохранить
@@ -1502,9 +1503,79 @@
         </div>
       </div>
     </div>
+
+    <div
+      id="app-toast"
+      class="pointer-events-none fixed inset-0 z-[70] hidden items-center justify-center px-4 opacity-0 transition-opacity duration-300 ease-out"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div
+        class="pointer-events-auto flex max-w-md items-center gap-3 rounded-xl border border-[#15803D] bg-[#16A34A] px-5 py-4 text-left shadow-lg"
+      >
+        <svg
+          class="h-6 w-6 shrink-0 animate-spin text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+        <span
+          data-toast-text
+          class="text-[14px] font-semibold leading-snug text-white"
+          >Данные успешно сохранены</span>
+      </div>
+    </div>
   </body>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      const toastEl = document.getElementById("app-toast");
+      let toastHideTimer;
+      let toastRemoveHiddenTimer;
+
+      function showToast(message) {
+        if (!toastEl) return;
+        const textEl = toastEl.querySelector("[data-toast-text]");
+        if (textEl && message) textEl.textContent = message;
+        clearTimeout(toastHideTimer);
+        clearTimeout(toastRemoveHiddenTimer);
+        toastEl.classList.remove("hidden");
+        toastEl.classList.add("flex");
+        void toastEl.offsetWidth;
+        toastEl.classList.remove("opacity-0");
+        toastEl.classList.add("opacity-100");
+        toastHideTimer = setTimeout(function () {
+          toastEl.classList.remove("opacity-100");
+          toastEl.classList.add("opacity-0");
+          toastRemoveHiddenTimer = setTimeout(function () {
+            toastEl.classList.remove("flex");
+            toastEl.classList.add("hidden");
+          }, 300);
+        }, 2800);
+      }
+
+      const saveConclusionsBtn = document.querySelector("[data-save-conclusions]");
+      if (saveConclusionsBtn) {
+        saveConclusionsBtn.addEventListener("click", function () {
+          showToast("Данные успешно сохранены");
+        });
+      }
+
       const stageItems = document.querySelectorAll("[data-stage-item]");
 
       function closeAllExcept(activeIndex) {
