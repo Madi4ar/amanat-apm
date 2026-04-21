@@ -63,6 +63,16 @@
         white-space: nowrap;
         border-width: 0;
       }
+
+      /* Скрыть системную иконку календаря у type=date (остаётся SVG в разметке) */
+      #add-stage-date::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
+      #add-stage-date {
+        appearance: none;
+        -webkit-appearance: none;
+      }
     </style>
   </head>
   <body class="font-['Montserrat'] bg-[#EEF4F6]">
@@ -797,6 +807,7 @@
                               >На проверке</span>
                             <div class="relative mt-1">
                               <select
+                                id="stage3-module"
                                 class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                               >
                                 <option selected>
@@ -860,9 +871,10 @@
                             <div class="space-y-2">
                               <label
                                 class="block text-[14px] font-semibold text-[#111827]"
-                                >Основной куратор</label>
+                                >Основной тренер</label>
                               <div class="relative">
                                 <select
+                                  id="stage3-main-trainer"
                                   class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                                 >
                                   <option selected>Құрметұлы Н.</option>
@@ -889,7 +901,7 @@
                             <div class="space-y-2">
                               <label
                                 class="block text-[14px] font-semibold text-[#111827]"
-                                >Со-куратор</label>
+                                >Со-тренер</label>
                               <div class="relative">
                                 <select
                                   class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
@@ -957,7 +969,7 @@
                                 >Одобрено</span>
                               <textarea
                                 rows="5"
-                                class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                                class="mt-2 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
                               >Проект направлен на повышение эффективности применения СРС для оптимизации распределения бюджетных средств и улучшения качества жизни населения</textarea>
                             </div>
                           </div>
@@ -1005,7 +1017,7 @@
                                   <th
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
                                   >
-                                    Участники
+                                    Жители региона
                                   </th>
                                   <th
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
@@ -1289,7 +1301,7 @@
                                   stroke-linecap="round"
                                 />
                               </svg>
-                              <span
+                              <span class="text-lg"
                                 >Презентация итогового проекта (объемом до 15
                                 слайдов)</span>
                             </div>
@@ -1360,7 +1372,7 @@
                                   stroke-linecap="round"
                                 />
                               </svg>
-                              <span>Рефлексивный анализ</span>
+                              <span class="text-lg">Рефлексивный анализ</span>
                             </div>
                             <span
                               class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
@@ -1435,7 +1447,7 @@
                                   stroke-width="1.25"
                                 />
                               </svg>
-                              <span
+                              <span class="text-lg"
                                 >Видео-презентация (продолжительностью до 3
                                 минут)</span>
                             </div>
@@ -1618,10 +1630,8 @@
           if (!header || !content) return;
 
           header.addEventListener("click", () => {
-            const isOpen =
-              content.style.maxHeight && content.style.maxHeight !== "0px";
+            const isOpen = !content.classList.contains("hidden");
             if (isOpen) {
-              // закрываем текущий
               closeAllExcept(-1);
             } else {
               closeAllExcept(index);
@@ -1636,9 +1646,38 @@
       const addStageOpenBtn = document.querySelector("[data-add-stage-open]");
       const addStageForm = document.getElementById("add-stage-form");
       const stagesTbody = document.getElementById("stages-tbody");
-      const moduleSelect = document.querySelector(
-        '[data-stage-item="3"] select'
-      );
+      const moduleSelect = document.getElementById("stage3-module");
+      const mainTrainerSelect = document.getElementById("stage3-main-trainer");
+
+      const MAIN_TRAINERS_BY_MODULE = [
+        ["Құрметұлы Н.", "Мукушева Д.А.", "Турсынбаева Н.Е."],
+        [
+          "Шаймаханов Н.А.",
+          "Дулатов Н.Д.",
+          "Байдильданова Л.Б.",
+          "Багжаева Г.С.",
+        ],
+        ["Муллабаева Г.Ф.", "Торина Д.Ж", "Шаменова Б.М."],
+      ];
+
+      function syncStage3MainTrainerOptions() {
+        if (!mainTrainerSelect || !moduleSelect) return;
+        const idx = moduleSelect.selectedIndex;
+        const names =
+          MAIN_TRAINERS_BY_MODULE[idx] || MAIN_TRAINERS_BY_MODULE[0];
+        mainTrainerSelect.innerHTML = "";
+        names.forEach(function (name, i) {
+          const opt = document.createElement("option");
+          opt.textContent = name;
+          if (i === 0) opt.selected = true;
+          mainTrainerSelect.appendChild(opt);
+        });
+      }
+
+      if (moduleSelect && mainTrainerSelect) {
+        moduleSelect.addEventListener("change", syncStage3MainTrainerOptions);
+        syncStage3MainTrainerOptions();
+      }
 
       function syncBodyScrollLock() {
         const exOpen = exampleModal && !exampleModal.classList.contains("hidden");
@@ -1659,8 +1698,6 @@
         syncBodyScrollLock();
         if (isOpen && addStageForm) {
           addStageForm.reset();
-          const sel = addStageForm.querySelector("#add-stage-participants");
-          if (sel) sel.selectedIndex = 0;
         }
       }
 
@@ -1804,12 +1841,9 @@
             addStageForm.querySelector("#add-stage-results")?.value?.trim() || "";
           const dateIso =
             addStageForm.querySelector("#add-stage-date")?.value || "";
-          const sel = addStageForm.querySelector("#add-stage-participants");
-          let participants = "";
-          if (sel && sel.value) {
-            const opt = sel.options[sel.selectedIndex];
-            participants = (opt && opt.textContent ? opt.textContent : "").trim();
-          }
+          const participants =
+            addStageForm.querySelector("#add-stage-participants")?.value?.trim() ||
+            "";
           const forms =
             addStageForm.querySelector("#add-stage-forms")?.value?.trim() || "";
           appendStageRow({
@@ -2129,37 +2163,14 @@
               class="block text-[14px] font-semibold text-[#111827]"
               for="add-stage-participants"
               >Участники</label>
-            <div class="relative">
-              <select
-                id="add-stage-participants"
-                name="participants"
-                class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
-              >
-                <option value="" selected disabled>Выбрать</option>
-                <option value="1">Құрметұлы Н.</option>
-                <option value="2">Мукушева Д.А.</option>
-                <option value="3">Турсынбаева Н.Е.</option>
-                <option value="4">Жолдасбаева С.</option>
-                <option value="5">Малдыбаева Н. Б.</option>
-                <option value="6">Ибрагимов Д.</option>
-                <option value="7">Жумабекова Г.</option>
-              </select>
-              <svg
-                class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#155DFC]"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M4 6L8 10L12 6"
-                  stroke="currentColor"
-                  stroke-width="1.33"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+            <input
+              type="text"
+              id="add-stage-participants"
+              name="participants"
+              autocomplete="off"
+              placeholder="Введите участников (при нескольких — через запятую)"
+              class="w-full rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 text-[14px] text-[#111827] placeholder:text-[#9CA3AF] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+            />
           </div>
           <div class="space-y-1.5">
             <label
