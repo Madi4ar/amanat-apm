@@ -796,23 +796,22 @@
                           Описание проекта
                         </h2>
                         <div
-                          class="bg-white rounded-[12px] border border-[#E5E7EB] p-5 md:p-6 space-y-6"
+                          class="bg-white rounded-[12px] border border-[#DDE2E8] p-5 md:p-6 space-y-5"
                         >
-                          <div class="space-y-2">
+                          <div class="space-y-2 flex items-center justify-between gap-3">
                             <label
-                              class="block text-[14px] font-semibold text-[#111827]"
-                              >Модуль</label>
-                            <span
-                              class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEF3C7] text-[#92400E]"
-                              >На проверке</span>
-                            <div class="relative mt-1">
+                              for="stage3-module"
+                              class="block text-[15px] font-semibold text-[#111827]"
+                              >Выберите модуль:</label
+                            >
+                            <div class="relative flex-1">
                               <select
                                 id="stage3-module"
-                                class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+                                class="w-full appearance-none rounded-xl border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                               >
                                 <option selected>
-                                  Применение системы региональных стандартов
-                                  при планировании развития населённых пунктов
+                                  Применение Система региональных стандартов при
+                                  планировании развития населённых пунктов
                                 </option>
                                 <option>
                                   Налоги для развития: от базы поступлений к
@@ -840,42 +839,40 @@
                             </div>
                           </div>
 
+                          <button
+                            type="button"
+                            class="cursor-pointer inline-flex w-fit text-[14px] text-blue-700 underline "
+                            data-example-open
+                          >
+                            Ознакомьтесь с примером оформления вашего проекта
+                          </button>
+
                           <div class="space-y-2">
                             <label
-                              class="block text-[14px] font-semibold text-[#111827]"
-                              >Тема</label>
-                            <span
-                              class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
-                              >Одобрено</span>
+                              class="block text-[15px] font-semibold text-[#111827]"
+                              >Тема проекта:</label
+                            >
                             <textarea
+                              id="stage3-project-topic"
                               rows="3"
-                              class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
-                            >Применение Системы региональных стандартов при планировании развития населённых пунктов (на примере Туркестанской области)</textarea>
-                            <p class="text-[12px] md:text-[13px] text-[#6B7280] leading-relaxed">
-                              Рекомендации: Укажите тему проекта в соответствии с
-                              выбранным модулем. Тема должна быть конкретной и
-                              отражать суть проекта.
-                              <span
-                              class="cursor-pointer inline-flex w-fit text-[13px] font-semibold text-[#155DFC] underline decoration-dashed underline-offset-4 hover:text-[#1249d4]"
-                              data-example-open
-                              >
-                                Посмотреть пример
-                            </span>
-                            </p>
-                            
+                              class="w-full resize-y rounded-xl border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                            >
+Повышение эффективности управления социально-экономическим развитием региона через внедрение цифровых технологий и укрепление взаимодействия с местными сообществами.</textarea
+                            >
                           </div>
 
                           <div
-                            class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6"
+                            class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5"
                           >
                             <div class="space-y-2">
                               <label
-                                class="block text-[14px] font-semibold text-[#111827]"
-                                >Основной тренер</label>
+                                class="block text-[15px] font-semibold text-[#111827]"
+                                >Основной тренер:</label
+                              >
                               <div class="relative">
                                 <select
                                   id="stage3-main-trainer"
-                                  class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+                                  class="w-full appearance-none rounded-xl border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                                 >
                                   <option selected>Құрметұлы Н.</option>
                                   <option>Мукушева Д.А.</option>
@@ -898,13 +895,15 @@
                                 </svg>
                               </div>
                             </div>
+
                             <div class="space-y-2">
                               <label
-                                class="block text-[14px] font-semibold text-[#111827]"
-                                >Со-тренер</label>
+                                class="block text-[15px] font-semibold text-[#111827]"
+                                >Со-тренер:</label
+                              >
                               <div class="relative">
                                 <select
-                                  class="w-full appearance-none rounded-lg border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
+                                  class="w-full appearance-none rounded-xl border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                                 >
                                   <option selected>Жолдасбаева С.</option>
                                   <option>Ибрагимов Д.К.</option>
@@ -934,60 +933,74 @@
                                 </svg>
                               </div>
                             </div>
+
+                            <div class="space-y-1.5">
+                              <label
+                                class="block text-[15px] font-semibold text-[#111827]"
+                                >Ваш куратор:</label
+                              >
+                              <p class="text-[14px] text-[#334155]">
+                                Региональный куратор: Иванов Иван
+                              </p>
+                              <p class="text-[14px] text-[#334155]">
+                                Куратор ЦА: Петрова Мария
+                              </p>
+                            </div>
                           </div>
 
-                          <div
-                            class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6"
-                          >
-                            <div class="space-y-2">
-                              <label
-                                class="block text-[14px] font-semibold text-[#111827] leading-snug"
-                                >Целевая группа и обоснование ее выбора</label>
-                              <span
-                                class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEE2E2] text-[#991B1B]"
-                                >Отклонено</span>
-                              <p
-                                class="text-[12px] md:text-[13px] text-[#6B7280]"
-                              >
-                                Необходимо более детально обосновать выбор
-                                целевой группы с учетом специфики региона
-                                <span class="text-[#9CA3AF] whitespace-nowrap"
-                                  >· 21.04.2026, 14:32</span>
-                              </p>
-                              <textarea
-                                rows="3"
-                                class="mt-1 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
-                              >Руководители районных акиматов и специалисты отделов развития территории Туркестанской области</textarea>
-                            </div>
-                            <div class="space-y-2">
-                              <label
-                                class="block text-[14px] font-semibold text-[#111827] leading-snug"
-                                >Описание социальной и (или) практической
-                                значимости</label>
-                              <span
-                                class="inline-flex text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
-                                >Одобрено</span>
-                              <textarea
-                                rows="5"
-                                class="mt-2 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
-                              >Проект направлен на повышение эффективности применения СРС для оптимизации распределения бюджетных средств и улучшения качества жизни населения</textarea>
-                            </div>
+                          <div class="space-y-2">
+                            <label
+                              class="block text-[15px] font-semibold text-[#111827]"
+                              >Целевая группа и обоснование ее выбора</label
+                            >
+                            <textarea
+                              rows="3"
+                              class="w-full resize-y rounded-xl border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                            >
+Целевая группа проекта включает руководителей местных исполнительных органов, акимов районов и сельских округов, а также представителей общественно-политических организаций. Выбор данной группы обоснован их ключевой ролью в принятии управленческих решений на местном уровне.</textarea
+                            >
                           </div>
+
+                          <div class="space-y-2">
+                            <label
+                              class="block text-[15px] font-semibold text-[#111827]"
+                              >Описание социальной и (или) практической значимости</label
+                            >
+                            <textarea
+                              rows="3"
+                              class="w-full resize-y rounded-xl border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                            >
+Проект направлен на повышение качества государственного управления на местном уровне и улучшение взаимодействия между государственными органами и населением.</textarea
+                            >
+                          </div>
+
+                          <button
+                            type="button"
+                            class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
+                          >
+                            Отправить на проверку
+                          </button>
                         </div>
                       </section>
 
                       <!-- Поэтапный алгоритм -->
                       <section class="w-full">
-                        <h2
-                          class="text-[20px] md:text-[22px] font-semibold text-[#101828] mb-4"
-                        >
-                          Поэтапный алгоритм выполнения проекта
-                        </h2>
                         <div
                           class="bg-white rounded-[12px] border border-[#E5E7EB] overflow-hidden"
                         >
+                          <div class="px-4 md:px-5 py-4 border-b border-[#E5E7EB]">
+                            <h2
+                              class="text-lg font-bold text-[#101828]"
+                            >
+                              Поэтапный алгоритм выполнения проекта:
+                              <span class="font-medium" data-stage-topic-title
+                                >Повышение эффективности управления социально-экономическим развитием региона через внедрение цифровых технологий и укрепление взаимодействия с местными сообществами.</span
+                              >
+                            </h2>
+                          </div>
                           <div class="overflow-x-auto">
                             <table
+                              id="stage-algorithm-table"
                               class="w-full min-w-[920px] text-left text-[13px] md:text-[14px]"
                             >
                               <thead>
@@ -1023,6 +1036,11 @@
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
                                   >
                                     Формы завершения
+                                  </th>
+                                  <th
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] text-center min-w-[70px]"
+                                  >
+                                    Файл
                                   </th>
                                   <th
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
@@ -1066,6 +1084,15 @@
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
                                     Аналитический отчет
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top text-center">
+                                    <button
+                                      type="button"
+                                      class="inline-flex items-center justify-center text-[30px] leading-none text-[#155DFC] hover:text-[#1249d4] transition-colors"
+                                      aria-label="Прикрепить файл"
+                                    >
+                                      +
+                                    </button>
                                   </td>
                                   <td class="px-3 py-3 md:px-4 align-top">
                                     <span
@@ -1154,6 +1181,15 @@
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
                                     Презентация стратегии
+                                  </td>
+                                  <td class="px-3 py-3 md:px-4 align-top text-center">
+                                    <button
+                                      type="button"
+                                      class="inline-flex items-center justify-center text-[30px] leading-none text-[#155DFC] hover:text-[#1249d4] transition-colors"
+                                      aria-label="Прикрепить файл"
+                                    >
+                                      +
+                                    </button>
                                   </td>
                                   <td class="px-3 py-3 md:px-4 align-top">
                                     <div class="flex flex-col items-start gap-1.5 max-w-[220px]">
@@ -1252,6 +1288,15 @@
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
                                     Итоговый отчет и видеопрезентация
                                   </td>
+                                  <td class="px-3 py-3 md:px-4 align-top text-center">
+                                    <button
+                                      type="button"
+                                      class="inline-flex items-center justify-center text-[30px] leading-none text-[#155DFC] hover:text-[#1249d4] transition-colors"
+                                      aria-label="Прикрепить файл"
+                                    >
+                                      +
+                                    </button>
+                                  </td>
                                   <td class="px-3 py-3 md:px-4 align-top">
                                     <span
                                       class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]"
@@ -1318,7 +1363,7 @@
                               </tbody>
                             </table>
                           </div>
-                          <div class="p-4 md:px-4 md:pb-4 border-t border-[#E5E7EB]">
+                          <div class="p-4 md:px-4 md:pb-4 border-t border-[#E5E7EB] space-y-3">
                             <button
                               type="button"
                               data-add-stage-open
@@ -1326,68 +1371,55 @@
                             >
                               Добавить этап
                             </button>
+                            <button
+                              type="button"
+                              data-download-stage-pdf
+                              class="w-full py-3 rounded-lg bg-[#6B7280] text-white text-[14px] font-semibold hover:bg-[#4B5563] transition-colors"
+                            >
+                              Скачать pdf файл для согласования
+                            </button>
+                            <button
+                              type="button"
+                              class="w-full py-3 rounded-lg bg-[#155DFC] text-white text-[14px] font-semibold hover:bg-[#1249d4] transition-colors"
+                            >
+                              Отправить на проверку
+                            </button>
                           </div>
                         </div>
                       </section>
 
                       <!-- Выводы и практические рекомендации -->
-                      <section class="w-full">
-                        <div class="flex flex-col gap-2 mb-4">
+                      <section class="w-full bg-white p-5 md:p-6 rounded-[12px] border border-[#DDE2E8]">
+                        <div class="space-y-2 mb-4">
                           <h2
                             class="text-[18px] md:text-[20px] font-semibold text-[#101828]"
                           >
-                            Выводы и практические рекомендации
+                            Результат проекта:
                           </h2>
-                          <span
-                            class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
-                            >Одобрено</span>
                         </div>
                         <textarea
-                          rows="5"
-                          class="block min-w-0 w-full max-w-full rounded-lg border border-[#D1D5DB] bg-white p-4 md:p-5 mb-6 text-[14px] md:text-[15px] font-semibold text-[#111827] leading-relaxed outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC] resize-y whitespace-normal"
+                          rows="3"
+                          class="block min-w-0 w-full max-w-full rounded-xl border border-[#D1D5DB] bg-white p-4 mb-6 text-[14px] md:text-[15px] font-semibold text-[#111827] leading-relaxed outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC] resize-y whitespace-normal"
                         >По итогам проекта ожидается формирование комплексной системы управления региональным развитием с применением современных цифровых инструментов, что позволит повысить эффективность принятия управленческих решений и улучшить качество предоставляемых услуг населению.</textarea>
 
                         <div
                           class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 md:items-stretch mb-6"
                         >
                           <div
-                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                            class="flex min-h-0 flex-col gap-2 min-w-0 md:h-full"
                           >
                             <div
-                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[3.5rem]"
                             >
-                              <svg
-                                class="shrink-0 mt-0.5 text-[#155DFC]"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 18 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                              >
-                                <rect
-                                  x="2.5"
-                                  y="3.5"
-                                  width="13"
-                                  height="10"
-                                  rx="1.5"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                />
-                                <path
-                                  d="M6 14.5H12"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                  stroke-linecap="round"
-                                />
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21H17M12 21H7M12 21V17" stroke="#155DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 17H3V5H21V17H12Z" stroke="#155DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span class="text-lg"
+                              <span
                                 >Презентация итогового проекта (объемом до 15
-                                слайдов)</span>
+                                слайдов)</span
+                              >
                             </div>
-                            <span
-                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
-                              >Одобрено</span>
                             <label
                               class="mt-auto flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 transition-colors hover:border-[#155DFC] focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
                             >
@@ -1399,7 +1431,8 @@
                               <span
                                 data-filename
                                 class="min-w-0 flex-1 truncate text-left text-[13px] font-semibold text-[#111827]"
-                                >Презентация_проекта.pptx</span>
+                                >Презентация_проекта.pptx</span
+                              >
                               <svg
                                 class="shrink-0 text-[#9CA3AF]"
                                 width="20"
@@ -1426,37 +1459,16 @@
                           </div>
 
                           <div
-                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                            class="flex min-h-0 flex-col gap-2 min-w-0 md:h-full"
                           >
                             <div
-                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[3.5rem]"
                             >
-                              <svg
-                                class="shrink-0 mt-0.5 text-[#155DFC]"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 18 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M4.5 3.75H13.5C14.053 3.75 14.5 4.197 14.5 4.75V13.25C14.5 13.803 14.053 14.25 13.5 14.25H4.5C3.947 14.25 3.5 13.803 3.5 13.25V4.75C3.5 4.197 3.947 3.75 4.5 3.75Z"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                />
-                                <path
-                                  d="M6 7.5H12M6 10H10"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                  stroke-linecap="round"
-                                />
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 9V3.5L18.5 9M6 2C4.89 2 4 2.89 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2H6Z" fill="#155DFC"/>
                               </svg>
-                              <span class="text-lg">Рефлексивный анализ</span>
+                              <span>Рефлексивный анализ</span>
                             </div>
-                            <span
-                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#DCFCE7] text-[#166534]"
-                              >Одобрено</span>
                             <label
                               class="mt-auto flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 transition-colors hover:border-[#155DFC] focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
                             >
@@ -1469,7 +1481,8 @@
                               <span
                                 data-filename
                                 class="min-w-0 flex-1 truncate text-left text-[13px] font-semibold text-[#111827]"
-                                >Рефлексивный_анализ.docx</span>
+                                >Рефлексивный_анализ.docx</span
+                              >
                               <svg
                                 class="shrink-0 text-[#9CA3AF]"
                                 width="20"
@@ -1496,44 +1509,20 @@
                           </div>
 
                           <div
-                            class="flex min-h-0 flex-col gap-1 min-w-0 md:h-full"
+                            class="flex min-h-0 flex-col gap-2 min-w-0 md:h-full"
                           >
                             <div
-                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[4.25rem]"
+                              class="flex items-start gap-2 text-[13px] md:text-[14px] font-semibold text-[#111827] md:min-h-[3.5rem]"
                             >
-                              <svg
-                                class="shrink-0 mt-0.5 text-[#155DFC]"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 18 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                              >
-                                <rect
-                                  x="2.5"
-                                  y="4.5"
-                                  width="13"
-                                  height="10"
-                                  rx="2"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                />
-                                <circle
-                                  cx="9"
-                                  cy="9.5"
-                                  r="2.25"
-                                  stroke="currentColor"
-                                  stroke-width="1.25"
-                                />
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M17 10.5V7C17 6.73478 16.8946 6.48043 16.7071 6.29289C16.5196 6.10536 16.2652 6 16 6H4C3.73478 6 3.48043 6.10536 3.29289 6.29289C3.10536 6.48043 3 6.73478 3 7V17C3 17.2652 3.10536 17.5196 3.29289 17.7071C3.48043 17.8946 3.73478 18 4 18H16C16.2652 18 16.5196 17.8946 16.7071 17.7071C16.8946 17.5196 17 17.2652 17 17V13.5L21 17.5V6.5L17 10.5Z" fill="#155DFC"/>
                               </svg>
-                              <span class="text-lg"
+                              
+                              <span
                                 >Видео-презентация (продолжительностью до 3
-                                минут)</span>
+                                минут)</span
+                              >
                             </div>
-                            <span
-                              class="inline-flex w-fit text-[12px] font-semibold px-2.5 py-1 rounded-md bg-[#FEF3C7] text-[#92400E]"
-                              >На проверке</span>
                             <div
                               class="mt-auto flex min-h-[52px] w-full items-center gap-2 rounded-lg border border-[#D1D5DB] bg-white px-3 py-3 focus-within:border-[#155DFC] focus-within:ring-1 focus-within:ring-[#155DFC]"
                             >
@@ -1543,7 +1532,8 @@
                                 inputmode="url"
                                 autocomplete="url"
                                 placeholder="Вставьте ссылку на видео"
-                                class="min-w-0 flex-1 border-0 bg-transparent p-0 text-[13px] font-semibold text-[#111827] outline-none placeholder:font-normal placeholder:text-[#9CA3AF] [&:not(:placeholder-shown)]:text-[#155DFC]"
+                                value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                class="min-w-0 flex-1 border-0 bg-transparent p-0 text-[13px] font-semibold text-[#155DFC] underline underline-offset-2 outline-none placeholder:font-normal placeholder:text-[#9CA3AF]"
                               />
                               <svg
                                 class="shrink-0 text-[#155DFC]"
@@ -1583,7 +1573,7 @@
                           data-save-conclusions
                           class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
                         >
-                          Сохранить
+                          Отправить на проверку
                         </button>
                       </section>
                     </div>
@@ -1701,7 +1691,6 @@
       }
 
       if (stageItems.length) {
-        // Изначально открыт только первый этап
         closeAllExcept(0);
 
         stageItems.forEach((item, index) => {
@@ -1724,11 +1713,16 @@
       const addStageModal = document.getElementById("add-stage-modal");
       const exampleOpenBtn = document.querySelector("[data-example-open]");
       const addStageOpenBtn = document.querySelector("[data-add-stage-open]");
+      const downloadStagePdfBtn = document.querySelector(
+        "[data-download-stage-pdf]"
+      );
       const addStageForm = document.getElementById("add-stage-form");
       const addStageTitleEl = document.getElementById("add-stage-title");
       const addStageSubmitBtn = addStageForm
         ? addStageForm.querySelector('button[type="submit"]')
         : null;
+      const projectTopicInput = document.getElementById("stage3-project-topic");
+      const stageTopicTitle = document.querySelector("[data-stage-topic-title]");
       const stagesTbody = document.getElementById("stages-tbody");
       let editingStageRow = null;
       const moduleSelect = document.getElementById("stage3-module");
@@ -1762,6 +1756,17 @@
       if (moduleSelect && mainTrainerSelect) {
         moduleSelect.addEventListener("change", syncStage3MainTrainerOptions);
         syncStage3MainTrainerOptions();
+      }
+
+      function syncStageTopicTitle() {
+        if (!projectTopicInput || !stageTopicTitle) return;
+        const text = projectTopicInput.value.trim();
+        stageTopicTitle.textContent = text || "—";
+      }
+
+      if (projectTopicInput && stageTopicTitle) {
+        projectTopicInput.addEventListener("input", syncStageTopicTitle);
+        syncStageTopicTitle();
       }
 
       function syncBodyScrollLock() {
@@ -1912,6 +1917,207 @@
         return td;
       }
 
+      function fileAttachCell() {
+        const td = document.createElement("td");
+        td.className = "px-3 py-3 md:px-4 align-top text-center";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className =
+          "inline-flex items-center justify-center text-[30px] leading-none text-[#155DFC] hover:text-[#1249d4] transition-colors";
+        btn.setAttribute("aria-label", "Прикрепить файл");
+        btn.textContent = "+";
+        td.appendChild(btn);
+        return td;
+      }
+
+      function renderFileAttachPlaceholder(td) {
+        if (!td) return;
+        const fileUrl = td.dataset.fileUrl;
+        if (fileUrl) URL.revokeObjectURL(fileUrl);
+        delete td.dataset.fileUrl;
+        delete td.dataset.fileName;
+        td.innerHTML = "";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className =
+          "inline-flex items-center justify-center text-[30px] leading-none text-[#155DFC] hover:text-[#1249d4] transition-colors";
+        btn.setAttribute("aria-label", "Прикрепить файл");
+        btn.textContent = "+";
+        td.appendChild(btn);
+      }
+
+      function renderAttachedFileCell(td, fileName) {
+        if (!td) return;
+        td.innerHTML = "";
+        const wrap = document.createElement("div");
+        wrap.className =
+          "inline-flex flex-col items-center justify-center gap-1.5 max-w-[110px]";
+        const actions = document.createElement("div");
+        actions.className = "inline-flex items-center justify-center gap-1";
+
+        const openBtn = document.createElement("button");
+        openBtn.type = "button";
+        openBtn.className =
+          "inline-flex p-1.5 text-[#155DFC] hover:bg-[#F5F9FF] rounded-md transition-colors";
+        openBtn.setAttribute("aria-label", "Открыть файл");
+        openBtn.innerHTML =
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1.5 12C3.75 7.5 7.5 5.25 12 5.25C16.5 5.25 20.25 7.5 22.5 12C20.25 16.5 16.5 18.75 12 18.75C7.5 18.75 3.75 16.5 1.5 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>';
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className =
+          "inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors";
+        removeBtn.setAttribute("aria-label", "Удалить файл");
+        removeBtn.innerHTML =
+          '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+        const name = document.createElement("span");
+        name.className =
+          "block max-w-[110px] truncate text-[11px] font-medium text-[#475467]";
+        name.textContent = fileName || "Файл";
+        name.title = fileName || "";
+
+        actions.appendChild(openBtn);
+        actions.appendChild(removeBtn);
+        wrap.appendChild(actions);
+        wrap.appendChild(name);
+        td.appendChild(wrap);
+      }
+
+      function attachFileToStage(td) {
+        if (!td) return;
+        const input = document.createElement("input");
+        input.type = "file";
+        input.className = "hidden";
+        input.accept =
+          ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.zip";
+        input.addEventListener("change", function () {
+          const file = input.files && input.files[0];
+          if (file) {
+            const prevUrl = td.dataset.fileUrl;
+            if (prevUrl) URL.revokeObjectURL(prevUrl);
+            td.dataset.fileUrl = URL.createObjectURL(file);
+            td.dataset.fileName = file.name;
+            renderAttachedFileCell(td, file.name);
+            showToast("Файл прикреплён");
+          }
+          input.remove();
+        });
+        document.body.appendChild(input);
+        input.click();
+        input.addEventListener("blur", function () {
+          setTimeout(function () {
+            input.remove();
+          }, 0);
+        });
+      }
+
+      function openStageFile(td) {
+        if (!td) return;
+        const fileUrl = td.dataset.fileUrl;
+        if (!fileUrl) return;
+        window.open(fileUrl, "_blank", "noopener");
+      }
+
+      function cleanupStageRowFiles(tr) {
+        if (!tr) return;
+        tr.querySelectorAll("td[data-file-url]").forEach(function (td) {
+          const fileUrl = td.dataset.fileUrl;
+          if (fileUrl) URL.revokeObjectURL(fileUrl);
+        });
+      }
+
+      function loadScriptOnce(src) {
+        return new Promise(function (resolve, reject) {
+          const existing = document.querySelector(`script[src="${src}"]`);
+          if (existing) {
+            if (existing.dataset.loaded === "true") {
+              resolve();
+              return;
+            }
+            existing.addEventListener("load", function () {
+              existing.dataset.loaded = "true";
+              resolve();
+            });
+            existing.addEventListener("error", reject);
+            return;
+          }
+          const script = document.createElement("script");
+          script.src = src;
+          script.async = true;
+          script.onload = function () {
+            script.dataset.loaded = "true";
+            resolve();
+          };
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      async function exportStagesTablePdf() {
+        const table = document.getElementById("stage-algorithm-table");
+        if (!table) {
+          showToast("Таблица не найдена");
+          return;
+        }
+
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+          await loadScriptOnce(
+            "https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"
+          );
+        }
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+          showToast("Не удалось загрузить PDF библиотеку");
+          return;
+        }
+        if (!window.html2canvas) {
+          await loadScriptOnce(
+            "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+          );
+        }
+        if (!window.html2canvas) {
+          showToast("Не удалось загрузить модуль рендера таблицы");
+          return;
+        }
+
+        const canvas = await window.html2canvas(table, {
+          backgroundColor: "#FFFFFF",
+          scale: 2,
+          useCORS: true,
+        });
+        const imgData = canvas.toDataURL("image/png");
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({
+          orientation: "landscape",
+          unit: "pt",
+          format: "a4",
+        });
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const margin = 20;
+        const contentWidth = pageWidth - margin * 2;
+        const contentHeight = pageHeight - margin * 2;
+        const imgWidth = contentWidth;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        let heightLeft = imgHeight;
+        let position = margin;
+
+        doc.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
+        heightLeft -= contentHeight;
+
+        while (heightLeft > 0) {
+          doc.addPage();
+          position = margin - (imgHeight - heightLeft);
+          doc.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
+          heightLeft -= contentHeight;
+        }
+
+        doc.save("poetapnyi-algoritm-proekta.pdf");
+      }
+
       function stageActionsCell() {
         const td = document.createElement("td");
         td.className = "px-3 py-3 md:px-4 align-top text-center";
@@ -1976,6 +2182,7 @@
         tr.appendChild(tdDate);
         tr.appendChild(tdPart);
         tr.appendChild(tdForms);
+        tr.appendChild(fileAttachCell());
         tr.appendChild(randomApprovalCell());
         tr.appendChild(randomExecutionCell());
         tr.appendChild(stageActionsCell());
@@ -1991,6 +2198,18 @@
           setAddStageModalOpen(true);
           if (addStageForm) addStageForm.reset();
           setAddStageModalLabels(false);
+        });
+      }
+
+      if (downloadStagePdfBtn) {
+        downloadStagePdfBtn.addEventListener("click", async function () {
+          try {
+            await exportStagesTablePdf();
+            showToast("Таблица скачана в PDF");
+          } catch (err) {
+            console.error(err);
+            showToast("Не удалось скачать PDF");
+          }
         });
       }
 
@@ -2030,6 +2249,29 @@
         stagesTbody.addEventListener("click", function (e) {
           const target = e.target;
           if (!(target instanceof Element)) return;
+          const fileBtn = target.closest('button[aria-label="Прикрепить файл"]');
+          if (fileBtn && stagesTbody.contains(fileBtn)) {
+            const td = fileBtn.closest("td");
+            if (td) attachFileToStage(td);
+            return;
+          }
+          const openFileBtn = target.closest('button[aria-label="Открыть файл"]');
+          if (openFileBtn && stagesTbody.contains(openFileBtn)) {
+            const td = openFileBtn.closest("td");
+            if (td) openStageFile(td);
+            return;
+          }
+          const removeFileBtn = target.closest(
+            'button[aria-label="Удалить файл"]'
+          );
+          if (removeFileBtn && stagesTbody.contains(removeFileBtn)) {
+            const td = removeFileBtn.closest("td");
+            if (td) {
+              renderFileAttachPlaceholder(td);
+              showToast("Файл удалён");
+            }
+            return;
+          }
           const editBtn = target.closest(
             'button[aria-label="Редактировать этап"]'
           );
@@ -2042,6 +2284,7 @@
           if (!delBtn || !stagesTbody.contains(delBtn)) return;
           const tr = delBtn.closest("tr");
           if (tr) {
+            cleanupStageRowFiles(tr);
             tr.remove();
             renumberStageRows();
             refreshStage3AccordionHeight();
