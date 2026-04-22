@@ -1035,8 +1035,10 @@
                                     Статус проведения
                                   </th>
                                   <th
-                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] w-14 text-center"
-                                  ></th>
+                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[88px] text-center"
+                                  >
+                                    <span class="sr-only">Действия</span>
+                                  </th>
                                 </tr>
                               </thead>
                               <tbody id="stages-tbody">
@@ -1060,7 +1062,7 @@
                                     15.05.2026
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
-                                    Малдыбаева Н. Б., Құрметұлы Н., Жолдасбаева С.
+                                    Весь кадровый состав акимата
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
                                     Аналитический отчет
@@ -1078,28 +1080,54 @@
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
                                   >
-                                    <button
-                                      type="button"
-                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
-                                      aria-label="Удалить этап"
+                                    <div
+                                      class="inline-flex items-center justify-center gap-0.5"
                                     >
-                                      <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        aria-hidden="true"
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#155DFC] hover:bg-[#F5F9FF] rounded-md transition-colors"
+                                        aria-label="Редактировать этап"
                                       >
-                                        <path
-                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
-                                          stroke="currentColor"
-                                          stroke-width="1.25"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                        />
-                                      </svg>
-                                    </button>
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M10.125 3.375L3.75 9.75V12.75H6.75L13.125 6.375M10.125 3.375L12.2625 1.2375C12.45 1.05 12.705 0.9375 12.975 0.9375C13.245 0.9375 13.5 1.05 13.6875 1.2375L15.2625 2.8125C15.45 3 15.5625 3.255 15.5625 3.525C15.5625 3.795 15.45 4.05 15.2625 4.2375L13.125 6.375M10.125 3.375L13.125 6.375"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                        aria-label="Удалить этап"
+                                      >
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
                                   </td>
                                 </tr>
                                 <tr class="border-b border-[#E5E7EB]">
@@ -1122,7 +1150,7 @@
                                     20.06.2026
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
-                                    Мукушева Д., Турсынбаева Н.
+                                    Эксперты и сотрудники акимата
                                   </td>
                                   <td class="px-3 py-3 md:px-4 text-[#111827] align-top">
                                     Презентация стратегии
@@ -1148,28 +1176,54 @@
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
                                   >
-                                    <button
-                                      type="button"
-                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
-                                      aria-label="Удалить этап"
+                                    <div
+                                      class="inline-flex items-center justify-center gap-0.5"
                                     >
-                                      <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        aria-hidden="true"
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#155DFC] hover:bg-[#F5F9FF] rounded-md transition-colors"
+                                        aria-label="Редактировать этап"
                                       >
-                                        <path
-                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
-                                          stroke="currentColor"
-                                          stroke-width="1.25"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                        />
-                                      </svg>
-                                    </button>
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M10.125 3.375L3.75 9.75V12.75H6.75L13.125 6.375M10.125 3.375L12.2625 1.2375C12.45 1.05 12.705 0.9375 12.975 0.9375C13.245 0.9375 13.5 1.05 13.6875 1.2375L15.2625 2.8125C15.45 3 15.5625 3.255 15.5625 3.525C15.5625 3.795 15.45 4.05 15.2625 4.2375L13.125 6.375M10.125 3.375L13.125 6.375"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                        aria-label="Удалить этап"
+                                      >
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
                                   </td>
                                 </tr>
                                 <tr class="border-b border-[#E5E7EB]">
@@ -1211,28 +1265,54 @@
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
                                   >
-                                    <button
-                                      type="button"
-                                      class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
-                                      aria-label="Удалить этап"
+                                    <div
+                                      class="inline-flex items-center justify-center gap-0.5"
                                     >
-                                      <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        aria-hidden="true"
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#155DFC] hover:bg-[#F5F9FF] rounded-md transition-colors"
+                                        aria-label="Редактировать этап"
                                       >
-                                        <path
-                                          d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
-                                          stroke="currentColor"
-                                          stroke-width="1.25"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                        />
-                                      </svg>
-                                    </button>
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M10.125 3.375L3.75 9.75V12.75H6.75L13.125 6.375M10.125 3.375L12.2625 1.2375C12.45 1.05 12.705 0.9375 12.975 0.9375C13.245 0.9375 13.5 1.05 13.6875 1.2375L15.2625 2.8125C15.45 3 15.5625 3.255 15.5625 3.525C15.5625 3.795 15.45 4.05 15.2625 4.2375L13.125 6.375M10.125 3.375L13.125 6.375"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors"
+                                        aria-label="Удалить этап"
+                                      >
+                                        <svg
+                                          width="18"
+                                          height="18"
+                                          viewBox="0 0 18 18"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25"
+                                            stroke="currentColor"
+                                            stroke-width="1.25"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
                                   </td>
                                 </tr>
                               </tbody>
@@ -1645,7 +1725,12 @@
       const exampleOpenBtn = document.querySelector("[data-example-open]");
       const addStageOpenBtn = document.querySelector("[data-add-stage-open]");
       const addStageForm = document.getElementById("add-stage-form");
+      const addStageTitleEl = document.getElementById("add-stage-title");
+      const addStageSubmitBtn = addStageForm
+        ? addStageForm.querySelector('button[type="submit"]')
+        : null;
       const stagesTbody = document.getElementById("stages-tbody");
+      let editingStageRow = null;
       const moduleSelect = document.getElementById("stage3-module");
       const mainTrainerSelect = document.getElementById("stage3-main-trainer");
 
@@ -1692,13 +1777,72 @@
         syncBodyScrollLock();
       }
 
+      function setAddStageModalLabels(isEdit) {
+        if (addStageTitleEl) {
+          addStageTitleEl.textContent = isEdit
+            ? "Редактировать этап"
+            : "Добавить этап";
+        }
+        if (addStageSubmitBtn) {
+          addStageSubmitBtn.textContent = isEdit
+            ? "Сохранить изменения"
+            : "Добавить этап";
+        }
+      }
+
       function setAddStageModalOpen(isOpen) {
         if (!addStageModal) return;
         addStageModal.classList.toggle("hidden", !isOpen);
         syncBodyScrollLock();
-        if (isOpen && addStageForm) {
-          addStageForm.reset();
+        if (!isOpen) {
+          editingStageRow = null;
+          if (addStageForm) addStageForm.reset();
+          setAddStageModalLabels(false);
         }
+      }
+
+      function parseDateRu(ru) {
+        if (!ru || ru === "—") return "";
+        const m = String(ru)
+          .trim()
+          .match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+        if (!m) return "";
+        return `${m[3]}-${m[2]}-${m[1]}`;
+      }
+
+      function populateAddStageFormFromRow(tr) {
+        if (!addStageForm || !tr) return;
+        const tds = tr.querySelectorAll("td");
+        if (tds.length < 6) return;
+        const nameEl = addStageForm.querySelector("#add-stage-name");
+        const resultsEl = addStageForm.querySelector("#add-stage-results");
+        const dateEl = addStageForm.querySelector("#add-stage-date");
+        const partEl = addStageForm.querySelector("#add-stage-participants");
+        const formsEl = addStageForm.querySelector("#add-stage-forms");
+        if (nameEl) nameEl.value = tds[1].textContent.trim();
+        if (resultsEl) resultsEl.value = tds[2].textContent.trim();
+        if (dateEl) dateEl.value = parseDateRu(tds[3].textContent.trim());
+        if (partEl) partEl.value = tds[4].textContent.trim();
+        if (formsEl) formsEl.value = tds[5].textContent.trim();
+      }
+
+      function updateStageRowFromData(tr, data) {
+        if (!tr) return;
+        const tds = tr.querySelectorAll("td");
+        if (tds.length < 6) return;
+        tds[1].textContent = data.name || "—";
+        tds[2].textContent = data.results || "—";
+        tds[3].textContent = data.dateRu || "—";
+        tds[4].textContent = data.participants || "—";
+        tds[5].textContent = data.forms || "—";
+      }
+
+      function openEditStageModal(tr) {
+        if (!tr || !addStageForm) return;
+        editingStageRow = tr;
+        setAddStageModalOpen(true);
+        populateAddStageFormFromRow(tr);
+        setAddStageModalLabels(true);
       }
 
       function formatDateRu(iso) {
@@ -1768,17 +1912,29 @@
         return td;
       }
 
-      function trashButtonCell() {
+      function stageActionsCell() {
         const td = document.createElement("td");
         td.className = "px-3 py-3 md:px-4 align-top text-center";
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className =
+        const wrap = document.createElement("div");
+        wrap.className =
+          "inline-flex items-center justify-center gap-0.5";
+        const editBtn = document.createElement("button");
+        editBtn.type = "button";
+        editBtn.className =
+          "inline-flex p-1.5 text-[#155DFC] hover:bg-[#F5F9FF] rounded-md transition-colors";
+        editBtn.setAttribute("aria-label", "Редактировать этап");
+        editBtn.innerHTML =
+          '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10.125 3.375L3.75 9.75V12.75H6.75L13.125 6.375M10.125 3.375L12.2625 1.2375C12.45 1.05 12.705 0.9375 12.975 0.9375C13.245 0.9375 13.5 1.05 13.6875 1.2375L15.2625 2.8125C15.45 3 15.5625 3.255 15.5625 3.525C15.5625 3.795 15.45 4.05 15.2625 4.2375L13.125 6.375M10.125 3.375L13.125 6.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className =
           "inline-flex p-1.5 text-[#DC2626] hover:bg-[#FEF2F2] rounded-md transition-colors";
-        btn.setAttribute("aria-label", "Удалить этап");
-        btn.innerHTML =
+        delBtn.setAttribute("aria-label", "Удалить этап");
+        delBtn.innerHTML =
           '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.75 5.25H14.25M6.75 5.25V3.75C6.75 3.15326 7.15326 2.75 7.75 2.75H10.25C10.8467 2.75 11.25 3.15326 11.25 3.75V5.25M6.75 8.25V12.75M9 8.25V12.75M11.25 8.25V12.75M4.5 5.25L5.25 14.25C5.25 14.8467 5.65326 15.25 6.25 15.25H11.75C12.3467 15.25 12.75 14.8467 12.75 14.25L13.5 5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        td.appendChild(btn);
+        wrap.appendChild(editBtn);
+        wrap.appendChild(delBtn);
+        td.appendChild(wrap);
         return td;
       }
 
@@ -1822,7 +1978,7 @@
         tr.appendChild(tdForms);
         tr.appendChild(randomApprovalCell());
         tr.appendChild(randomExecutionCell());
-        tr.appendChild(trashButtonCell());
+        tr.appendChild(stageActionsCell());
 
         stagesTbody.appendChild(tr);
         renumberStageRows();
@@ -1830,7 +1986,12 @@
       }
 
       if (addStageOpenBtn) {
-        addStageOpenBtn.addEventListener("click", () => setAddStageModalOpen(true));
+        addStageOpenBtn.addEventListener("click", function () {
+          editingStageRow = null;
+          setAddStageModalOpen(true);
+          if (addStageForm) addStageForm.reset();
+          setAddStageModalLabels(false);
+        });
       }
 
       if (addStageForm) {
@@ -1846,25 +2007,40 @@
             "";
           const forms =
             addStageForm.querySelector("#add-stage-forms")?.value?.trim() || "";
-          appendStageRow({
+          const rowData = {
             name,
             results,
             dateRu: formatDateRu(dateIso),
             participants,
             forms,
-          });
-          setAddStageModalOpen(false);
+          };
+          if (editingStageRow) {
+            updateStageRowFromData(editingStageRow, rowData);
+            refreshStage3AccordionHeight();
+            setAddStageModalOpen(false);
+            showToast("Этап успешно обновлён");
+          } else {
+            appendStageRow(rowData);
+            setAddStageModalOpen(false);
+          }
         });
       }
 
       if (stagesTbody) {
         stagesTbody.addEventListener("click", function (e) {
-          const btn =
-            e.target &&
-            e.target.closest &&
-            e.target.closest('button[aria-label="Удалить этап"]');
-          if (!btn || !stagesTbody.contains(btn)) return;
-          const tr = btn.closest("tr");
+          const target = e.target;
+          if (!(target instanceof Element)) return;
+          const editBtn = target.closest(
+            'button[aria-label="Редактировать этап"]'
+          );
+          if (editBtn && stagesTbody.contains(editBtn)) {
+            const tr = editBtn.closest("tr");
+            if (tr) openEditStageModal(tr);
+            return;
+          }
+          const delBtn = target.closest('button[aria-label="Удалить этап"]');
+          if (!delBtn || !stagesTbody.contains(delBtn)) return;
+          const tr = delBtn.closest("tr");
           if (tr) {
             tr.remove();
             renumberStageRows();
