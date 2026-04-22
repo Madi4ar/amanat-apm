@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User cabinet ticket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="font-['Montserrat'] bg-[#EEF4F6]">
+    <div class="block1 md:pt-[20px]">
+      <header class="relative flex flex-col md:min-h-0">
+        <div
+          class="container py-[20px] px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto flex items-center justify-between w-full header__inner flex items-center justify-between">
+          <a href="/" class="header__logo">
+            <img
+              class="w-40 md:w-64"
+              src="images/icons/logo_kaz.svg.svg"
+              alt="logo" />
+          </a>
+
+          <div class="flex items-center gap-8">
+            <div class="relative z-[9999]">
+              <button
+                id="lang-toggle"
+                class="flex items-center gap-1 text-[#023047] text-sm font-medium"
+                type="button">
+                <span id="lang-label">РУС</span>
+                <span
+                  id="lang-arrow"
+                  class="inline-block translate-y-[1px] transition-transform duration-200"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4 6L8 10L12 6"
+                      stroke="#023047"
+                      stroke-width="1.33333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+
+              <div
+                id="lang-menu"
+                class="absolute right-0 mt-2 w-[80px] rounded-md border border-gray-200 bg-white shadow-lg py-1 text-sm text-[#023047] hidden">
+                <button
+                  type="button"
+                  data-lang="РУС"
+                  class="block w-full px-3 py-1 text-left hover:bg-gray-100">
+                  РУС
+                </button>
+                <button
+                  type="button"
+                  data-lang="ҚАЗ"
+                  class="block w-full px-3 py-1 text-left hover:bg-gray-100">
+                  ҚАЗ
+                </button>
+              </div>
+            </div>
+
+            <div class="menu_toggle lg:hidden flex items-center">
+              <button
+                type="button"
+                class="menu_toggle_open"
+                aria-label="Открыть меню">
+                <img src="images/icons/burger-menu.svg" alt="menu" />
+              </button>
+              <button
+                type="button"
+                class="menu_toggle_close hidden"
+                aria-label="Закрыть меню">
+                <img src="images/icons/close.svg" alt="close" />
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="cursor-pointer hidden lg:flex px-6 py-2 rounded-full text-white text-sm font-semibold bg-[linear-gradient(90deg,#023047_0%,#219EBC_100%)]">
+              Малдыбаева Н. Б.
+            </button>
+          </div>
+        </div>
+
+        <nav
+          class="menu_list bg-[#023047] w-full mt-4 flex-1 min-h-0 flex flex-col md:flex-initial hidden lg:flex fixed top-[84px] left-0 z-50 lg:static h-full">
+          <div
+            class="container flex-1 min-h-0 flex flex-col md:flex-initial px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto w-full">
+            <ul
+              class="flex flex-col lg:flex-row flex-1 lg:flex-initial lg:items-center gap-12 py-[30px] w-full">
+              <li>
+                <a
+                  href="courses.html"
+                  class="text-white text-[20px] font-semibold"
+                  >Личный кабинет</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trainers.html"
+                  class="text-white text-[20px] font-semibold underline"
+                  >Заявки на согласование</a
+                >
+              </li>
+
+              <div
+                class="w-full bg-gray-100 h-[0.5px] rounded-lg flex lg:hidden"></div>
+              <button
+                type="button"
+                class="cursor-pointer flex w-full lg:hidden justify-center rounded-full text-center py-3 text-xl font-semibold bg-white text-[#023047]">
+                Регистрация
+              </button>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="section-1 w-full py-10 md:py-14 bg-[#EEF4F6]">
+      <div
+        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative">
+        <div
+          class="w-full bg-white rounded-[10px] shadow-lg px-5 md:px-6 py-6 md:py-7">
+          <h1
+            class="text-[28px] md:text-[30px] font-semibold text-[#111827] mb-7">
+            Малдыбаева Назерке
+          </h1>
+
+          <article
+            class="w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] px-4 md:px-5 py-4 md:py-5">
+            <div class="space-y-4 md:space-y-5">
+              <div
+                id="ticket-status-rework"
+                class="hidden items-center rounded-full border border-[#F8B88A] bg-[#FFD9BF] px-4 py-1 text-[14px] font-medium text-[#9A561B] leading-none">
+                На доработке
+              </div>
+              <div>
+                <p
+                  class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                  Модуль:
+                </p>
+                <p
+                  class="mt-1 text-[17px] md:text-[18px] font-semibold leading-tight text-[#111827]">
+                  Применение Система региональных стандартов при планировании
+                  развития населённых пунктов
+                </p>
+              </div>
+
+              <div>
+                <p
+                  class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                  Тема проекта:
+                </p>
+                <p
+                  class="mt-1 text-[17px] md:text-[18px] font-semibold leading-tight text-[#111827]">
+                  Повышение эффективности управления социально-экономическим
+                  развитием региона через внедрение цифровых технологий и
+                  укрепление взаимодействия с местными сообществами.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <p
+                    class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                    Основной тренер:
+                  </p>
+                  <p
+                    class="mt-1 text-[17px] md:text-[18px] font-semibold text-[#111827]">
+                    Курметулы Н.
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                    Со-тренер:
+                  </p>
+                  <p
+                    class="mt-1 text-[17px] md:text-[18px] font-semibold text-[#111827]">
+                    Жолдасбаева С.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p
+                  class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                  Целевая группа и обоснование ее выбора:
+                </p>
+                <p
+                  class="mt-1 text-[17px] md:text-[18px] font-semibold leading-tight text-[#111827]">
+                  Целевая группа проекта включает руководителей местных
+                  исполнительных органов, акимов районов и сельских округов, а
+                  также представителей общественно-политических организаций.
+                  Выбор данной группы обоснован их ключевой ролью в принятии
+                  управленческих решений на местном уровне.
+                </p>
+              </div>
+
+              <div>
+                <p
+                  class="text-[15px] md:text-[16px] font-medium text-[#6B7280]">
+                  Описание социальной и (или) практической значимости:
+                </p>
+                <p
+                  class="mt-1 text-[17px] md:text-[18px] font-semibold leading-tight text-[#111827]">
+                  Проект направлен на повышение качества государственного
+                  управления на местном уровне и улучшение взаимодействия между
+                  государственными органами и населением.
+                </p>
+              </div>
+
+              <div
+                id="ticket-primary-actions"
+                class="pt-2 flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
+                <button
+                  type="button"
+                  id="ticket-reject-trigger"
+                  class="inline-flex items-center justify-center rounded-[10px] bg-[#E5484D] hover:bg-[#D13F44] text-white text-[17px] font-semibold px-7 py-2.5 min-w-[210px] transition-colors">
+                  Отклонить
+                </button>
+                <button
+                  type="button"
+                  id="ticket-approve-trigger"
+                  class="inline-flex items-center justify-center rounded-[10px] bg-[#155DFC] hover:bg-[#1249D4] text-white text-[17px] font-semibold px-7 py-2.5 min-w-[210px] transition-colors">
+                  Одобрить
+                </button>
+              </div>
+
+              <div id="ticket-reject-panel" class="hidden pt-1 space-y-3">
+                <div>
+                  <label
+                    for="ticket-reject-comment"
+                    class="text-[15px] md:text-[16px] font-medium text-[#6B7280]"
+                    >Комментарий:</label
+                  >
+                  <textarea
+                    id="ticket-reject-comment"
+                    rows="2"
+                    placeholder="Введите текст"
+                    class="mt-1 w-full resize-y rounded-[10px] border border-[#D1D5DB] bg-white px-3 py-2.5 text-[16px] text-[#111827] placeholder:text-[#9CA3AF] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"></textarea>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:justify-end gap-3">
+                  <button
+                    type="button"
+                    id="ticket-reject-cancel"
+                    class="inline-flex items-center justify-center rounded-[10px] border border-[#9CA3AF] bg-white text-[#374151] text-[16px] font-semibold px-6 py-2.5 min-w-[170px] transition-colors hover:bg-[#F9FAFB]">
+                    Отменить
+                  </button>
+                  <button
+                    type="button"
+                    id="ticket-reject-confirm"
+                    class="inline-flex items-center justify-center rounded-[10px] bg-[#E5484D] hover:bg-[#D13F44] text-white text-[16px] font-semibold px-6 py-2.5 min-w-[210px] transition-colors">
+                    Подтвердить отклонение
+                  </button>
+                </div>
+              </div>
+
+              <div
+                id="ticket-status-approved-row"
+                class="hidden justify-end pt-1">
+                <div
+                  id="ticket-status-approved"
+                  class="items-center gap-2 rounded-[10px] border border-[#34A853] bg-[#34A853] px-6 py-2.5 text-[16px] font-semibold text-white leading-none min-w-[210px] justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.75 8.75L6.25 12.25L13.25 4.75"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+
+                  Одобрено
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            id="ticket-approved-stages"
+            class="hidden mt-4 w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] p-3 md:p-4">
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[860px] text-[13px] text-[#111827]">
+                <thead>
+                  <tr class="border-b border-[#E5E7EB] text-[#374151]">
+                    <th class="px-2 py-2 text-left font-semibold">№</th>
+                    <th class="px-2 py-2 text-left font-semibold">
+                      Наименование мероприятия
+                    </th>
+                    <th class="px-2 py-2 text-left font-semibold">
+                      Ожидаемые результаты
+                    </th>
+                    <th class="px-2 py-2 text-left font-semibold">Сроки</th>
+                    <th class="px-2 py-2 text-left font-semibold">Участники</th>
+                    <th class="px-2 py-2 text-left font-semibold">
+                      Форма завершения
+                    </th>
+                    <th class="px-2 py-2 text-left font-semibold">Статус</th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="[&>tr]:border-b [&>tr:last-child]:border-b-0 [&>tr]:border-[#F1F5F9]">
+                  <tr>
+                    <td class="px-2 py-2 font-semibold">1</td>
+                    <td class="px-2 py-2 font-medium">
+                      Проведение анализа текущей ситуации
+                    </td>
+                    <td class="px-2 py-2 font-medium">
+                      План мероприятий с конкретными целями и KPI
+                    </td>
+                    <td class="px-2 py-2 font-medium">15.05.2026</td>
+                    <td class="px-2 py-2 font-medium">
+                      Мукушева Д., Турсынбаева Н.
+                    </td>
+                    <td class="px-2 py-2 font-medium">Аналитический отчет</td>
+                    <td class="px-2 py-2">
+                      <span
+                        class="inline-flex rounded-full bg-[#22C55E] px-2.5 py-1 text-[11px] font-semibold text-white"
+                        >Завершенный</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 font-semibold">2</td>
+                    <td class="px-2 py-2 font-medium">
+                      Реализация пилотного проекта
+                    </td>
+                    <td class="px-2 py-2 font-medium">
+                      Апробированная модель внедрения с метриками эффективности
+                    </td>
+                    <td class="px-2 py-2 font-medium">15.05.2026</td>
+                    <td class="px-2 py-2 font-medium">
+                      Ибрагимов Д., Жумабекова Г., Малдыбаева Н. Б.
+                    </td>
+                    <td class="px-2 py-2 font-medium">
+                      Итоговый отчет и видеопрезентация
+                    </td>
+                    <td class="px-2 py-2">
+                      <span
+                        class="inline-flex rounded-full bg-[#EF4444] px-2.5 py-1 text-[11px] font-semibold text-white"
+                        >Критический</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 font-semibold">3</td>
+                    <td class="px-2 py-2 font-medium">
+                      Разработка стратегии и плана действий
+                    </td>
+                    <td class="px-2 py-2 font-medium">
+                      Отчет с выявленными проблемами и возможностями
+                    </td>
+                    <td class="px-2 py-2 font-medium">15.05.2026</td>
+                    <td class="px-2 py-2 font-medium">
+                      Малдыбаева Н. Б., Курметулы Н., Жолдасбаева С.
+                    </td>
+                    <td class="px-2 py-2 font-medium">Презентация стратегии</td>
+                    <td class="px-2 py-2">
+                      <span
+                        class="inline-flex rounded-full bg-[#6B7280] px-2.5 py-1 text-[11px] font-semibold text-white"
+                        >Просроченный</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article
+            id="ticket-approved-results"
+            class="hidden mt-4 w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] px-4 md:px-5 py-4">
+            <div class="space-y-3 text-[14px] text-[#111827]">
+              <div>
+                <p class="font-medium text-[#6B7280]">Результат проекта:</p>
+                <p class="mt-1 font-semibold leading-relaxed">
+                  По итогам проекта ожидается формирование комплексной системы
+                  управления региональным развитием с применением современных
+                  цифровых инструментов, что позволит повысить эффективность
+                  принятия управленческих решений и улучшить качество
+                  предоставляемых услуг населению.
+                </p>
+              </div>
+              <div>
+                <p class="font-medium text-[#6B7280]">
+                  Презентация итогового проекта (объемом до 15 слайдов)
+                </p>
+                <a
+                  href="#"
+                  class="mt-0.5 inline-block font-semibold text-[#155DFC] underline underline-offset-2"
+                  >Презентация_проекта.pptx</a
+                >
+              </div>
+              <div>
+                <p class="font-medium text-[#6B7280]">Рефлексивный анализ</p>
+                <a
+                  href="#"
+                  class="mt-0.5 inline-block font-semibold text-[#155DFC] underline underline-offset-2"
+                  >Рефлексивный анализ.docx</a
+                >
+              </div>
+              <div>
+                <p class="font-medium text-[#6B7280]">
+                  Видео-презентация (продолжительностью до 3 минут)
+                </p>
+                <a
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  class="mt-0.5 inline-block font-semibold break-all text-[#155DFC] underline underline-offset-2"
+                  >https://www.youtube.com/watch?v=dQw4w9WgXcQ</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const primaryActions = document.getElementById(
+          'ticket-primary-actions',
+        );
+        const rejectPanel = document.getElementById('ticket-reject-panel');
+        const rejectTrigger = document.getElementById('ticket-reject-trigger');
+        const rejectCancel = document.getElementById('ticket-reject-cancel');
+        const rejectConfirm = document.getElementById('ticket-reject-confirm');
+        const approveTrigger = document.getElementById(
+          'ticket-approve-trigger',
+        );
+        const rejectComment = document.getElementById('ticket-reject-comment');
+        const statusRework = document.getElementById('ticket-status-rework');
+        const statusApprovedRow = document.getElementById(
+          'ticket-status-approved-row',
+        );
+        const statusApproved = document.getElementById(
+          'ticket-status-approved',
+        );
+        const approvedStages = document.getElementById(
+          'ticket-approved-stages',
+        );
+        const approvedResults = document.getElementById(
+          'ticket-approved-results',
+        );
+
+        function setRejectMode(isOpen) {
+          if (!primaryActions || !rejectPanel) return;
+          primaryActions.classList.toggle('hidden', isOpen);
+          rejectPanel.classList.toggle('hidden', !isOpen);
+          if (isOpen && rejectComment) rejectComment.focus();
+          if (!isOpen && rejectComment) rejectComment.value = '';
+        }
+
+        if (rejectTrigger) {
+          rejectTrigger.addEventListener('click', function () {
+            setRejectMode(true);
+          });
+        }
+
+        if (rejectCancel) {
+          rejectCancel.addEventListener('click', function () {
+            setRejectMode(false);
+          });
+        }
+
+        if (rejectConfirm) {
+          rejectConfirm.addEventListener('click', function () {
+            if (statusRework) {
+              statusRework.classList.remove('hidden');
+              statusRework.classList.add('inline-flex');
+            }
+            if (primaryActions) primaryActions.classList.add('hidden');
+            if (rejectPanel) rejectPanel.classList.add('hidden');
+          });
+        }
+
+        if (approveTrigger) {
+          approveTrigger.addEventListener('click', function () {
+            if (statusRework) statusRework.classList.add('hidden');
+            if (statusApprovedRow)
+              statusApprovedRow.classList.replace('hidden', 'flex');
+            if (statusApproved) {
+              statusApproved.classList.add('inline-flex');
+            }
+            if (primaryActions) primaryActions.classList.add('hidden');
+            if (rejectPanel) rejectPanel.classList.add('hidden');
+            if (approvedStages) approvedStages.classList.remove('hidden');
+            if (approvedResults) approvedResults.classList.remove('hidden');
+          });
+        }
+      });
+    </script>
+
+    <footer class="bg-[#023047] text-white pt-16 pb-8">
+      <div class="container px-3.5 md:px-0 md:w-full lg:w-full mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-white/20">
+          <div class="flex flex-col">
+            <a href="/" class="flex items-start gap-3 mb-4">
+              <img
+                src="images/icons/logo-white.svg"
+                alt="Академия"
+                class="h-12 w-auto" />
+              <span class="text-sm font-medium leading-tight max-w-[140px]"
+                >САЯСИ МЕНЕДЖМЕНТ АКАДЕМИЯСЫ</span
+              >
+            </a>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Академия политического менеджмента партии «AMANAT» -
+              профессиональное образование для будущих лидеров.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Быстрые ссылки</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >О Нас</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Курсы</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Тренеры</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Контакты</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Контакты</h3>
+            <ul class="space-y-3 text-sm text-white/80">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 3 16.284 3 8V5z" />
+                </svg>
+                <a href="tel:+77172000000" class="hover:text-white"
+                  >+7 (717) 200-00-00</a
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:info@academy-amanat.kz" class="hover:text-white"
+                  >info@academy-amanat.kz</a
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>г. Астана, ул. Мәңгілік Ел, 55/21</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Социальные сети</h3>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="Instagram">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="YouTube">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/80">
+          <p class="text-center sm:text-left">
+            © 2026 Академия политического менеджмента партии "AMANAT". Все права
+            защищены.
+          </p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+            <a href="#" class="hover:text-white">Условия использования</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

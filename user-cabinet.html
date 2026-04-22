@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User cabinet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="font-['Montserrat'] bg-[#EEF4F6]">
+    <div class="block1 md:pt-[20px]">
+      <header class="relative flex flex-col md:min-h-0">
+        <div
+          class="container py-[20px] px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto flex items-center justify-between w-full header__inner flex items-center justify-between">
+          <a href="/" class="header__logo">
+            <img
+              class="w-40 md:w-64"
+              src="images/icons/logo_kaz.svg.svg"
+              alt="logo" />
+          </a>
+
+          <div class="flex items-center gap-8">
+            <div class="relative z-[9999]">
+              <button
+                id="lang-toggle"
+                class="flex items-center gap-1 text-[#023047] text-sm font-medium"
+                type="button">
+                <span id="lang-label">РУС</span>
+                <span
+                  id="lang-arrow"
+                  class="inline-block translate-y-[1px] transition-transform duration-200"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4 6L8 10L12 6"
+                      stroke="#023047"
+                      stroke-width="1.33333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+
+              <div
+                id="lang-menu"
+                class="absolute right-0 mt-2 w-[80px] rounded-md border border-gray-200 bg-white shadow-lg py-1 text-sm text-[#023047] hidden">
+                <button
+                  type="button"
+                  data-lang="РУС"
+                  class="block w-full px-3 py-1 text-left hover:bg-gray-100">
+                  РУС
+                </button>
+                <button
+                  type="button"
+                  data-lang="ҚАЗ"
+                  class="block w-full px-3 py-1 text-left hover:bg-gray-100">
+                  ҚАЗ
+                </button>
+              </div>
+            </div>
+
+            <div class="menu_toggle lg:hidden flex items-center">
+              <button
+                type="button"
+                class="menu_toggle_open"
+                aria-label="Открыть меню">
+                <img src="images/icons/burger-menu.svg" alt="menu" />
+              </button>
+              <button
+                type="button"
+                class="menu_toggle_close hidden"
+                aria-label="Закрыть меню">
+                <img src="images/icons/close.svg" alt="close" />
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="cursor-pointer hidden lg:flex px-6 py-2 rounded-full text-white text-sm font-semibold bg-[linear-gradient(90deg,#023047_0%,#219EBC_100%)]">
+              Малдыбаева Н. Б.
+            </button>
+          </div>
+        </div>
+
+        <nav
+          class="menu_list bg-[#023047] w-full mt-4 flex-1 min-h-0 flex flex-col md:flex-initial hidden lg:flex fixed top-[84px] left-0 z-50 lg:static h-full">
+          <div
+            class="container flex-1 min-h-0 flex flex-col md:flex-initial px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto w-full">
+            <ul
+              class="flex flex-col lg:flex-row flex-1 lg:flex-initial lg:items-center gap-12 py-[30px] w-full">
+              <li>
+                <a
+                  href="courses.html"
+                  class="text-white text-[20px] font-semibold"
+                  >Личный кабинет</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trainers.html"
+                  class="text-white text-[20px] font-semibold underline"
+                  >Управление проектами</a
+                >
+              </li>
+
+              <div
+                class="w-full bg-gray-100 h-[0.5px] rounded-lg flex lg:hidden"></div>
+              <button
+                type="button"
+                class="cursor-pointer flex w-full lg:hidden justify-center rounded-full text-center py-3 text-xl font-semibold bg-white text-[#023047]">
+                Регистрация
+              </button>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="section-1 w-full py-10 md:py-14 bg-[#EEF4F6]">
+      <div
+        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative">
+        <div
+          class="w-full bg-white rounded-[10px] shadow-lg px-5 md:px-6 py-6 md:py-7">
+          <h1 class="text-[24px] font-semibold text-[#111827] mb-7">
+            Управление проектами
+          </h1>
+
+          <div class="space-y-4">
+            <article
+              class="w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] px-4 md:px-5 py-4">
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+                <div class="min-w-0">
+                  <p class="text-[15px] font-medium text-[#6B7280] mb-1.5">
+                    Малдыбаева Назерке
+                  </p>
+                  <p
+                    class="text-[18px] leading-tight font-semibold text-[#111827]">
+                    Повышение эффективности управления социально-экономическим
+                    развитием региона через внедрение цифровых технологий и
+                    укрепление взаимодействия с местными сообществами.
+                  </p>
+                </div>
+                <div class="w-full md:w-[220px] shrink-0 flex flex-col gap-2">
+                  <span
+                    class="self-end inline-flex items-center justify-center gap-1.5 rounded-full border border-[#DF7A84] bg-[#F9D5D9] text-[#8A2531] px-4 py-1.5 text-[13px] font-medium leading-none">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true">
+                      <path
+                        d="M7.41588 9.74957C7.52749 9.63757 7.58329 9.49894 7.58329 9.33366C7.58329 9.16838 7.52729 9.02994 7.41529 8.91833C7.30329 8.80671 7.16485 8.75071 6.99996 8.75033C6.83507 8.74994 6.69663 8.80594 6.58463 8.91833C6.47263 9.03071 6.41663 9.16916 6.41663 9.33366C6.41663 9.49816 6.47263 9.6368 6.58463 9.74957C6.69663 9.86235 6.83507 9.91816 6.99996 9.91699C7.16485 9.91583 7.30349 9.86041 7.41588 9.74957ZM6.41663 7.58366H7.58329V4.08366H6.41663V7.58366ZM6.99996 12.8337C6.19302 12.8337 5.43468 12.6804 4.72496 12.374C4.01524 12.0675 3.39788 11.652 2.87288 11.1274C2.34788 10.6028 1.93235 9.98544 1.62629 9.27533C1.32024 8.56521 1.16702 7.80688 1.16663 7.00033C1.16624 6.19377 1.31946 5.43544 1.62629 4.72533C1.93313 4.01521 2.34865 3.39785 2.87288 2.87324C3.3971 2.34863 4.01446 1.9331 4.72496 1.62666C5.43546 1.32021 6.19379 1.16699 6.99996 1.16699C7.80613 1.16699 8.56446 1.32021 9.27496 1.62666C9.98546 1.9331 10.6028 2.34863 11.127 2.87324C11.6513 3.39785 12.067 4.01521 12.3742 4.72533C12.6814 5.43544 12.8345 6.19377 12.8333 7.00033C12.8321 7.80688 12.6789 8.56521 12.3736 9.27533C12.0683 9.98544 11.6528 10.6028 11.127 11.1274C10.6013 11.652 9.9839 12.0677 9.27496 12.3746C8.56601 12.6814 7.80768 12.8344 6.99996 12.8337ZM6.99996 11.667C8.30274 11.667 9.40621 11.2149 10.3104 10.3107C11.2145 9.40657 11.6666 8.3031 11.6666 7.00033C11.6666 5.69755 11.2145 4.59408 10.3104 3.68991C9.40621 2.78574 8.30274 2.33366 6.99996 2.33366C5.69718 2.33366 4.59371 2.78574 3.68954 3.68991C2.78538 4.59408 2.33329 5.69755 2.33329 7.00033C2.33329 8.3031 2.78538 9.40657 3.68954 10.3107C4.59371 11.2149 5.69718 11.667 6.99996 11.667Z"
+                        fill="#910707" />
+                    </svg>
+                    Новая заявка
+                  </span>
+                  <a
+                    href="user-cabinet-ticket.html"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#155DFC] hover:bg-[#1249D4] text-white text-[16px] font-semibold py-2.5 transition-colors">
+                    Перейти
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] px-4 md:px-5 py-4">
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+                <div class="min-w-0">
+                  <p class="text-[15px] font-medium text-[#6B7280] mb-1.5">
+                    Танкеев Самат
+                  </p>
+                  <p
+                    class="text-[18px] leading-tight font-semibold text-[#111827]">
+                    Название второго проекта - Повышение эффективности
+                    управления социально-экономическим развитием региона через
+                    внедрение цифровых технологий и укрепление взаимодействия с
+                    местными сообществами.
+                  </p>
+                </div>
+                <div class="w-full md:w-[220px] shrink-0 flex flex-col gap-2">
+                  <span
+                    class="self-end inline-flex items-center justify-center gap-1.5 rounded-full border border-[#DF7A84] bg-[#F9D5D9] text-[#8A2531] px-4 py-1.5 text-[13px] font-medium leading-none">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true">
+                      <path
+                        d="M7.41588 9.74957C7.52749 9.63757 7.58329 9.49894 7.58329 9.33366C7.58329 9.16838 7.52729 9.02994 7.41529 8.91833C7.30329 8.80671 7.16485 8.75071 6.99996 8.75033C6.83507 8.74994 6.69663 8.80594 6.58463 8.91833C6.47263 9.03071 6.41663 9.16916 6.41663 9.33366C6.41663 9.49816 6.47263 9.6368 6.58463 9.74957C6.69663 9.86235 6.83507 9.91816 6.99996 9.91699C7.16485 9.91583 7.30349 9.86041 7.41588 9.74957ZM6.41663 7.58366H7.58329V4.08366H6.41663V7.58366ZM6.99996 12.8337C6.19302 12.8337 5.43468 12.6804 4.72496 12.374C4.01524 12.0675 3.39788 11.652 2.87288 11.1274C2.34788 10.6028 1.93235 9.98544 1.62629 9.27533C1.32024 8.56521 1.16702 7.80688 1.16663 7.00033C1.16624 6.19377 1.31946 5.43544 1.62629 4.72533C1.93313 4.01521 2.34865 3.39785 2.87288 2.87324C3.3971 2.34863 4.01446 1.9331 4.72496 1.62666C5.43546 1.32021 6.19379 1.16699 6.99996 1.16699C7.80613 1.16699 8.56446 1.32021 9.27496 1.62666C9.98546 1.9331 10.6028 2.34863 11.127 2.87324C11.6513 3.39785 12.067 4.01521 12.3742 4.72533C12.6814 5.43544 12.8345 6.19377 12.8333 7.00033C12.8321 7.80688 12.6789 8.56521 12.3736 9.27533C12.0683 9.98544 11.6528 10.6028 11.127 11.1274C10.6013 11.652 9.9839 12.0677 9.27496 12.3746C8.56601 12.6814 7.80768 12.8344 6.99996 12.8337ZM6.99996 11.667C8.30274 11.667 9.40621 11.2149 10.3104 10.3107C11.2145 9.40657 11.6666 8.3031 11.6666 7.00033C11.6666 5.69755 11.2145 4.59408 10.3104 3.68991C9.40621 2.78574 8.30274 2.33366 6.99996 2.33366C5.69718 2.33366 4.59371 2.78574 3.68954 3.68991C2.78538 4.59408 2.33329 5.69755 2.33329 7.00033C2.33329 8.3031 2.78538 9.40657 3.68954 10.3107C4.59371 11.2149 5.69718 11.667 6.99996 11.667Z"
+                        fill="#910707" />
+                    </svg>
+                    Новая заявка
+                  </span>
+                  <a
+                    href="user-cabinet-ticket.html"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#155DFC] hover:bg-[#1249D4] text-white text-[16px] font-semibold py-2.5 transition-colors">
+                    Перейти
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="w-full rounded-[10px] border border-[#E5E7EB] bg-white shadow-[0_3px_8px_rgba(15,23,42,0.08)] px-4 md:px-5 py-4">
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+                <div class="min-w-0">
+                  <p class="text-[15px] font-medium text-[#6B7280] mb-1.5">
+                    Шалкаров Альнур
+                  </p>
+                  <p
+                    class="text-[18px] leading-tight font-semibold text-[#111827]">
+                    Название третьего проекта - Повышение эффективности
+                    управления социально-экономическим развитием региона через
+                    внедрение цифровых технологий и укрепление взаимодействия с
+                    местными сообществами.
+                  </p>
+                </div>
+                <div class="w-full md:w-[220px] shrink-0 flex flex-col gap-2">
+                  <span
+                    class="self-end inline-flex items-center justify-center gap-1.5 rounded-full border border-[#DF7A84] bg-[#F9D5D9] text-[#8A2531] px-4 py-1.5 text-[13px] font-medium leading-none">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true">
+                      <path
+                        d="M7.41588 9.74957C7.52749 9.63757 7.58329 9.49894 7.58329 9.33366C7.58329 9.16838 7.52729 9.02994 7.41529 8.91833C7.30329 8.80671 7.16485 8.75071 6.99996 8.75033C6.83507 8.74994 6.69663 8.80594 6.58463 8.91833C6.47263 9.03071 6.41663 9.16916 6.41663 9.33366C6.41663 9.49816 6.47263 9.6368 6.58463 9.74957C6.69663 9.86235 6.83507 9.91816 6.99996 9.91699C7.16485 9.91583 7.30349 9.86041 7.41588 9.74957ZM6.41663 7.58366H7.58329V4.08366H6.41663V7.58366ZM6.99996 12.8337C6.19302 12.8337 5.43468 12.6804 4.72496 12.374C4.01524 12.0675 3.39788 11.652 2.87288 11.1274C2.34788 10.6028 1.93235 9.98544 1.62629 9.27533C1.32024 8.56521 1.16702 7.80688 1.16663 7.00033C1.16624 6.19377 1.31946 5.43544 1.62629 4.72533C1.93313 4.01521 2.34865 3.39785 2.87288 2.87324C3.3971 2.34863 4.01446 1.9331 4.72496 1.62666C5.43546 1.32021 6.19379 1.16699 6.99996 1.16699C7.80613 1.16699 8.56446 1.32021 9.27496 1.62666C9.98546 1.9331 10.6028 2.34863 11.127 2.87324C11.6513 3.39785 12.067 4.01521 12.3742 4.72533C12.6814 5.43544 12.8345 6.19377 12.8333 7.00033C12.8321 7.80688 12.6789 8.56521 12.3736 9.27533C12.0683 9.98544 11.6528 10.6028 11.127 11.1274C10.6013 11.652 9.9839 12.0677 9.27496 12.3746C8.56601 12.6814 7.80768 12.8344 6.99996 12.8337ZM6.99996 11.667C8.30274 11.667 9.40621 11.2149 10.3104 10.3107C11.2145 9.40657 11.6666 8.3031 11.6666 7.00033C11.6666 5.69755 11.2145 4.59408 10.3104 3.68991C9.40621 2.78574 8.30274 2.33366 6.99996 2.33366C5.69718 2.33366 4.59371 2.78574 3.68954 3.68991C2.78538 4.59408 2.33329 5.69755 2.33329 7.00033C2.33329 8.3031 2.78538 9.40657 3.68954 10.3107C4.59371 11.2149 5.69718 11.667 6.99996 11.667Z"
+                        fill="#910707" />
+                    </svg>
+                    Новая заявка
+                  </span>
+                  <a
+                    href="user-cabinet-ticket.html"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#155DFC] hover:bg-[#1249D4] text-white text-[16px] font-semibold py-2.5 transition-colors">
+                    Перейти
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-[#023047] text-white pt-16 pb-8">
+      <div class="container px-3.5 md:px-0 md:w-full lg:w-full mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-white/20">
+          <div class="flex flex-col">
+            <a href="/" class="flex items-start gap-3 mb-4">
+              <img
+                src="images/icons/logo-white.svg"
+                alt="Академия"
+                class="h-12 w-auto" />
+              <span class="text-sm font-medium leading-tight max-w-[140px]"
+                >САЯСИ МЕНЕДЖМЕНТ АКАДЕМИЯСЫ</span
+              >
+            </a>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Академия политического менеджмента партии «AMANAT» -
+              профессиональное образование для будущих лидеров.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Быстрые ссылки</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >О Нас</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Курсы</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Тренеры</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white/80 hover:text-white text-sm"
+                  >Контакты</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Контакты</h3>
+            <ul class="space-y-3 text-sm text-white/80">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 3 16.284 3 8V5z" />
+                </svg>
+                <a href="tel:+77172000000" class="hover:text-white"
+                  >+7 (717) 200-00-00</a
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:info@academy-amanat.kz" class="hover:text-white"
+                  >info@academy-amanat.kz</a
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-5 h-5 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>г. Астана, ул. Мәңгілік Ел, 55/21</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Социальные сети</h3>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="Instagram">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                aria-label="YouTube">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/80">
+          <p class="text-center sm:text-left">
+            © 2026 Академия политического менеджмента партии "AMANAT". Все права
+            защищены.
+          </p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+            <a href="#" class="hover:text-white">Условия использования</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
