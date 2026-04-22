@@ -798,12 +798,18 @@
                         <div
                           class="bg-white rounded-[12px] border border-[#DDE2E8] p-5 md:p-6 space-y-5"
                         >
+                          <span
+                              data-project-review-status
+                              class="hidden text-[12px] font-semibold px-3 py-1 rounded-lg bg-[#FDF0CD] text-[#8A6400] whitespace-nowrap"
+                              >На проверке</span>
                           <div class="space-y-2 flex items-center justify-between gap-3">
+                            
                             <label
                               for="stage3-module"
                               class="block text-[15px] font-semibold text-[#111827]"
                               >Выберите модуль:</label
                             >
+                            
                             <div class="relative flex-1">
                               <select
                                 id="stage3-module"
@@ -976,6 +982,7 @@
 
                           <button
                             type="button"
+                            data-send-project-review
                             class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
                           >
                             Отправить на проверку
@@ -988,6 +995,24 @@
                         <div
                           class="bg-white rounded-[12px] border border-[#E5E7EB] overflow-hidden"
                         >
+                          <div class="px-4 md:px-5 pt-4">
+                            <div
+                              data-stage-review-status-wrap
+                              class="hidden flex-col items-start gap-2"
+                            >
+                              <span
+                                class="inline-flex text-[12px] font-semibold px-3 py-1 rounded-lg bg-[#FCE7EB] text-[#9F1239] whitespace-nowrap"
+                                >Отклонено</span
+                              >
+                              <p
+                                class="text-[12px] md:text-[13px] font-medium text-[#9F1239] leading-relaxed"
+                              >
+                                Необходимо доработать результат проекта: уточнить
+                                показатели эффективности и добавить конкретные примеры
+                                внедрения цифровых технологий.
+                              </p>
+                            </div>
+                          </div>
                           <div class="px-4 md:px-5 py-4 border-b border-[#E5E7EB]">
                             <h2
                               class="text-lg font-bold text-[#101828]"
@@ -1380,6 +1405,7 @@
                             </button>
                             <button
                               type="button"
+                              data-send-stage-review
                               class="w-full py-3 rounded-lg bg-[#155DFC] text-white text-[14px] font-semibold hover:bg-[#1249d4] transition-colors"
                             >
                               Отправить на проверку
@@ -1396,6 +1422,11 @@
                           >
                             Результат проекта:
                           </h2>
+                          <span
+                            data-result-approved-status
+                            class="hidden text-[12px] font-semibold px-3 py-1 rounded-lg bg-[#DCFCE7] text-[#166534] w-fit"
+                            >Одобрено</span
+                          >
                         </div>
                         <textarea
                           rows="3"
@@ -1629,6 +1660,9 @@
       const toastEl = document.getElementById("app-toast");
       let toastHideTimer;
       let toastRemoveHiddenTimer;
+      const resultApprovedStatusEl = document.querySelector(
+        "[data-result-approved-status]"
+      );
 
       function showToast(message) {
         if (!toastEl) return;
@@ -1654,6 +1688,11 @@
       const saveConclusionsBtn = document.querySelector("[data-save-conclusions]");
       if (saveConclusionsBtn) {
         saveConclusionsBtn.addEventListener("click", function () {
+          if (resultApprovedStatusEl) {
+            resultApprovedStatusEl.classList.remove("hidden");
+            resultApprovedStatusEl.classList.add("inline-flex");
+          }
+          saveConclusionsBtn.classList.add("hidden");
           showToast("Данные успешно сохранены");
         });
       }
@@ -1721,10 +1760,23 @@
       const addStageSubmitBtn = addStageForm
         ? addStageForm.querySelector('button[type="submit"]')
         : null;
+      const sendProjectReviewBtn = document.querySelector(
+        "[data-send-project-review]"
+      );
+      const projectReviewStatusEl = document.querySelector(
+        "[data-project-review-status]"
+      );
+      const sendStageReviewBtn = document.querySelector(
+        "[data-send-stage-review]"
+      );
+      const stageReviewStatusWrap = document.querySelector(
+        "[data-stage-review-status-wrap]"
+      );
       const projectTopicInput = document.getElementById("stage3-project-topic");
       const stageTopicTitle = document.querySelector("[data-stage-topic-title]");
       const stagesTbody = document.getElementById("stages-tbody");
       let editingStageRow = null;
+      let draggedStageRow = null;
       const moduleSelect = document.getElementById("stage3-module");
       const mainTrainerSelect = document.getElementById("stage3-main-trainer");
 
@@ -1767,6 +1819,24 @@
       if (projectTopicInput && stageTopicTitle) {
         projectTopicInput.addEventListener("input", syncStageTopicTitle);
         syncStageTopicTitle();
+      }
+
+      if (sendProjectReviewBtn && projectReviewStatusEl) {
+        sendProjectReviewBtn.addEventListener("click", function () {
+          projectReviewStatusEl.classList.remove("hidden");
+          projectReviewStatusEl.classList.add("inline-flex");
+          sendProjectReviewBtn.classList.add("hidden");
+          showToast("Раздел отправлен на проверку");
+        });
+      }
+
+      if (sendStageReviewBtn && stageReviewStatusWrap) {
+        sendStageReviewBtn.addEventListener("click", function () {
+          stageReviewStatusWrap.classList.remove("hidden");
+          stageReviewStatusWrap.classList.add("flex");
+          sendStageReviewBtn.classList.add("hidden");
+          showToast("Раздел отправлен на проверку");
+        });
       }
 
       function syncBodyScrollLock() {
@@ -1865,6 +1935,59 @@
         stagesTbody.querySelectorAll("tr").forEach((tr, i) => {
           const numCell = tr.querySelector("td:first-child");
           if (numCell) numCell.textContent = String(i + 1);
+        });
+      }
+
+      function makeStageRowDraggable(tr) {
+        if (!tr) return;
+        tr.setAttribute("draggable", "true");
+        tr.classList.add("cursor-move");
+
+        tr.addEventListener("dragstart", function (e) {
+          const target = e.target;
+          if (target instanceof Element && target.closest("button")) {
+            e.preventDefault();
+            return;
+          }
+          draggedStageRow = tr;
+          tr.classList.add("opacity-50");
+          if (e.dataTransfer) {
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData("text/plain", "");
+          }
+        });
+
+        tr.addEventListener("dragend", function () {
+          tr.classList.remove("opacity-50");
+          draggedStageRow = null;
+        });
+      }
+
+      function initStageRowsDnD() {
+        if (!stagesTbody) return;
+        stagesTbody.querySelectorAll("tr").forEach(function (tr) {
+          makeStageRowDraggable(tr);
+        });
+
+        stagesTbody.addEventListener("dragover", function (e) {
+          if (!draggedStageRow) return;
+          e.preventDefault();
+          const targetRow =
+            e.target instanceof Element ? e.target.closest("tr") : null;
+          if (!targetRow || targetRow === draggedStageRow) return;
+          const rect = targetRow.getBoundingClientRect();
+          const insertBefore = e.clientY < rect.top + rect.height / 2;
+          if (insertBefore) {
+            stagesTbody.insertBefore(draggedStageRow, targetRow);
+          } else {
+            stagesTbody.insertBefore(draggedStageRow, targetRow.nextSibling);
+          }
+        });
+
+        stagesTbody.addEventListener("drop", function (e) {
+          if (!draggedStageRow) return;
+          e.preventDefault();
+          renumberStageRows();
         });
       }
 
@@ -2186,6 +2309,7 @@
         tr.appendChild(randomApprovalCell());
         tr.appendChild(randomExecutionCell());
         tr.appendChild(stageActionsCell());
+        makeStageRowDraggable(tr);
 
         stagesTbody.appendChild(tr);
         renumberStageRows();
@@ -2246,6 +2370,7 @@
       }
 
       if (stagesTbody) {
+        initStageRowsDnD();
         stagesTbody.addEventListener("click", function (e) {
           const target = e.target;
           if (!(target instanceof Element)) return;
@@ -2322,31 +2447,34 @@
           srs: {
             theme: "Село без дефицитов: дороги, вода, услуги.",
             body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Село без дефицитов: дороги, вода, услуги.</span></p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести комплексную оценку обеспеченности выбранной территории социальными и инфраструктурными благами в соответствии с системой региональных стандартов (СРС), выявить имеющиеся дефициты и разработать обоснованные меры по их устранению.</span></p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-2 leading-relaxed">По итогам анализа подготовить предложения для включения:</p>
-              <ul class="list-disc pl-5 space-y-1.5 text-[14px] md:text-[15px] leading-relaxed">
-                <li>в план развития территории;</li>
-                <li>в бюджетную заявку с указанием приоритетных направлений финансирования.</li>
-              </ul>
-              <p class="text-[14px] md:text-[15px] font-normal mt-4 leading-relaxed">Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Село без дефицитов: дороги, вода, услуги.</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители местных исполнительных органов, акимы сельских округов, специалисты отделов развития территорий. Выбор обусловлен их прямой ответственностью за планирование и реализацию мер по обеспечению территории необходимой инфраструктурой и социальными благами.</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
+              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести комплексную оценку обеспеченности выбранной территории социальными и инфраструктурными благами в соответствии с системой региональных стандартов (СРС), выявить имеющиеся дефициты и разработать обоснованные меры по их устранению. По итогам анализа подготовить предложения для включения в план развития территории и в бюджетную заявку с указанием приоритетных направлений финансирования. Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
             `,
           },
           taxes: {
             theme: "Больше доходов — лучше условия",
             body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Больше доходов — лучше условия</span></p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести анализ налоговых поступлений на территории села (виды налогов, источники, уровень собираемости), выявить резервы для увеличения доходной базы и определить меры по ее расширению (легализация деятельности, поддержка МСБ, учет объектов налогообложения)</span></p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-3 leading-relaxed">На основе полученных данных разработать конкретные предложения по направлению дополнительных поступлений на приоритетные нужды села (инфраструктура, благоустройство, социальные объекты) с последующим включением в план развития и бюджет.</p>
-              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Больше доходов - лучше условия</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители налоговых служб, акимы районов и сельских округов, предприниматели малого и среднего бизнеса. Выбор обусловлен их ключевой ролью в формировании налоговой базы территории и необходимостью взаимодействия между органами власти и бизнес-сообществом.</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
+              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести анализ налоговых поступлений на территории села (виды налогов, источники, уровень собираемости), выявить резервы для увеличения доходной базы и определить меры по ее расширению (легализация деятельности, поддержка МСБ, учет объектов налогообложения). На основе полученных данных разработать конкретные предложения по направлению дополнительных поступлений на приоритетные нужды села (инфраструктура, благоустройство, социальные объекты) с последующим включением в план развития и бюджет. Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
             `,
           },
           budget: {
             theme: "Бюджет для жителей",
             body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Тема: <span class="font-normal">Бюджет для жителей</span></p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-3 leading-relaxed">Краткое обоснование: <span class="font-normal">Провести анализ формирования и исполнения местного бюджета (доходы, расходы, приоритеты), определить ключевые потребности населения и обеспечить перераспределение средств на наиболее востребованные направления (инфраструктура, ЖКХ, социальные услуги).</span></p>
-              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Обеспечить прозрачность бюджетного процесса: организовать информирование (лидерство и коммуникация) и вовлечение жителей в обсуждение приоритетов, усилить контроль за целевым и эффективным использованием средств, а также включить приоритетные проекты в план развития территории.</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Бюджет для жителей</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
+              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители финансовых отделов, акимы всех уровней, представители маслихатов. Выбор обусловлен их участием в формировании, распределении и контроле исполнения бюджета на всех уровнях бюджетной вертикали.</p>
+              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
+              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести анализ формирования и исполнения местного бюджета (доходы, расходы, приоритеты), определить ключевые потребности населения и обеспечить перераспределение средств на наиболее востребованные направления (инфраструктура, ЖКХ, социальные услуги). Обеспечить прозрачность бюджетного процесса: организовать информирование (лидерство и коммуникация) и вовлечение жителей в обсуждение приоритетов, усилить контроль за целевым и эффективным использованием средств, а также включить приоритетные проекты в план развития территории.</p>
             `,
           },
         };
