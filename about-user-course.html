@@ -788,12 +788,12 @@
                     <div
                       class="flex flex-col gap-8 px-4 pb-6 pt-4 md:px-5 md:pb-8"
                     >
-                      <!-- Описание проекта -->
+                      <!-- Проектная работа -->
                       <section class="w-full">
                         <h2
                           class="text-[20px] md:text-[22px] font-semibold text-[#101828] mb-4"
                         >
-                          Описание проекта
+                        Проектная работа
                         </h2>
                         <div
                           class="bg-white rounded-[12px] border border-[#DDE2E8] p-5 md:p-6 space-y-5"
@@ -816,8 +816,7 @@
                                 class="w-full appearance-none rounded-xl border border-[#D1D5DB] bg-white py-3 pl-3 pr-10 text-[14px] font-semibold text-[#111827] outline-none focus:border-[#155DFC] focus:ring-1 focus:ring-[#155DFC]"
                               >
                                 <option selected>
-                                  Применение Система региональных стандартов при
-                                  планировании развития населённых пунктов
+                                  Управление развитием регионов и местных сообществ 
                                 </option>
                                 <option>
                                   Налоги для развития: от базы поступлений к
@@ -943,13 +942,13 @@
                             <div class="space-y-1.5">
                               <label
                                 class="block text-[15px] font-semibold text-[#111827]"
-                                >Ваш куратор:</label
+                                >Ваши кураторы:</label
                               >
                               <p class="text-[14px] text-[#334155]">
-                                Региональный куратор: Иванов Иван
+                                Куратор от региона: Иванов Иван, тел.: +7 777 777 7777, эл.почта: info@cpm.kz 
                               </p>
                               <p class="text-[14px] text-[#334155]">
-                                Куратор ЦА: Петрова Мария
+                                Куратор от Академии: Джон Доу, тел.: +7 777 777 7777, эл.почта: info@academy-amanat.kz]
                               </p>
                             </div>
                           </div>
@@ -958,6 +957,19 @@
                             <label
                               class="block text-[15px] font-semibold text-[#111827]"
                               >Целевая группа и обоснование ее выбора</label
+                            >
+                            <textarea
+                              rows="3"
+                              class="w-full resize-y rounded-xl border border-[#D1D5DB] bg-white p-3 text-[14px] font-semibold text-[#111827] outline-none"
+                            >
+Целевая группа проекта включает руководителей местных исполнительных органов, акимов районов и сельских округов, а также представителей общественно-политических организаций. Выбор данной группы обоснован их ключевой ролью в принятии управленческих решений на местном уровне.</textarea
+                            >
+                          </div>
+
+                          <div class="space-y-2">
+                            <label
+                              class="block text-[15px] font-semibold text-[#111827]"
+                              >Обоснование выбора целевой группы</label
                             >
                             <textarea
                               rows="3"
@@ -985,7 +997,7 @@
                             data-send-project-review
                             class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
                           >
-                            Отправить на проверку
+                          Отправить на проверку основному тренеру
                           </button>
                         </div>
                       </section>
@@ -1070,12 +1082,7 @@
                                   <th
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[140px]"
                                   >
-                                    Статус одобрения
-                                  </th>
-                                  <th
-                                    class="px-3 py-3 md:px-4 font-semibold text-[#111827] whitespace-nowrap"
-                                  >
-                                    Статус проведения
+                                    Статус
                                   </th>
                                   <th
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] min-w-[88px] text-center"
@@ -1085,7 +1092,7 @@
                                 </tr>
                               </thead>
                               <tbody id="stages-tbody">
-                                <tr class="border-b border-[#E5E7EB]">
+                                <tr class="border-b border-[#E5E7EB]" data-status-override="critical">
                                   <td
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center"
                                   >
@@ -1119,15 +1126,8 @@
                                       +
                                     </button>
                                   </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <span
-                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]"
-                                      >Одобрено</span>
-                                  </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <span
-                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DBEAFE] text-[#1E40AF]"
-                                      >Проведено</span>
+                                  <td class="px-3 py-3 md:px-4 align-top" data-stage-status>
+                                    —
                                   </td>
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
@@ -1182,7 +1182,7 @@
                                     </div>
                                   </td>
                                 </tr>
-                                <tr class="border-b border-[#E5E7EB]">
+                                <tr class="border-b border-[#E5E7EB]" data-status-override="overdue">
                                   <td
                                     class="px-3 py-3 md:px-4 font-semibold text-[#111827] align-top text-center"
                                   >
@@ -1216,23 +1216,8 @@
                                       +
                                     </button>
                                   </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <div class="flex flex-col items-start gap-1.5 max-w-[220px]">
-                                      <span
-                                        class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FCE7F3] text-[#9D174D]"
-                                        >Не одобрено</span>
-                                      <p
-                                        class="text-[11px] md:text-[12px] font-medium leading-snug text-[#9D174D]"
-                                      >
-                                        Необходимо уточнить сроки и конкретизировать
-                                        показатели эффективности
-                                      </p>
-                                    </div>
-                                  </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <span
-                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FEF9C3] text-[#854D0E]"
-                                      >Не проведено</span>
+                                  <td class="px-3 py-3 md:px-4 align-top" data-stage-status>
+                                    —
                                   </td>
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
@@ -1322,15 +1307,8 @@
                                       +
                                     </button>
                                   </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <span
-                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]"
-                                      >Одобрено</span>
-                                  </td>
-                                  <td class="px-3 py-3 md:px-4 align-top">
-                                    <span
-                                      class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FEF9C3] text-[#854D0E]"
-                                      >Не проведено</span>
+                                  <td class="px-3 py-3 md:px-4 align-top" data-stage-status>
+                                    —
                                   </td>
                                   <td
                                     class="px-3 py-3 md:px-4 align-top text-center"
@@ -1394,21 +1372,14 @@
                               data-add-stage-open
                               class="w-full py-3 rounded-lg border border-[#155DFC] text-[#155DFC] text-[14px] font-semibold bg-white hover:bg-[#F5F9FF] transition-colors"
                             >
-                              Добавить этап
+                            Добавить мероприятие
                             </button>
                             <button
                               type="button"
                               data-download-stage-pdf
                               class="w-full py-3 rounded-lg bg-[#6B7280] text-white text-[14px] font-semibold hover:bg-[#4B5563] transition-colors"
                             >
-                              Скачать pdf файл для согласования
-                            </button>
-                            <button
-                              type="button"
-                              data-send-stage-review
-                              class="w-full py-3 rounded-lg bg-[#155DFC] text-white text-[14px] font-semibold hover:bg-[#1249d4] transition-colors"
-                            >
-                              Отправить на проверку
+                              Скачать файл
                             </button>
                           </div>
                         </div>
@@ -1598,14 +1569,6 @@
                             </div>
                           </div>
                         </div>
-
-                        <button
-                          type="button"
-                          data-save-conclusions
-                          class="w-full py-3.5 rounded-xl bg-[#155DFC] text-white text-[15px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
-                        >
-                          Отправить на проверку
-                        </button>
                       </section>
                     </div>
                   </div>
@@ -1856,12 +1819,12 @@
         if (addStageTitleEl) {
           addStageTitleEl.textContent = isEdit
             ? "Редактировать этап"
-            : "Добавить этап";
+            : "Добавить мероприятие";
         }
         if (addStageSubmitBtn) {
           addStageSubmitBtn.textContent = isEdit
             ? "Сохранить изменения"
-            : "Добавить этап";
+            : "Добавить мероприятие";
         }
       }
 
@@ -1910,6 +1873,7 @@
         tds[3].textContent = data.dateRu || "—";
         tds[4].textContent = data.participants || "—";
         tds[5].textContent = data.forms || "—";
+        updateStageStatusForRow(tr);
       }
 
       function openEditStageModal(tr) {
@@ -1991,53 +1955,101 @@
         });
       }
 
-      function randomApprovalCell() {
-        const td = document.createElement("td");
-        td.className = "px-3 py-3 md:px-4 align-top";
-        const approved = Math.random() < 0.5;
-        if (approved) {
-          const span = document.createElement("span");
-          span.className =
-            "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#DCFCE7] text-[#166534]";
-          span.textContent = "Одобрено";
-          td.appendChild(span);
-        } else {
-          const wrap = document.createElement("div");
-          wrap.className =
-            "flex flex-col items-start gap-1.5 max-w-[220px]";
-          const span = document.createElement("span");
-          span.className =
-            "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold bg-[#FCE7F3] text-[#9D174D]";
-          span.textContent = "Не одобрено";
-          wrap.appendChild(span);
-          if (Math.random() < 0.5) {
-            const p = document.createElement("p");
-            p.className =
-              "text-[11px] md:text-[12px] font-medium leading-snug text-[#9D174D]";
-            p.textContent =
-              "Требуется уточнение сроков и показателей эффективности.";
-            wrap.appendChild(p);
-          }
-          td.appendChild(wrap);
-        }
-        return td;
+      function parseDateRuValue(dateRu) {
+        if (!dateRu || !/^\d{2}\.\d{2}\.\d{4}$/.test(dateRu)) return null;
+        const [d, m, y] = dateRu.split(".").map(Number);
+        if (!d || !m || !y) return null;
+        return new Date(y, m - 1, d, 12, 0, 0, 0);
       }
 
-      function randomExecutionCell() {
-        const td = document.createElement("td");
-        td.className = "px-3 py-3 md:px-4 align-top";
+      function getUnifiedStageStatus(dateRu, hasFile) {
+        if (hasFile) {
+          return { text: "Завершенный", className: "bg-[#22C55E] text-white" };
+        }
+        const deadline = parseDateRuValue(dateRu);
+        if (!deadline) return null;
+        const now = new Date();
+        const today = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          12,
+          0,
+          0,
+          0
+        );
+        const daysLeft = Math.ceil((deadline.getTime() - today.getTime()) / 86400000);
+        if (daysLeft < 0) {
+          return { text: "Просроченный", className: "bg-[#6B7280] text-white" };
+        }
+        if (daysLeft <= 3) {
+          return { text: "Критический", className: "bg-[#EF4444] text-white" };
+        }
+        return { text: "В работе", className: "bg-[#DBEAFE] text-[#1E40AF]" };
+      }
+
+      function getStatusByOverride(override) {
+        if (!override) return null;
+        if (override === "done") {
+          return { text: "Завершенный", className: "bg-[#22C55E] text-white" };
+        }
+        if (override === "critical") {
+          return { text: "Критический", className: "bg-[#EF4444] text-white" };
+        }
+        if (override === "overdue") {
+          return { text: "Просроченный", className: "bg-[#6B7280] text-white" };
+        }
+        if (override === "in-progress") {
+          return { text: "В работе", className: "bg-[#DBEAFE] text-[#1E40AF]" };
+        }
+        return null;
+      }
+
+      function renderStageStatusCell(statusTd, dateRu, hasFile) {
+        if (!statusTd) return;
+        statusTd.innerHTML = "";
+        statusTd.className = "px-3 py-3 md:px-4 align-top";
+        const status = getUnifiedStageStatus(dateRu, hasFile);
         const span = document.createElement("span");
         span.className =
-          "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold ";
-        if (Math.random() < 0.5) {
-          span.className += "bg-[#DBEAFE] text-[#1E40AF]";
-          span.textContent = "Проведено";
-        } else {
-          span.className += "bg-[#FEF9C3] text-[#854D0E]";
-          span.textContent = "Не проведено";
+          "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold " +
+          (status ? status.className : "bg-[#DBEAFE] text-[#1E40AF]");
+        span.textContent = status ? status.text : "В работе";
+        statusTd.appendChild(span);
+      }
+
+      function updateStageStatusForRow(tr) {
+        if (!tr) return;
+        const tds = tr.querySelectorAll("td");
+        if (tds.length < 8) return;
+        const dateRu = (tds[3].textContent || "").trim();
+        const fileTd = tds[6];
+        const statusTd = tds[7];
+        const hasFile = !!(
+          fileTd &&
+          (fileTd.dataset.fileName ||
+            fileTd.querySelector('button[aria-label="Открыть файл"]'))
+        );
+        const forcedStatus = getStatusByOverride(tr.dataset.statusOverride);
+        if (forcedStatus) {
+          renderStageStatusCell(statusTd, "", false);
+          const span = statusTd.querySelector("span");
+          if (span) {
+            span.className =
+              "inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] md:text-[12px] font-semibold " +
+              forcedStatus.className;
+            span.textContent = forcedStatus.text;
+          }
+          return;
         }
-        td.appendChild(span);
-        return td;
+        renderStageStatusCell(statusTd, dateRu, hasFile);
+      }
+
+      function updateAllStageStatuses() {
+        if (!stagesTbody) return;
+        stagesTbody.querySelectorAll("tr").forEach(function (tr) {
+          updateStageStatusForRow(tr);
+        });
       }
 
       function fileAttachCell() {
@@ -2067,6 +2079,8 @@
         btn.setAttribute("aria-label", "Прикрепить файл");
         btn.textContent = "+";
         td.appendChild(btn);
+        const tr = td.closest("tr");
+        if (tr) updateStageStatusForRow(tr);
       }
 
       function renderAttachedFileCell(td, fileName) {
@@ -2105,6 +2119,8 @@
         wrap.appendChild(actions);
         wrap.appendChild(name);
         td.appendChild(wrap);
+        const tr = td.closest("tr");
+        if (tr) updateStageStatusForRow(tr);
       }
 
       function attachFileToStage(td) {
@@ -2306,12 +2322,15 @@
         tr.appendChild(tdPart);
         tr.appendChild(tdForms);
         tr.appendChild(fileAttachCell());
-        tr.appendChild(randomApprovalCell());
-        tr.appendChild(randomExecutionCell());
+        const tdStatus = document.createElement("td");
+        tdStatus.className = "px-3 py-3 md:px-4 align-top";
+        tdStatus.textContent = "—";
+        tr.appendChild(tdStatus);
         tr.appendChild(stageActionsCell());
         makeStageRowDraggable(tr);
 
         stagesTbody.appendChild(tr);
+        updateStageStatusForRow(tr);
         renumberStageRows();
         refreshStage3AccordionHeight();
       }
@@ -2371,6 +2390,7 @@
 
       if (stagesTbody) {
         initStageRowsDnD();
+        updateAllStageStatuses();
         stagesTbody.addEventListener("click", function (e) {
           const target = e.target;
           if (!(target instanceof Element)) return;
@@ -2441,50 +2461,35 @@
         const container = document.querySelector("[data-example-content]");
         if (!container) return;
 
-        const selected = getSelectedModuleText().toLowerCase();
+        const exampleBody = `
+          <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">«Баянды - вода без перебоев»: устойчивое водоснабжение.</p>
+          <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа:</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Население с. Баянды (около 5 000 чел.) Мунайлинского района, Мангистауской области, однако первоочередными бенефициарами выступают следующие группы: многодетные семьи с детьми до 14 лет, дети дошкольного и школьного возраста, пожилые жители и инвалиды, медицинский персонал ФАП.</p>
+          <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Обоснование выбора целевой группы:</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-4 leading-relaxed">Большинство жителей Баянды - переселенцы, прибывшие в регион без накоплений и с ограниченным доступом к социальной поддержке. Привозная вода от частных водовозов стоит в среднем 800-1 200 тенге за 1 м3, тогда как централизованная подача обходилась бы в 80-100 тенге/м3.</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-4 leading-relaxed">Среднемесячные расходы малообеспеченной и многодетной семьи на воду составляют 8 000-15 000 тенге - это сопоставимо с недельным бюджетом на питание. Устранение переплаты немедленно высвобождает ресурс для питания, образования и накоплений.</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Дети и пожилые наиболее уязвимы: по данным Мангистауского областного управления здравоохранения, Мунайлинский район входит в топ-3 по заболеваемости острыми кишечными инфекциями среди сельских территорий области.</p>
+          <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
+          <p class="text-[14px] md:text-[15px] font-normal mb-4 leading-relaxed">Мунайлинский район создавался в 2007 году именно для решения проблем переселенцев, однако базовая инфраструктура так и не была приведена в соответствие с реальной численностью жителей. При населении около 5 000 человек и нормативной потребности в воде 50 л/чел./сутки суточная потребность составляет 250 м3 - действующая установка покрывает ее менее чем на 40%. При реализации проекта ожидается:</p>
+          <ul class="list-decimal pl-5 space-y-2 mb-5 text-[14px] md:text-[15px] font-normal leading-relaxed">
+            <li>Снижение заболеваемости: круглосуточная подача воды устраняет необходимость хранить воду в открытых емкостях. Ожидаемое снижение числа случаев ОКИ у детей до 14 лет - не менее 40% в первый год после завершения проекта.</li>
+            <li>Интеграция переселенцев: решение бытовой проблемы снижает отток обратно в Актау и стабилизирует демографию района. Доставка воды - преимущественно обязанность женщин. Автоматизированное водоснабжение высвобождает 1,5-2 часа в день, которые можно направить на занятость, обучение или воспитание детей.</li>
+            <li>Качество образования: школа и детский сад с бесперебойной водой соответствуют требованиям СанПиН, сокращают пропуски по болезни и повышают привлекательность работы для педагогов по программе «С дипломом в село».</li>
+            <li>Доверие к власти: долгожданное решение водного вопроса формирует позитивное восприятие государственных институтов у нового поколения граждан-репатриантов.</li>
+          </ul>
+          <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Поэтапный алгоритм выполнения проекта:</p>
+          <ol class="list-decimal pl-5 space-y-1.5 text-[14px] md:text-[15px] font-normal leading-relaxed">
+            <li>Разработка и согласование поэтапного алгоритма выполнения проекта.</li>
+            <li>Разработка ПСД, экспертиза, получение разрешений. Диагностика действующих сетей. Тендер на поставку оборудования.</li>
+            <li>Монтаж второй опреснительной установки (3 000 м3/сут). Строительство резервуара в Баянды-1. Замена 3 км аварийных труб.</li>
+            <li>Резервуары в Баянды-2 и Баянды-3. Прокладка 5,5 км новых разводящих сетей. Монтаж IoT-датчиков.</li>
+            <li>Установка солнечных панелей. Запуск диспетчерского пульта акима. Тестирование приложения «Баянды-Су».</li>
+            <li>Круглосуточный режим подачи по всем районам. Обучение техников. Годовой мониторинг качества воды. Отчетность перед жителями.</li>
+          </ol>
+        `;
 
-        const examples = {
-          srs: {
-            theme: "Село без дефицитов: дороги, вода, услуги.",
-            body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Село без дефицитов: дороги, вода, услуги.</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители местных исполнительных органов, акимы сельских округов, специалисты отделов развития территорий. Выбор обусловлен их прямой ответственностью за планирование и реализацию мер по обеспечению территории необходимой инфраструктурой и социальными благами.</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
-              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести комплексную оценку обеспеченности выбранной территории социальными и инфраструктурными благами в соответствии с системой региональных стандартов (СРС), выявить имеющиеся дефициты и разработать обоснованные меры по их устранению. По итогам анализа подготовить предложения для включения в план развития территории и в бюджетную заявку с указанием приоритетных направлений финансирования. Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
-            `,
-          },
-          taxes: {
-            theme: "Больше доходов — лучше условия",
-            body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Больше доходов - лучше условия</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители налоговых служб, акимы районов и сельских округов, предприниматели малого и среднего бизнеса. Выбор обусловлен их ключевой ролью в формировании налоговой базы территории и необходимостью взаимодействия между органами власти и бизнес-сообществом.</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
-              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести анализ налоговых поступлений на территории села (виды налогов, источники, уровень собираемости), выявить резервы для увеличения доходной базы и определить меры по ее расширению (легализация деятельности, поддержка МСБ, учет объектов налогообложения). На основе полученных данных разработать конкретные предложения по направлению дополнительных поступлений на приоритетные нужды села (инфраструктура, благоустройство, социальные объекты) с последующим включением в план развития и бюджет. Организовать информирование и вовлечение жителей в обсуждение приоритетов (лидерство и эффективная коммуникация).</p>
-            `,
-          },
-          budget: {
-            theme: "Бюджет для жителей",
-            body: `
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Тема проекта:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Бюджет для жителей</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Целевая группа и обоснование ее выбора:</p>
-              <p class="text-[14px] md:text-[15px] font-normal mb-5 leading-relaxed">Руководители финансовых отделов, акимы всех уровней, представители маслихатов. Выбор обусловлен их участием в формировании, распределении и контроле исполнения бюджета на всех уровнях бюджетной вертикали.</p>
-              <p class="text-[14px] md:text-[15px] font-semibold mb-2 leading-relaxed">Описание социальной и (или) практической значимости:</p>
-              <p class="text-[14px] md:text-[15px] font-normal leading-relaxed">Провести анализ формирования и исполнения местного бюджета (доходы, расходы, приоритеты), определить ключевые потребности населения и обеспечить перераспределение средств на наиболее востребованные направления (инфраструктура, ЖКХ, социальные услуги). Обеспечить прозрачность бюджетного процесса: организовать информирование (лидерство и коммуникация) и вовлечение жителей в обсуждение приоритетов, усилить контроль за целевым и эффективным использованием средств, а также включить приоритетные проекты в план развития территории.</p>
-            `,
-          },
-        };
-
-        let html = examples.srs.body;
-        if (selected.includes("налог")) html = examples.taxes.body;
-        else if (selected.includes("бюджет")) html = examples.budget.body;
-        else if (selected.includes("стандарт")) html = examples.srs.body;
-
-        container.innerHTML = html;
+        container.innerHTML = exampleBody;
       }
 
       if (exampleOpenBtn) {
@@ -2607,7 +2612,7 @@
             id="add-stage-title"
             class="text-[18px] md:text-[20px] font-semibold text-[#111827]"
           >
-            Добавить этап
+          Добавить мероприятие
           </h3>
           <button
             type="button"
@@ -2641,7 +2646,7 @@
             <label
               class="block text-[14px] font-semibold text-[#111827]"
               for="add-stage-name"
-              >Наименование мероприятия</label>
+              >Разработка и согласование</label>
             <textarea
               id="add-stage-name"
               name="name"
@@ -2654,7 +2659,7 @@
             <label
               class="block text-[14px] font-semibold text-[#111827]"
               for="add-stage-results"
-              >Ожидаемые результаты</label>
+              >Планирование реализации Проекта</label>
             <textarea
               id="add-stage-results"
               name="results"
@@ -2723,7 +2728,7 @@
             <label
               class="block text-[14px] font-semibold text-[#111827]"
               for="add-stage-forms"
-              >Формы завершения</label>
+              >Согласованный Поэтапный алгоритм выполнения проекта</label>
             <textarea
               id="add-stage-forms"
               name="forms"
@@ -2736,7 +2741,7 @@
             type="submit"
             class="w-full py-3 rounded-lg bg-[#155DFC] text-white text-[14px] font-semibold hover:bg-[#1249d4] transition-colors shadow-sm"
           >
-            Добавить этап
+          Добавить мероприятие
           </button>
         </form>
       </div>
