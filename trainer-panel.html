@@ -8,15 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       .students-scroll {
         -ms-overflow-style: none;
         scrollbar-width: none;
         cursor:
-          url("data:image/svg+xml,%3Csvg%20width%3D%2721%27%20height%3D%279%27%20viewBox%3D%270%200%2021%209%27%20fill%3D%27none%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M5.657%201.415L4.243%200L0%204.243L4.243%208.486L5.657%207.071L2.828%204.243L5.657%201.415ZM15.293%207.071L16.707%208.486L20.95%204.243L16.707%200L15.293%201.415L18.121%204.243L15.293%207.071Z%27%20fill%3D%27black%27/%3E%3C/svg%3E")
+          url('data:image/svg+xml,%3Csvg%20width%3D%2721%27%20height%3D%279%27%20viewBox%3D%270%200%2021%209%27%20fill%3D%27none%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M5.657%201.415L4.243%200L0%204.243L4.243%208.486L5.657%207.071L2.828%204.243L5.657%201.415ZM15.293%207.071L16.707%208.486L20.95%204.243L16.707%200L15.293%201.415L18.121%204.243L15.293%207.071Z%27%20fill%3D%27black%27/%3E%3C/svg%3E')
             10 4,
           grab;
       }
@@ -29,54 +28,73 @@
         cursor: grabbing;
         user-select: none;
       }
+
+      .contact-accordion {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .contact-accordion > summary {
+        list-style: none;
+      }
+
+      .contact-accordion > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .contact-accordion .label-close {
+        display: none;
+      }
+
+      .contact-accordion[open] .label-open {
+        display: none;
+      }
+
+      .contact-accordion[open] .label-close {
+        display: inline-flex;
+      }
     </style>
   </head>
   <body class="font-['Montserrat'] bg-[#EEF4F6]">
     <div class="section-1 w-full py-[64px] bg-[#EEF4F6] min-h-screen">
       <div
-        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative"
-      >
+        class="container px-3.5 md:px-0 sm:py-0 md:w-full md:py-0 lg:w-full mx-auto relative">
         <div class="bg-white shadow rounded p-6">
           <div
             class="mb-6 flex flex-wrap gap-3 border-b border-gray-200 pb-4"
             role="tablist"
-            aria-label="Разделы панели тренера"
-          >
+            aria-label="Разделы панели тренера">
             <button
               type="button"
               class="trainer-tab-btn active inline-flex items-center rounded-lg border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
-              data-tab-target="students"
-            >
+              data-tab-target="students">
               Количество учащихся (1)
             </button>
             <button
               type="button"
               class="trainer-tab-btn inline-flex items-center rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
-              data-tab-target="homework"
-            >
+              data-tab-target="homework">
               Домашнее задание
             </button>
             <button
               type="button"
               class="trainer-tab-btn relative inline-flex items-center rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
-              data-tab-target="projects"
-            >
+              data-tab-target="projects">
               Управление проектами
               <span
-                class="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-semibold text-white"
-              >
+                class="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-semibold text-white">
                 4
               </span>
             </button>
             <button
               type="button"
               class="trainer-tab-btn relative inline-flex items-center rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
-              data-tab-target="stats"
-            >
+              data-tab-target="stats">
               Статистика по группе
               <span
-                class="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-semibold text-white"
-              >
+                class="absolute -right-2 -top-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-semibold text-white">
                 2
               </span>
             </button>
@@ -105,26 +123,22 @@
                       width: 542px;
                     "
                     width="542"
-                    height="256"
-                  ></canvas>
+                    height="256"></canvas>
                 </div>
 
                 <div class="mt-4 space-y-2 text-sm">
                   <div
-                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200"
-                  >
+                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200">
                     <span class="text-gray-700">Меньше 50%</span>
                     <span class="font-semibold text-red-600">0</span>
                   </div>
                   <div
-                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200"
-                  >
+                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200">
                     <span class="text-gray-700">50% и выше</span>
                     <span class="font-semibold text-emerald-600">1</span>
                   </div>
                   <div
-                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200"
-                  >
+                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200">
                     <span class="text-gray-700">Без результатов</span>
                     <span class="font-semibold text-gray-600">0</span>
                   </div>
@@ -152,14 +166,12 @@
                       width: 542px;
                     "
                     width="542"
-                    height="256"
-                  ></canvas>
+                    height="256"></canvas>
                 </div>
 
                 <div class="mt-4 space-y-2">
                   <div
-                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200"
-                  >
+                    class="flex items-center justify-between rounded bg-white px-3 py-2 ring-1 ring-inset ring-gray-200">
                     <div>
                       <div class="font-medium text-gray-900">
                         1. Сериков Нұрлан Қайратұлы
@@ -192,8 +204,7 @@
 
             <table class="min-w-full text-sm border border-gray-200">
               <thead
-                class="border-b border-gray-200 bg-gray-50 text-left text-gray-600"
-              >
+                class="border-b border-gray-200 bg-gray-50 text-left text-gray-600">
                 <tr>
                   <th class="p-3 font-semibold">Модуль</th>
                   <th class="p-3 font-semibold">Период</th>
@@ -215,12 +226,10 @@
                     <div>
                       <a
                         href="https://academy.amanatpartiasy.kz/trainer/groups/10/tasks/691/assignments"
-                        class="inline-flex items-center justify-center gap-2 rounded border border-gray-300 px-5 py-2 text-base text-gray-700 hover:bg-gray-50"
-                      >
+                        class="inline-flex items-center justify-center gap-2 rounded border border-gray-300 px-5 py-2 text-base text-gray-700 hover:bg-gray-50">
                         Проверить ДЗ
                         <span
-                          class="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white"
-                        >
+                          class="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white">
                           99
                         </span>
                       </a>
@@ -241,12 +250,10 @@
                     <div>
                       <a
                         href="https://academy.amanatpartiasy.kz/trainer/groups/10/tasks/695/assignments"
-                        class="inline-flex items-center justify-center gap-2 rounded border border-gray-300 px-5 py-2 text-base text-gray-700 hover:bg-gray-50"
-                      >
+                        class="inline-flex items-center justify-center gap-2 rounded border border-gray-300 px-5 py-2 text-base text-gray-700 hover:bg-gray-50">
                         Проверить ДЗ
                         <span
-                          class="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white"
-                        >
+                          class="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white">
                           99
                         </span>
                       </a>
@@ -298,8 +305,7 @@
                       </td>
                       <td class="border-r border-gray-200 p-3 align-top">
                         <span
-                          class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700"
-                        >
+                          class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
                           Проект завершен
                         </span>
                       </td>
@@ -309,8 +315,7 @@
                       <td class="p-3 align-top">
                         <a
                           href="#"
-                          class="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white hover:bg-blue-500"
-                        >
+                          class="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white hover:bg-blue-500">
                           Открыть
                           <span aria-hidden="true">&nbsp;→</span>
                         </a>
@@ -329,8 +334,7 @@
                       </td>
                       <td class="border-r border-gray-200 p-3 align-top">
                         <span
-                          class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700"
-                        >
+                          class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
                           Проект завершен
                         </span>
                       </td>
@@ -340,8 +344,7 @@
                       <td class="p-3 align-top">
                         <a
                           href="#"
-                          class="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white hover:bg-blue-500"
-                        >
+                          class="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white hover:bg-blue-500">
                           Открыть
                           <span aria-hidden="true">&nbsp;→</span>
                         </a>
@@ -369,29 +372,27 @@
                 >
                 <select
                   id="students-filter"
-                  class="inline-flex rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-                >
+                  class="inline-flex rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
                   <option>Показать все группы</option>
                   <option>Показать только мои группы</option>
                 </select>
               </div>
 
               <div
-                class="students-scroll mt-5 overflow-x-auto rounded border border-gray-200"
-              >
-                <table class="min-w-[2000px] text-sm text-center text-gray-700">
+                class="students-scroll mt-5 overflow-x-auto rounded border border-gray-200">
+                <table class="min-w-[1620px] text-sm text-center text-gray-700">
                   <thead class="bg-gray-50 text-xs font-medium text-gray-600">
                     <tr class="border-b border-gray-200">
                       <th class="w-12 border-r border-gray-200 p-2" rowspan="2">
                         №
                       </th>
-                      <th class="w-56 border-r border-gray-200 p-2" rowspan="2">
+                      <th class="w-44 border-r border-gray-200 p-2" rowspan="2">
                         ФИО
                       </th>
                       <th class="w-32 border-r border-gray-200 p-2" rowspan="2">
                         Прогресс курса
                       </th>
-                      <th class="border-r border-gray-200 p-2" colspan="6">
+                      <th class="border-r border-gray-200 p-2" colspan="5">
                         Средний балл по результатам тестов модулей
                       </th>
                       <th class="w-24 border-r border-gray-200 p-2" rowspan="2">
@@ -419,11 +420,8 @@
                       <th class="w-44 border-r border-gray-200 p-2">
                         Бюджетная вертикаль: от Республики до села
                       </th>
-                      <th class="w-44 border-r border-gray-200 p-2">
+                      <th class="w-44 p-2">
                         Эффективные коммуникации с населением и командой
-                      </th>
-                      <th class="w-44 border-r border-gray-200 p-2">
-                        Политические кампании: от позиционирования к поддержке
                       </th>
                     </tr>
                   </thead>
@@ -431,9 +429,9 @@
                     <tr class="border-b border-gray-200">
                       <td class="border-r border-gray-200 p-2 align-top">1</td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top text-left"
-                      >
-                        <div class="font-medium text-gray-900">
+                        class="border-r border-gray-200 p-2 align-top text-left">
+                        <div
+                          class="text-sm font-medium text-gray-900 text-center">
                           Сериков Нұрлан Қайратұлы
                         </div>
                       </td>
@@ -444,43 +442,31 @@
                         </div>
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         98%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         75%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         82%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         27%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         27%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
-                        27%
-                      </td>
-                      <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         95
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         90
                       </td>
                       <td class="border-r border-gray-200 p-2 align-top">
@@ -492,20 +478,17 @@
                         <button
                           type="button"
                           class="inline-flex h-5 w-6 items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-500"
-                          aria-label="Действие по студенту"
-                        >
+                          aria-label="Действие по студенту">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             class="h-3.5 w-3.5"
-                            aria-hidden="true"
-                          >
+                            aria-hidden="true">
                             <path
                               fill-rule="evenodd"
                               d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
-                              clip-rule="evenodd"
-                            />
+                              clip-rule="evenodd" />
                           </svg>
                         </button>
                       </td>
@@ -513,15 +496,56 @@
                     <tr>
                       <td class="border-r border-gray-200 p-2 align-top">2</td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top text-left"
-                      >
-                        <div class="font-medium text-gray-900">
+                        class="border-r border-gray-200 p-2 align-top text-left">
+                        <div
+                          class="text-sm font-medium text-gray-900 text-center">
                           Малдыбаева Назерке Бейбитовна
                         </div>
-                        <div class="mt-1 text-xs text-gray-500">
-                          <div>+77014567823</div>
-                          <div>n.serikov.mph@gmail.com</div>
-                        </div>
+                        <details class="mt-1 text-center contact-accordion">
+                          <summary
+                            class="cursor-pointer list-none text-sm text-[#155DFC] hover:text-[#1249d4] inline-flex items-center gap-1">
+                            <span
+                              class="label-open inline-flex items-center gap-1 uppercase">
+                              Контакты
+                              <span aria-hidden="true"
+                                ><svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M3.17567 4.37458C3.28819 4.2621 3.44077 4.19891 3.59987 4.19891C3.75897 4.19891 3.91156 4.2621 4.02407 4.37458L5.99987 6.35038L7.97567 4.37458C8.03102 4.31727 8.09723 4.27156 8.17043 4.24012C8.24363 4.20867 8.32236 4.19212 8.40203 4.19143C8.4817 4.19074 8.56071 4.20592 8.63444 4.23609C8.70818 4.26625 8.77517 4.31081 8.83151 4.36714C8.88784 4.42348 8.9324 4.49047 8.96256 4.56421C8.99273 4.63794 9.00792 4.71695 9.00722 4.79662C9.00653 4.87629 8.98998 4.95502 8.95853 5.02822C8.92709 5.10142 8.88138 5.16763 8.82407 5.22298L6.42407 7.62298C6.31156 7.73546 6.15897 7.79865 5.99987 7.79865C5.84077 7.79865 5.68819 7.73546 5.57567 7.62298L3.17567 5.22298C3.06319 5.11046 3 4.95788 3 4.79878C3 4.63968 3.06319 4.4871 3.17567 4.37458Z"
+                                    fill="#2563EB" />
+                                </svg>
+                              </span>
+                            </span>
+                            <span
+                              class="label-close text-sm text-center items-center gap-1 uppercase tracking-wide">
+                              Свернуть
+                              <span aria-hidden="true"
+                                ><svg
+                                  class="rotate-180"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M3.17567 4.37458C3.28819 4.2621 3.44077 4.19891 3.59987 4.19891C3.75897 4.19891 3.91156 4.2621 4.02407 4.37458L5.99987 6.35038L7.97567 4.37458C8.03102 4.31727 8.09723 4.27156 8.17043 4.24012C8.24363 4.20867 8.32236 4.19212 8.40203 4.19143C8.4817 4.19074 8.56071 4.20592 8.63444 4.23609C8.70818 4.26625 8.77517 4.31081 8.83151 4.36714C8.88784 4.42348 8.9324 4.49047 8.96256 4.56421C8.99273 4.63794 9.00792 4.71695 9.00722 4.79662C9.00653 4.87629 8.98998 4.95502 8.95853 5.02822C8.92709 5.10142 8.88138 5.16763 8.82407 5.22298L6.42407 7.62298C6.31156 7.73546 6.15897 7.79865 5.99987 7.79865C5.84077 7.79865 5.68819 7.73546 5.57567 7.62298L3.17567 5.22298C3.06319 5.11046 3 4.95788 3 4.79878C3 4.63968 3.06319 4.4871 3.17567 4.37458Z"
+                                    fill="#2563EB" /></svg
+                              ></span>
+                            </span>
+                          </summary>
+                          <div class="mt-1 text-xs text-gray-500 space-y-1">
+                            <div>+77014567823</div>
+                            <div>n.serikov.mph@gmail.com</div>
+                          </div>
+                        </details>
                       </td>
                       <td class="border-r border-gray-200 p-2 align-top">
                         <div class="font-semibold text-gray-900">98%</div>
@@ -530,43 +554,31 @@
                         </div>
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         98%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         75%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         75%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         75%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         82%
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
-                        27%
-                      </td>
-                      <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         98
                       </td>
                       <td
-                        class="border-r border-gray-200 p-2 align-top font-semibold"
-                      >
+                        class="border-r border-gray-200 p-2 align-top font-semibold">
                         95
                       </td>
                       <td class="border-r border-gray-200 p-2 align-top">
@@ -578,20 +590,17 @@
                         <button
                           type="button"
                           class="inline-flex h-5 w-6 items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-500"
-                          aria-label="Действие по студенту"
-                        >
+                          aria-label="Действие по студенту">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             class="h-3.5 w-3.5"
-                            aria-hidden="true"
-                          >
+                            aria-hidden="true">
                             <path
                               fill-rule="evenodd"
                               d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
-                              clip-rule="evenodd"
-                            />
+                              clip-rule="evenodd" />
                           </svg>
                         </button>
                       </td>
@@ -605,54 +614,54 @@
       </div>
     </div>
     <script>
-      const tabButtons = document.querySelectorAll(".trainer-tab-btn");
-      const tabPanels = document.querySelectorAll(".trainer-tab-panel");
+      const tabButtons = document.querySelectorAll('.trainer-tab-btn');
+      const tabPanels = document.querySelectorAll('.trainer-tab-panel');
 
       const activateTab = (tabName) => {
         tabButtons.forEach((button) => {
           const isActive = button.dataset.tabTarget === tabName;
-          button.classList.toggle("active", isActive);
-          button.classList.toggle("border-blue-600", isActive);
-          button.classList.toggle("bg-blue-600", isActive);
-          button.classList.toggle("text-white", isActive);
-          button.classList.toggle("hover:bg-blue-500", isActive);
-          button.classList.toggle("border-gray-300", !isActive);
-          button.classList.toggle("bg-gray-50", !isActive);
-          button.classList.toggle("text-gray-700", !isActive);
-          button.classList.toggle("hover:bg-gray-100", !isActive);
+          button.classList.toggle('active', isActive);
+          button.classList.toggle('border-blue-600', isActive);
+          button.classList.toggle('bg-blue-600', isActive);
+          button.classList.toggle('text-white', isActive);
+          button.classList.toggle('hover:bg-blue-500', isActive);
+          button.classList.toggle('border-gray-300', !isActive);
+          button.classList.toggle('bg-gray-50', !isActive);
+          button.classList.toggle('text-gray-700', !isActive);
+          button.classList.toggle('hover:bg-gray-100', !isActive);
         });
 
         tabPanels.forEach((panel) => {
           panel.classList.toggle(
-            "hidden",
+            'hidden',
             panel.dataset.tabContent !== tabName,
           );
         });
       };
 
       tabButtons.forEach((button) => {
-        button.addEventListener("click", () => {
+        button.addEventListener('click', () => {
           activateTab(button.dataset.tabTarget);
         });
       });
 
       const studentsScrollContainers =
-        document.querySelectorAll(".students-scroll");
+        document.querySelectorAll('.students-scroll');
 
       studentsScrollContainers.forEach((container) => {
         let isDragging = false;
         let startX = 0;
         let startScrollLeft = 0;
 
-        container.addEventListener("mousedown", (event) => {
+        container.addEventListener('mousedown', (event) => {
           isDragging = true;
-          container.classList.add("dragging");
+          container.classList.add('dragging');
           startX = event.pageX - container.offsetLeft;
           startScrollLeft = container.scrollLeft;
           event.preventDefault();
         });
 
-        container.addEventListener("mousemove", (event) => {
+        container.addEventListener('mousemove', (event) => {
           if (!isDragging) return;
           const currentX = event.pageX - container.offsetLeft;
           const delta = currentX - startX;
@@ -661,11 +670,11 @@
 
         const stopDragging = () => {
           isDragging = false;
-          container.classList.remove("dragging");
+          container.classList.remove('dragging');
         };
 
-        container.addEventListener("mouseleave", stopDragging);
-        container.addEventListener("mouseup", stopDragging);
+        container.addEventListener('mouseleave', stopDragging);
+        container.addEventListener('mouseup', stopDragging);
       });
     </script>
   </body>
